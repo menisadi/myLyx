@@ -95,17 +95,14 @@
 סיבוכיות של פעולות אריתמטיות
 \end_layout
 
-\begin_layout Paragraph*
-\begin_inset Marginal
-status open
+\begin_layout Standard
 
-\begin_layout Plain Layout
-תזכורת:
-\end_layout
-
-\end_inset
-
-חיבור וחיסור ניתנים לביצוע בזמן 
+\series bold
+תזכורת
+\series medium
+:
+\series default
+ חיבור וחיסור ניתנים לביצוע בזמן 
 \begin_inset Formula $\mathcal{O}(n)$
 \end_inset
 
@@ -114,10 +111,7 @@ status open
 \end_inset
 
  הוא מספר הביטים )ולא גודל המספר(.
-\end_layout
-
-\begin_layout Paragraph*
-כפל וחילוק ניתנים לחישוב בזמן 
+ כפל וחילוק ניתנים לחישוב בזמן 
 \begin_inset Formula $\mathcal{O}(n^{2})$
 \end_inset
 
@@ -128,8 +122,12 @@ status open
 חשבון מודולרי
 \end_layout
 
-\begin_layout Itemize
-חיבור: 
+\begin_layout Description
+
+\series bold
+חיבור
+\series default
+: 
 \begin_inset Formula $a+b\,(mod\, m)$
 \end_inset
 
@@ -191,11 +189,11 @@ m
 \begin_inset Formula $n\geq$
 \end_inset
 
- ביטים
-\end_layout
+ ביטים 
+\begin_inset Newline newline
+\end_inset
 
-\begin_deeper
-\begin_layout Itemize
+
 \begin_inset Formula $0\leq a+b<2m$
 \end_inset
 
@@ -213,9 +211,12 @@ a+b-m & \Leftarrow a+b\geq m
 
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-כפל: 
+\begin_layout Description
+
+\series bold
+כפל
+\series default
+: 
 \family roman
 \series medium
 \shape up
@@ -302,10 +303,9 @@ m
 \end_inset
 
  ביטים
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_deeper
-\begin_layout Itemize
 החישוב דורש פעולת כפל + פעולת חילוק עם שארית ובסה"כ זמן ריצה 
 \begin_inset Formula $\mathcal{O}\left(n^{2}\right)$
 \end_inset
@@ -313,9 +313,12 @@ m
 
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-חילוק: למעשה חילוק מעל הממשיים משמעותו הכפלה באיבר ההופכי כלומר 
+\begin_layout Description
+
+\series bold
+חילוק
+\series default
+: למעשה חילוק מעל הממשיים משמעותו הכפלה באיבר ההופכי כלומר 
 \begin_inset Formula $a/b\Rightarrow ab^{-1}$
 \end_inset
 
@@ -324,10 +327,9 @@ m
 \end_inset
 
 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_deeper
-\begin_layout Itemize
 ב
 \begin_inset Formula $\mathbb{Z}_{m}$
 \end_inset
@@ -395,9 +397,9 @@ m
 \end_inset
 
 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Itemize
 במקרה כזה נאמר ש
 \begin_inset Formula $\mathbb{Z}_{m}$
 \end_inset
@@ -405,7 +407,6 @@ m
  הוא לא רק חוג אלא שדה
 \end_layout
 
-\end_deeper
 \begin_layout Subsection*
 האלגוריתם של אוקלידס למציאת
 \family roman
@@ -450,25 +451,12 @@ m
 
 \end_layout
 
-\begin_layout Standard
-לכל 
-\begin_inset Formula $a,b$
-\end_inset
+\begin_layout Description
 
-: 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-טענה:
-\end_layout
-
-\end_inset
-
-אם 
+\series bold
+טענה
+\series default
+: אם 
 \begin_inset Formula $b=0\, mod\, m$
 \end_inset
 
@@ -476,32 +464,212 @@ status open
 \begin_inset Formula $a\mid b$
 \end_inset
 
- אזי 
+ אזי - 
 \begin_inset Formula $gcd(a,b)=a$
 \end_inset
 
 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
-אחרת 
+אחרת - 
 \begin_inset Formula $gcd(a,b)=gcd(a,a-b)$
 \end_inset
 
 
+\series bold
+ 
+\end_layout
+
+\begin_layout Description
+
+\series bold
+נימוק
+\series default
+: 
+\begin_inset Formula $c|a\wedge c|a\Rightarrow c|ab$
+\end_inset
+
+ ומנגד 
+\begin_inset Formula $c|a\wedge c|b-a\Rightarrow c|a+b-a=b$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+נחסר אם כך את 
+\begin_inset Formula $a$
+\end_inset
+
+מ
+\begin_inset Formula $b$
+\end_inset
+
+שוב ושוב עד שנרד מתחת ל-
+\begin_inset Formula $a$
+\end_inset
+
+ונקבל את בצד ימין 
+\begin_inset Formula $b\, mod\, a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+מסקנה: 
+\begin_inset Formula $gcd(a,b)=gcd(a,b-ka)=gcd(a,b\, mod\, a)$
+\end_inset
+
+ עבור 
+\begin_inset Formula $k$
+\end_inset
+
+ כלשהו ומכאן נקבל אלגוריתם רקורסיבי:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Marginal
-status open
 
-\begin_layout Plain Layout
-נימוק:
-\end_layout
-
+\series medium
+\begin_inset Formula $GCD-Euclid(a,b)$
 \end_inset
 
- לכל 
+ :
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $c=b\, mod\, a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula $c=0$
+\end_inset
+
+ - נחזיר 
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+אחרת - נחזיר 
+\begin_inset Formula $GCD-Euclid(c,a)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+זמן ריצה
+\series default
+ - 
+\begin_inset Formula $a,b$
+\end_inset
+
+ באורך 
+\begin_inset Formula $n\geq$
+\end_inset
+
+ ביטים 
+\end_layout
+
+\begin_layout Standard
+בהתבוננות ראשונית נוכל לשים לב שבכל צעד אחד המספרים קטן ולכן נוכל להסיק
+ שעומק הרקורסיה 
+\begin_inset Formula $\geq$
+\end_inset
+
+
+\begin_inset Formula $max(a,b)$
+\end_inset
+
+
+\begin_inset Formula $\geq$
+\end_inset
+
+
+\begin_inset Formula $2^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+טענה: 
+\begin_inset Formula $b\, mod\, a\leq\dfrac{b}{a}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הוכחה: נחלק למקרים - 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $a\leq\frac{b}{2}$
+\end_inset
+
+ - 
+\begin_inset Formula $b\, mod\, a<a\leq\frac{b}{a}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $a>\frac{b}{2}$
+\end_inset
+
+ - נקבל כי 
+\begin_inset Formula $b\, mod\, a=b-a<b-\frac{b}{2}=\frac{b}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אם כך בכל צעד 
+\bar under
+אחד
+\bar default
+ הפרמטרים קטן לפחות בחצי 
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+מספר האיטרציות הוא לכל היותר 
+\begin_inset Formula $2log_{2}min(a,b)$
+\end_inset
+
+ ומאחר ו
+\begin_inset Formula $a,b\leq2^{n}$
+\end_inset
+
+ נקבל 
+\begin_inset Formula $\mathcal{O}(n)$
+\end_inset
+
+ איטרציות 
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+נבצע 
+\begin_inset Formula $\mathcal{O}(n)$
+\end_inset
+
+ פעמים חילוק עם שארית ולכן סה"כ זמן ריצה 
+\begin_inset Formula $\mathcal{O}(n^{3})$
+\end_inset
+
+
 \end_layout
 
 \end_body
