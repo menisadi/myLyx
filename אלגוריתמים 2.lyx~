@@ -229,7 +229,7 @@ a+b-m & \Leftarrow a+b\geq m
 \noun off
 \color none
 
-\begin_inset Formula $ab\,(mod\, m)$
+\begin_inset Formula $ab\:(mod\: m)$
 \end_inset
 
  
@@ -393,7 +393,7 @@ m
 \end_inset
 
  כך ש 
-\begin_inset Formula $aa'=1(mod\, m)$
+\begin_inset Formula $aa'=1(mod\: m)$
 \end_inset
 
 
@@ -457,7 +457,7 @@ m
 טענה
 \series default
 : אם 
-\begin_inset Formula $b=0\, mod\, m$
+\begin_inset Formula $b=0\: mod\: m$
 \end_inset
 
  כלומר 
@@ -511,7 +511,7 @@ m
 \end_inset
 
 ונקבל את בצד ימין 
-\begin_inset Formula $b\, mod\, a$
+\begin_inset Formula $b\: mod\: a$
 \end_inset
 
 
@@ -519,7 +519,7 @@ m
 
 \begin_layout Description
 מסקנה: 
-\begin_inset Formula $gcd(a,b)=gcd(a,b-ka)=gcd(a,b\, mod\, a)$
+\begin_inset Formula $gcd(a,b)=gcd(a,b-ka)=gcd(a,b\: mod\: a)$
 \end_inset
 
  עבור 
@@ -539,7 +539,7 @@ m
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $c=b\, mod\, a$
+\begin_inset Formula $c=b\: mod\: a$
 \end_inset
 
 
@@ -569,10 +569,8 @@ m
 
 \series bold
 זמן ריצה
-\end_layout
-
-\begin_layout Standard
-כזכור 
+\series default
+ - 
 \begin_inset Formula $a,b$
 \end_inset
 
@@ -606,7 +604,7 @@ m
 
 \begin_layout Description
 טענה: 
-\begin_inset Formula $b\, mod\, a\leq\dfrac{b}{a}$
+\begin_inset Formula $b\: mod\: a\leq\dfrac{b}{a}$
 \end_inset
 
 
@@ -621,7 +619,7 @@ m
 \end_inset
 
  - 
-\begin_inset Formula $b\, mod\, a<a\leq\frac{b}{a}$
+\begin_inset Formula $b\: mod\: a<a\leq\frac{b}{a}$
 \end_inset
 
 
@@ -632,7 +630,7 @@ m
 \end_inset
 
  - נקבל כי 
-\begin_inset Formula $b\, mod\, a=b-a<b-\frac{b}{2}=\frac{b}{2}$
+\begin_inset Formula $b\: mod\: a=b-a<b-\frac{b}{2}=\frac{b}{2}$
 \end_inset
 
 
@@ -672,6 +670,206 @@ m
 \end_inset
 
 
+\end_layout
+
+\begin_layout Description
+משפט: אם 
+\begin_inset Formula $ $
+\end_inset
+
+ ראשוני ו 
+\begin_inset Formula $0\ne a\in\mathbb{Z}_{m}$
+\end_inset
+
+ אזי קיים 
+\begin_inset Formula $a'\in\mathbb{Z}_{m}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $aa'=1\in\mathbb{Z}_{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+למה: הלמה של בזו 
+\begin_inset Formula $(Bézout)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+לכל 
+\begin_inset Formula $a,b\in\mathbb{N}$
+\end_inset
+
+ קייים 
+\begin_inset Formula $x,y\in\mathbb{Z}$
+\end_inset
+
+ כך ש:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $xa+yb=GCD(a,b)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הוכחת
+\begin_inset space ~
+\end_inset
+
+המשפט: יהי 
+\begin_inset Formula $0\ne a\in\mathbb{Z}_{m}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $m$
+\end_inset
+
+ ראשוני
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $GCD(a,m)=1\Rightarrow\exists x,y:\: xa+ym=1\Rightarrow xa=1+(-y)bm\Rightarrow xa=1(mod\: m)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הערה: גם אם 
+\begin_inset Formula $m$
+\end_inset
+
+פריק אבל 
+\begin_inset Formula $GCD(a,m)=1$
+\end_inset
+
+ קיים הופכי ל
+\begin_inset Formula $a$
+\end_inset
+
+ ב
+\begin_inset Formula $\mathbb{Z}_{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הוכחת
+\begin_inset space ~
+\end_inset
+
+הלמה: נשנה מעט את הלגוריתם של אוקלידס כך שיחזיר גם 
+\begin_inset Formula $x,y$
+\end_inset
+
+שעבורם 
+\begin_inset Formula $xa+yb=GCD(a,b)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $GCD-Euclid(a,b)$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $c=b\: mod\: a$
+\end_inset
+
+ ונשמור את 
+\begin_inset Formula $d$
+\end_inset
+
+ שעבורו 
+\begin_inset Formula $b=da+c$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+אם 
+\begin_inset Formula $c=0$
+\end_inset
+
+: נחזיר את צש וגם 
+\begin_inset Formula $y=0\; x=1$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+אחרת: נחזיר את 
+\begin_inset Formula $GCD(c,a)$
+\end_inset
+
+ וגם את 
+\begin_inset Formula $y=x'\; x=y'-dx$
+\end_inset
+
+ אותם קיבלנו מהרקורסיה
+\end_layout
+
+\begin_layout Description
+הסבר: נניח שהקריאה הרקורסיבית החזירה 
+\begin_inset Formula $x,y$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $x'c+y'a=GCD(c,a)=GCD(a,b$
+\end_inset
+
+ בפעולה 
+\begin_inset Formula $b\: mod\: a$
+\end_inset
+
+ קיבלנו 
+\begin_inset Formula $c,d$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $b=da+c$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+כלומר 
+\begin_inset Formula $x'c+y'a=x'(b-da)+y'a=x'b+(y'-dx')a$
+\end_inset
+
+ כנדרש
+\end_layout
+
+\begin_layout Description
+סבוכיות: 
+\begin_inset Formula $\mathcal{O}\left(n^{3}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+בדיקת ראשוניות
 \end_layout
 
 \begin_layout Standard
