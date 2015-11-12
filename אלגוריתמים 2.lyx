@@ -89,7 +89,7 @@
 2
 \end_layout
 
-\begin_layout Section*
+\begin_layout Part*
 
 \size largest
 סיבוכיות של פעולות אריתמטיות
@@ -118,7 +118,7 @@
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 חשבון מודולרי
 \end_layout
 
@@ -407,7 +407,7 @@ m
  הוא לא רק חוג אלא שדה
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 האלגוריתם של אוקלידס למציאת
 \family roman
 \series medium
@@ -868,8 +868,630 @@ m
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Part*
 בדיקת ראשוניות
+\end_layout
+
+\begin_layout Section*
+חישוב חזקה בחשבון מודולרי
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a,b,m$
+\end_inset
+
+ באורך 
+\begin_inset Formula $m\geq$
+\end_inset
+
+ ביטים
+\end_layout
+
+\begin_layout Standard
+רוצים לחשב את 
+\begin_inset Formula $a^{b}\: mod\: m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הבעיה: 
+\begin_inset Formula $a^{b}$
+\end_inset
+
+ הוא מספר באורך 
+\begin_inset Formula $\approx$
+\end_inset
+
+ 
+\begin_inset Formula $ab$
+\end_inset
+
+ ביטים כלומר 
+\begin_inset Formula $\mathcal{O}\left(n2^{n}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+רעיון: נבצע 
+\begin_inset Formula $mod\: m$
+\end_inset
+
+ לאחר כל כפל.
+ אלא שזה עדיין לא מספיק משום שאנחנו נדרשים לבצע 
+\begin_inset Formula $b$
+\end_inset
+
+ פעולות/איטרציות כאשר 
+\begin_inset Formula $b=\mathcal{O}\left(2^{n}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+טריק
+\begin_inset space ~
+\end_inset
+
+נפוץ
+\begin_inset space ~
+\end_inset
+
+ושימושי: נחשב את הסדרה 
+\begin_inset Formula $a\: mod\: m,\; a^{2}\: mod\: m,\; a^{4}\: mod\: m,\;...\;,a^{2^{n}}\: mod\: m$
+\end_inset
+
+ - סדרה בת 
+\begin_inset Formula $n$
+\end_inset
+
+ איברים
+\begin_inset Newline newline
+\end_inset
+
+בשביל לחשב כל איבר בסדרה פשוט נעלה את קודמו בריבוע.
+ נשים לב שמתכונות החשבון המודולורי תוצאת ה 
+\begin_inset Formula $mod$
+\end_inset
+
+ תהיה זהה גם אם נבצע אותה אחרי כל העלאה בריבוע.
+ 
+\begin_inset Newline newline
+\end_inset
+
+נקבל שלחישוב כל איבר נזדקק לפעולת כפל + פעולת 
+\begin_inset Formula $mod$
+\end_inset
+
+ )ששוות ערך לחילוק עם שארית( כלומר 
+\begin_inset Formula $\mathcal{O}\left(n^{2}\right)$
+\end_inset
+
+ פעולות
+\begin_inset Newline newline
+\end_inset
+
+ולכן בסך הכל עבור ככל הסדרה נקבל 
+\begin_inset Formula $\mathcal{O}\left(n^{3}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+כעת נוכל לפרק את החזקה )בעזרת הייצוג הבינארי שלה( לסכום של חזקות של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כלומר 
+\begin_inset Formula $b=2^{x_{1}}+2^{x_{2}}+...$
+\end_inset
+
+, נקבל, אם כך, כפל של חזקות 
+\begin_inset Formula $a^{b}=a^{s^{x_{1}}}a^{2^{x_{2}}}...$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+גם כאן נכניס את פעולת ה 
+\begin_inset Formula $mod$
+\end_inset
+
+ פנימה ונקבל: 
+\begin_inset Formula $b=\sum2^{x_{k}}\Rightarrow a^{b}\: mod\: m=\prod_{k}(a^{2^{x_{k}}}\: mod\: m)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+זמן
+\begin_inset space ~
+\end_inset
+
+ריצה: עיבוד ראשוני - 
+\begin_inset Formula $\mathcal{O}\left(n^{3}\right)$
+\end_inset
+
+ עבור חישוב הסדרה
+\begin_inset Newline newline
+\end_inset
+
+בכל שלב עבור כל 
+\begin_inset Formula $x_{k}$
+\end_inset
+
+ נכפיל - 
+\begin_inset Formula $(\prod_{j=1}^{k-1}a^{2^{x_{j}}}\: mod\: m)(a^{2^{x_{k}}}\: mod\: m)\: mod\: m$
+\end_inset
+
+- כאשר הכופל השמאלי הוא מה שחושב עד כה והימני הוא החישוב המבוקש 
+\begin_inset Newline newline
+\end_inset
+
+ולכן מדובר בכל שלב בכפל + 
+\begin_inset Formula $mod$
+\end_inset
+
+ 
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+ סה"כ 
+\begin_inset Formula $\mathcal{O}\left(n^{3}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\series bold
+\begin_inset Formula $PRIMES$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ישנן שתי בעיות קרובות אבל שונות מאוד בתחום של ראשוניות:
+\end_layout
+
+\begin_layout Enumerate
+בדיקת ראשוניות 
+\begin_inset Formula $(PRIMES)$
+\end_inset
+
+ - בהינתן 
+\begin_inset Formula $m\in\mathbb{N}$
+\end_inset
+
+ האם הוא ראשוני?
+\end_layout
+
+\begin_layout Enumerate
+פירוק לגורמים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+
+\begin_inset Formula $(FACTORING)$
+\end_inset
+
+
+\lang hebrew
+ - בהינתן 
+\begin_inset Formula $m\in\mathbb{N}$
+\end_inset
+
+ פריק, מצא גורם של 
+\begin_inset Formula $m$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+בהנתן אלגוריתם שפותר את
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בעיה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+נוכל למצוא ע"י את כל הגורמים של 
+\begin_inset Formula $m$
+\end_inset
+
+ על ידי חילוק בגורם שמצאנו והפעלה חוזרת
+\end_layout
+
+\begin_layout Standard
+בעיה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+היא בעיה קלה - שיערו שזה כך ואכן בשנת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2002
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הוכח שהיא ב
+\begin_inset Formula $P$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בעיה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+לעומת זאת נחשבת בעיה קשה - לא ידוע על אלגוריתם שפותר אותה בזמן סביר
+\end_layout
+
+\begin_layout Subsubsection*
+היסטוריה
+\end_layout
+
+\begin_layout Description
+
+\numeric on
+1976
+\numeric off
+: אלגוריתם של 
+\begin_inset Formula $Miller$
+\end_inset
+
+ דטרמיניסטי ופולינומי
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $Miller$
+\end_inset
+
+ הוכיח שהאלגוריתם נכון אם השערת רימן המוכללת נכונה
+\end_layout
+
+\begin_layout Description
+
+\numeric on
+1977
+\numeric off
+: אלגוריתם של 
+\begin_inset Formula $Solovag-Starassen$
+\end_inset
+
+ רנדומי, פולינומי, נכון ללא הנחות
+\begin_inset Newline newline
+\end_inset
+
+הראו ש 
+\begin_inset Formula $PRIMES\in CO-RP$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $CO-RP$
+\end_inset
+
+ - אלגוריתמים בעלי אפשרות רנדומית לטעות חד-צדדית.
+ 
+\begin_inset Newline newline
+\end_inset
+
+כלומר במקרה שלנו - אם 
+\begin_inset Formula $m$
+\end_inset
+
+ ראשוני - האלגוריתם יחזיר "כן" תמיד, אם הוא פריק - האלגוריתם יחזיר "לא"
+ בהסתברות 
+\begin_inset Formula $\frac{1}{2}\leq$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+אם חוזרים 
+\begin_inset Formula $k$
+\end_inset
+
+ פעמים על האלגוריתם על 
+\begin_inset Formula $m$
+\end_inset
+
+ נתון, ההסתברות שנחזיר בכל הפעמים "כן" כאשר למעשה 
+\begin_inset Formula $m$
+\end_inset
+
+ פריק היא 
+\begin_inset Formula $\left(\frac{1}{2}\right)^{k}\geq$
+\end_inset
+
+
 \end_layout
 
 \end_body
