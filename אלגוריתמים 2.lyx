@@ -1494,5 +1494,86 @@ m
 
 \end_layout
 
+\begin_layout Description
+
+\numeric on
+1980
+\numeric off
+: 
+\begin_inset Formula $\text{\ensuremath{Miller-Rabin}}$
+\end_inset
+
+ אלגוריתם ב 
+\begin_inset Formula $C-RP$
+\end_inset
+
+ )כלומר עם שגיאה הסתברותית חד צדדית(, יעיל יותר )דרגת הפולינום נמוכה יותר(,
+ נכון ללא הנחות
+\end_layout
+
+\begin_layout Description
+
+\numeric on
+1992
+\numeric off
+: 
+\begin_inset Formula $Adelman-Hung$
+\end_inset
+
+ אלגוריתם 
+\begin_inset Formula $ZPP$
+\end_inset
+
+ כלומר רנדומי במובן הזה שהוא תמיד מחזיר תשובה נכונה ו
+\bar under
+תוחלת
+\bar default
+ זמן הריצה היא פולינומית
+\begin_inset Newline newline
+\end_inset
+
+הערה: נניח שתוחלת זמן הריצה 
+\begin_inset Formula $n^{c}$
+\end_inset
+
+ נקבל מאי-שיוויון מרקוב 
+\begin_inset Formula $Pr\left[\text{\ensuremath{run-time\geq2n^{c}}}\right]\leq\frac{1}{2}$
+\end_inset
+
+ ולכן אם נריץ את האלגוריתם 
+\begin_inset Formula $k$
+\end_inset
+
+ פעמים כל פעם במשך 
+\begin_inset Formula $2n^{c}$
+\end_inset
+
+ צעדים ההסתברות שאף ריצה לא תעצור בזמן הזה היא 
+\begin_inset Formula $\left(\frac{1}{2}\right)^{k}\geq$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+
+\numeric on
+2001
+\numeric off
+: 
+\begin_inset Formula $Agravant-Kayst-Saysera$
+\end_inset
+
+ הוכיחו ש 
+\begin_inset Formula $PRIMES\in P$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+מציאת מספר ראשוני
+\end_layout
+
 \end_body
 \end_document
