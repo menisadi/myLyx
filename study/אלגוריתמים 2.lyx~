@@ -45,8 +45,8 @@
 \end_index
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\paragraph_separation skip
+\defskip smallskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -90,6 +90,18 @@
 \end_layout
 
 \begin_layout Part*
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $29.10.15$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \size largest
 סיבוכיות של פעולות אריתמטיות
@@ -1406,6 +1418,24 @@ m
 \noun default
 \color inherit
 לעומת זאת נחשבת בעיה קשה - לא ידוע על אלגוריתם שפותר אותה בזמן סביר
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.11.15$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
