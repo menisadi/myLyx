@@ -1,0 +1,167 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{culmus}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\lang english
+by defenition 
+\lang hebrew
+
+\begin_inset Formula 
+\[
+q(S,j)\geq(1-\nicefrac{1}{4})R\Rightarrow r-L(j+1)\geq(1-\nicefrac{1}{4})R=\frac{3\alpha}{8}r\Rightarrow L(j+1)\leq r-\frac{3\alpha}{8}r=(1-\frac{3\alpha}{8})r
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+and by the promise there is p such 
+\begin_inset Formula $Q(p)\geq r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+so the gap is at least 
+\begin_inset Formula 
+\[
+r-(1-\frac{3\alpha}{8})r=\frac{3\alpha}{8}r
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+in other words we need that 
+\begin_inset Formula 
+\[
+\frac{3\alpha}{8}r>\frac{ln\left(\frac{1}{\beta\delta}\right)}{\epsilon}\Rightarrow r>\frac{8ln\left(\frac{1}{\beta\delta}\right)}{3\epsilon\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+recall that from privacy we must have 
+\begin_inset Formula $\delta<\frac{1}{T}$
+\end_inset
+
+ so 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\[
+r>\frac{8ln\left(\frac{T}{\beta}\right)}{3\epsilon\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+in the case of median quality 
+\begin_inset Formula $r=\frac{|S|}{2}$
+\end_inset
+
+ so we get that the sample complecsity bound:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\[
+|S|>\frac{16ln\left(\frac{T}{\beta}\right)}{3\epsilon\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

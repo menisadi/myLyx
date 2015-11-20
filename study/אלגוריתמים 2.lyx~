@@ -1560,7 +1560,7 @@ m
 \numeric on
 2001
 \numeric off
-: ְ
+: 
 \begin_inset Formula $Agravant-Kayst-Saysera$
 \end_inset
 
@@ -1573,6 +1573,641 @@ m
 
 \begin_layout Subsection*
 מציאת מספר ראשוני
+\end_layout
+
+\begin_layout Standard
+הרעיון הכללי: נגריל מספר באורך 
+\begin_inset Formula $m$
+\end_inset
+
+ ביטים ונריץ אלגוריתם לבדיקת ראשוניות, אם התשובה היא "כן" נחזיר את 
+\begin_inset Formula $m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+משפט
+\begin_inset space ~
+\end_inset
+
+המספרים
+\begin_inset space ~
+\end_inset
+
+הראשוניים: נגדיר 
+\begin_inset Formula $\pi(x)=|\{p|p\leq x,\: p\: is\: prime\}|$
+\end_inset
+
+ אזי
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\pi(x)=(1+o(1))\frac{x}{ln\left(x\right)}
+\]
+
+\end_inset
+
+ ומכאן שבין 
+\begin_inset Formula $x$
+\end_inset
+
+ ל
+\begin_inset Formula $2x$
+\end_inset
+
+ יש 
+\begin_inset Formula $(1+o(1))\frac{x}{ln\left(x\right)}$
+\end_inset
+
+ ראשוניים
+\end_layout
+
+\begin_layout Standard
+כלומר אם נגריל מספר שלם 
+\begin_inset Formula $2^{n}\leq m\leq2^{n+1}$
+\end_inset
+
+ נקבל ש 
+\begin_inset Formula 
+\[
+Pr\left[m\ is\ prime\right]=\frac{(1+o(1))\frac{2^{n}}{ln\left(2^{n}\right)}}{2^{n}}=(1+o(1))\frac{1}{nln\left(2\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אם נבצע 
+\begin_inset Formula $kn$
+\end_inset
+
+ חזרות ההסתברות להצלחה באחת מהן היא 
+\begin_inset Formula 
+\[
+1-Pr\left[failor\right]=1-\left(1-\frac{1-o\left(1\right)}{nln2}\right)^{kn}\geq1-\left(e^{-\frac{1-o\left(1\right)}{nln2}}\right)^{kn}=1-\left(e^{-\frac{1-o\left(1\right)}{ln2}}\right)^{k}>1-\left(\frac{1}{4}\right)^{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+השערה: השערת 
+\begin_inset Formula $Cramer$
+\end_inset
+
+ - הפער המקסימלי בין שני ראשונים עוקבים באורך 
+\begin_inset Formula $n$
+\end_inset
+
+ ביים הוא 
+\begin_inset Formula $\mathcal{O}\left(n^{2}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+התוצאה הכי טובה בדרך להוכחת ההשערה היא שפער לא גדול מ 
+\begin_inset Formula $\frac{1}{n}2^{\frac{n}{2}}\approx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+אלגוריתם 
+\begin_inset Formula $CO-RP$
+\end_inset
+
+ לבדיקת ראשוניות
+\end_layout
+
+\begin_layout Standard
+עד פשוט לפריקות: 
+\begin_inset Formula $m$
+\end_inset
+
+ פריק 
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+ קיים 
+\begin_inset Formula $0<a<m$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $GCD(a,m)\neq1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+דוגמה: אם 
+\begin_inset Formula $m=pq$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $p,q$
+\end_inset
+
+ ראשוניים באורך 
+\begin_inset Formula $n$
+\end_inset
+
+ 
+\begin_inset Formula $\left(2^{2n}\approx m,\ 2^{n}\approx p,q\right)$
+\end_inset
+
+ כמה עדים יהיו?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p+q+2\;\begin{cases}
+\text{p,2p,...}(q-1)p\\
+q,2q,...,(p-1)q
+\end{cases}$
+\end_inset
+
+ עדים מתוך 
+\begin_inset Formula $m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר אם נגריל ההסתברות שנפגע בעד היא בערך 
+\begin_inset Formula $\mathcal{O}\left(\frac{1}{2^{n}}\right)2\frac{2^{n}}{2^{2n}}$
+\end_inset
+
+ - לא יעיל!
+\end_layout
+
+\begin_layout Description
+משפט: משפט פרמה הקטן
+\begin_inset Newline newline
+\end_inset
+
+אם 
+\begin_inset Formula $p$
+\end_inset
+
+ ראשוני אזי לכל 
+\begin_inset Formula $1<a<p-1$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $a^{p-1}\equiv1\: mod\: p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הוכחה: נבחר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $1<a<p-1$
+\end_inset
+
+ ונסתכל על הקבוצה 
+\begin_inset Formula $A=\left\{ ai\: mod\: p\ |\ i=1...p-1\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\mathbb{Z}_{p}$
+\end_inset
+
+ שדה 
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+ אם 
+\begin_inset Formula $i,j\in\mathbb{Z}_{p}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $i\equiv j\: mod\: p\Leftarrow(i-j)a\bar{a}\equiv0\: mod\: p\Leftarrow(i-j)a\equiv0\Leftarrow ia\equiv ja$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+מנימוק דומה ניתן להראות שכל אברי הקבוצה שונים מ
+\numeric on
+0
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ולכן למעשה אברי 
+\begin_inset Formula $A$
+\end_inset
+
+ הם כל המספרים 
+\begin_inset Formula $1,...,p-1$
+\end_inset
+
+ בפרמוטציה כלשהי
+\begin_inset Newline newline
+\end_inset
+
+ומכאן 
+\begin_inset Formula 
+\[
+0\ensuremath{\stackrel{*}{\neq}}\neq\prod_{i=1}^{p-1}i=\prod_{i=1}^{p-1}ai\; mod\; p
+\]
+
+\end_inset
+
+* בשדה אין כופלי אפס ולכן מכפלה של אברים שאינם אפס בהכרח שונה מאפס
+\begin_inset Newline newline
+\end_inset
+
+מאחר ואנחנו בשדה לכל איבר קיים הופכי ולכן נוכל להכפיל ב 
+\begin_inset Formula $\left(\prod_{i=1}^{p-1}i\right)^{-1}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+a^{p-1}=\left(\prod_{i=1}^{p-1}i\right)\left(\prod_{i=1}^{p-1}i\right)^{-1}\equiv1\: mod\: p
+\]
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+ציינו מקודם שאם 
+\begin_inset Formula $m$
+\end_inset
+
+ פריק קיים 
+\begin_inset Formula $0<a<m$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $GCD(a,m)\neq1$
+\end_inset
+
+ ובפרט 
+\begin_inset Formula $a^{m-1}\neq1\: mod\: m$
+\end_inset
+
+ כי אם 
+\begin_inset Formula $c|a^{k}-jm\Leftarrow c|a,m$
+\end_inset
+
+כלומר חזקות של 
+\begin_inset Formula $a$
+\end_inset
+
+ נקבל תמיד מספר שמחלק את 
+\begin_inset Formula $c$
+\end_inset
+
+ )מודולו 
+\begin_inset Formula $m$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Description
+שאלה: הטענה יכולה חד משמעית לשלול ראשוניות )אם היא לא מתקיימת עבור 
+\begin_inset Formula $a$
+\end_inset
+
+ כלשהו( אבל מה יקרה אם 
+\begin_inset Formula $m$
+\end_inset
+
+ למעשה פריק? אז יתכן מצב שבו קיים 
+\begin_inset Formula $a$
+\end_inset
+
+ שיקיים את השקילות 
+\begin_inset Formula $a^{m-1}\equiv1\: mod\: m$
+\end_inset
+
+.
+ נרצה לוודא שאם המספר פריק בדיקת השקילות של משפט פרמה תכשל בסבירות גבוה.
+ 
+\begin_inset Newline newline
+\end_inset
+
+אם כך נשאל - מה קורה אם קיים 
+\begin_inset Formula $a$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $GCD(a,m)=1$
+\end_inset
+
+ ובנוסף 
+\begin_inset Formula $a$
+\end_inset
+
+ הוא עד לפריקות על פי פרמה כלומר 
+\begin_inset Formula $a^{m-1}\not\equiv1\: mod\: m$
+\end_inset
+
+.
+ או במילים אחרות 
+\begin_inset Formula $a$
+\end_inset
+
+ אמנם זר ל 
+\begin_inset Formula $m$
+\end_inset
+
+ ולכן לא יכול להפריך את הראשוניות של 
+\begin_inset Formula $m$
+\end_inset
+
+ באופן הנאיבי שהצענו אבל מצד שני הוא כן מפריך את הראשוניות על פי פרמה?
+\end_layout
+
+\begin_layout Description
+למה: אם קיים 
+\begin_inset Formula $a$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\text{\ensuremath{GCD(a,m)=1}}$
+\end_inset
+
+ ובנוסף 
+\begin_inset Formula $a^{m-1}\not\equiv1\: mod\: m$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+אזי לפחות חצי מהמספרים 
+\begin_inset Formula $b\in\left\{ 1,..,m-1\right\} $
+\end_inset
+
+ מקיימים גם 
+\begin_inset Formula $b^{m-1}\not\equiv1\: mod\: m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הוכחה: נגדיר 
+\begin_inset Formula $X=\left\{ 1\leq x\leq m-1|x^{m-1}\not\equiv1\: mod\: m\right\} $
+\end_inset
+
+ ונסמן את שאר האיברים בטווח 
+\begin_inset Formula $Y=\left\{ 1\leq y\leq m-1|y^{m-1}\equiv1\: mod\: m\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+נראה ש 
+\begin_inset Formula $|Y|<|X|$
+\end_inset
+
+ על ידי המיפוי החד-חד-ערכי מ 
+\begin_inset Formula $Y$
+\end_inset
+
+ ל-
+\begin_inset Formula $X$
+\end_inset
+
+ הבא:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+y\in Y\mapsto ay\: mod\: m
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+נראה תחילה שזו אכן מעתיקה איברים מ 
+\begin_inset Formula $Y$
+\end_inset
+
+ ל- 
+\begin_inset Formula $X$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+(ay)^{m-1}\equiv a^{m-1}y^{m-1}\equiv a^{m-1}\not\equiv1\: mod\: m\Rightarrow ay\in X
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+הראנו בעבר שגם אם 
+\begin_inset Formula $\mathbb{Z}_{m}$
+\end_inset
+
+לא שדה עבור 
+\begin_inset Formula $a$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $GCD(a,m)=1$
+\end_inset
+
+ קיים הופכי ב 
+\begin_inset Formula $Z_{m}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+נשתמש בעובדה זו כדי להראות את החד-חד-ערכיות של ההעתקה שהגדרנו 
+\begin_inset Formula 
+\[
+ay\equiv az\: mod\: m\Rightarrow a^{-1}ay\equiv a^{-1}az\: mod\: m\Rightarrow y\equiv z\: mod\: m
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+מסקנה: אם קיים 
+\begin_inset Formula $a$
+\end_inset
+
+ שהינו עד שסותר את משפט פרמה הקטן אבל הוא זק ל-
+\begin_inset Formula $m$
+\end_inset
+
+ אזי יש "הרבה" כאלה )יותר מ
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+( עדים כאלה.
+\begin_inset Newline newline
+\end_inset
+
+ולכן נוכל להגדיר את האלגוריתם הבא:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Not-Quite-Miller-Rabin(m)$
+\end_inset
+
+ : 
+\end_layout
+
+\begin_layout Itemize
+נגריל 
+\begin_inset Formula $a\in\left\{ 1,...,m-1\right\} $
+\end_inset
+
+ ונבדוק
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula $a^{m-1}\equiv1\: mod\: m$
+\end_inset
+
+ : נחזיר "כן"
+\end_layout
+
+\begin_layout Itemize
+אחרת : נחזיר "לא"
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+אם 
+\begin_inset Formula $m$
+\end_inset
+
+ ראשוני אז על פי משפט פרמה הקטן תנאי הבדיקה יהיה תמיד חיובי ולכן תמיד נזהה
+ נכון ונחזיר "כן"
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula $m$
+\end_inset
+
+ פריק אז או שתנאי הבדיקה של משפט פרמה הקטן יכשל ונזהה נכון את 
+\begin_inset Formula $m$
+\end_inset
+
+ כפריק או שבמקרה ניפול על 
+\begin_inset Formula $a\in Y$
+\end_inset
+
+ כלומר 
+\begin_inset Formula $a^{m-1}\equiv1\: mod\: m$
+\end_inset
+
+ ואז נטעה ונחשוב ש 
+\begin_inset Formula $m$
+\end_inset
+
+ ראשוני.
+ אבל הראנו שהסיכוי שהאפשרות השניה תקרה היא קטנה מ 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ כלומר במקרה ש 
+\begin_inset Formula $m$
+\end_inset
+
+ פריק נחזיר תשובה נכונה בהסתברות 
+\begin_inset Formula $\frac{1}{2}\leq$
+\end_inset
+
+.
 \end_layout
 
 \end_body
