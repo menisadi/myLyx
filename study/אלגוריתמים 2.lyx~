@@ -90,8 +90,13 @@
 \end_layout
 
 \begin_layout Part*
+
+\size largest
+סיבוכיות של פעולות אריתמטיות
+\size default
+
 \begin_inset Marginal
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Formula $29.10.15$
@@ -103,8 +108,6 @@ status collapsed
 \end_inset
 
 
-\size largest
-סיבוכיות של פעולות אריתמטיות
 \end_layout
 
 \begin_layout Standard
@@ -1420,9 +1423,10 @@ m
 לעומת זאת נחשבת בעיה קשה - לא ידוע על אלגוריתם שפותר אותה בזמן סביר
 \end_layout
 
-\begin_layout Standard
-
+\begin_layout Subsubsection*
+היסטוריה
 \lang english
+
 \begin_inset Marginal
 status open
 
@@ -1436,10 +1440,6 @@ status open
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsubsection*
-היסטוריה
 \end_layout
 
 \begin_layout Description
@@ -2238,6 +2238,234 @@ ay\equiv az\: mod\: m\Rightarrow a^{-1}ay\equiv a^{-1}az\: mod\: m\Rightarrow y\
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Description
+הגדרה: מספרי קרמייקל 
+\begin_inset Formula $Carmichael$
+\end_inset
+
+ 
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $5.11.15$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+מספר 
+\begin_inset Formula $\text{m\in\mathbb{N}}$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $a$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $GCD(a,m)=1$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $a^{m-1}\equiv1\: mod\: m$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Description
+בעיה: יש אינסוף מספרי קרמייקלץ למרות שהם נדירים
+\end_layout
+
+\begin_layout Description
+משפט: עבור 
+\begin_inset Formula $n$
+\end_inset
+
+ ביטים 
+\begin_inset Formula $Pr\left[m\ is\ Carmichael\ number\right]\leq e^{-\Omega\left(n\frac{log\left(log\left(n\right)\right)}{log\left(n\right)}\right)}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+לעומת זאת 
+\begin_inset Formula $Pr\left[m\; is\; prime\right]=\Theta\left(\frac{1}{n}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ולכן האלגוריתם שראינו מספיק טוב כדי להגריל ולזהות מספר ראשוני בהסתברות גבוה
+ מאוד.
+ אבל בתור אלגוריתם לבדיקה של מספר נתון זה לא מספיק ולכן הוסיפו באלגוריתם
+ שלב של בדיקה שמזהה מספרי קרמייקל.
+\end_layout
+
+\begin_layout Standard
+אבחנה: אם 
+\begin_inset Formula $p$
+\end_inset
+
+ ראשוני 
+\end_layout
+
+\begin_layout Standard
+ומתקיים 
+\begin_inset Formula $x^{2}\equiv1\: mod\: p$
+\end_inset
+
+ אזי:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(x+1)(x-1)=x^{2}-1\equiv0\: mod\: p
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ומראשוניות 
+\begin_inset Formula $p$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+p|(x+1)(x-1)\Rightarrow p|x+1\ or\ p|x-1\Rightarrow x\equiv\pm1\: mod\: m
+\]
+
+\end_inset
+
+ ולכן עד נוסף לפריקות 
+\begin_inset Formula $m$
+\end_inset
+
+ : 
+\begin_inset Formula $a<m$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $a^{2}\equiv1\: mod\: m$
+\end_inset
+
+ אבל 
+\begin_inset Formula $a\not\equiv\pm1\: mod\: m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+וכעת
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Miller-Rabin(m)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+נגריל באופן אחיד 
+\begin_inset Formula $a\in\left\{ 1,...,m-1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula $a^{m-1}\not\equiv1\: mod\: m$
+\end_inset
+
+ : נחזיר "לא"
+\end_layout
+
+\begin_layout Itemize
+אחרת )כלומר 
+\begin_inset Formula $a^{m-1}\equiv1\: mod\: m$
+\end_inset
+
+(
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נכתוב 
+\begin_inset Formula $m-1=2^{t}q$
+\end_inset
+
+ עבור 
+\begin_inset Formula $t\in\mathbb{N}$
+\end_inset
+
+ ו 
+\begin_inset Formula $q$
+\end_inset
+
+ אי-זוגי
+\end_layout
+
+\begin_layout Itemize
+נחשב את הסדרה 
+\begin_inset Formula $a_{0}=a^{q}\ mod\ m,a_{1}=a^{2q}\ mod\ m,...,a_{t}=a^{2^{t}q}\ mod\ m=a^{m-1}\ mod\ m=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+לכל הסדרה: אם קיים 
+\begin_inset Formula $j\in\left\{ 1,...,t\right\} $
+\end_inset
+
+ כך ש 
+\begin_inset Formula $a_{j}=1$
+\end_inset
+
+ ו 
+\begin_inset Formula $a_{j-1}\neq\pm1$
+\end_inset
+
+ : נחזיר "לא"
+\end_layout
+
+\begin_layout Itemize
+אחרת : נחזיר "כן"
+\end_layout
+
+\end_deeper
+\begin_layout Description
+משפט: אם 
+\begin_inset Formula $m$
+\end_inset
+
+ מספר קרמייקל אזי הבדיקה הנוספת תחזיר "לא" בהסתברות 
+\begin_inset Formula $\frac{3}{4}$
+\end_inset
+
+ )ללא הוכחה(
+\end_layout
+
+\begin_layout Description
+
 \end_layout
 
 \end_body
