@@ -63,6 +63,83 @@
 
 \begin_body
 
+\begin_layout Description
+Theorem in algorithm RecConcave
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A.
+ Beimel, K.
+ Nissim, and U.
+ Stemmer.
+ Private learning and sanitization- Pure vs.
+ Approximate Differential Privacy
+\end_layout
+
+\end_inset
+
+ for privacy parameters 
+\begin_inset Formula $\epsilon,\delta$
+\end_inset
+
+ ,promise 
+\begin_inset Formula $r$
+\end_inset
+
+ database 
+\begin_inset Formula $X$
+\end_inset
+
+, domain 
+\begin_inset Formula $R$
+\end_inset
+
+ and sensetivity-1 utility function 
+\begin_inset Formula $u$
+\end_inset
+
+ :
+\begin_inset Newline newline
+\end_inset
+
+if we use 
+\begin_inset Formula $Exponential-Mechanism$
+\end_inset
+
+ instead of 
+\begin_inset Formula $A_{dist}$
+\end_inset
+
+ (at step 9) it will return the highest scored value 
+\begin_inset Formula $OPT_{u}(x)$
+\end_inset
+
+ , in probability at least 
+\begin_inset Formula $1-\beta$
+\end_inset
+
+ if 
+\begin_inset Formula $r>\frac{16}{3\epsilon\alpha}ln\left(\frac{|R|}{\beta}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+proof by The Algorithmic Foundations of Differential Privacy
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+C.Dwork , A.roth
+\end_layout
+
+\end_inset
+
+ Theorem 3.11
+\end_layout
+
 \begin_layout Standard
 \begin_inset Formula 
 \[
@@ -92,8 +169,19 @@ we get:
 
 \begin_layout Standard
 \begin_inset Formula 
+\begin{eqnarray*}
+ & Pr\left[u(M_{E}(x,u,R))\leq OPT_{u}(x)-\frac{2}{\epsilon}\left(ln\left(|R|\right)+ln\left(\frac{1}{\beta}\right)\right)\right] & =
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
 \[
-Pr\left[u(M_{E}(x,u,R))\leq OPT_{u}(x)-\frac{2}{\epsilon}\left(ln\left(|R|\right)+ln\left(\frac{1}{\beta}\right)\right)\right]=Pr\left[u(M_{E}(x,u,R))\leq OPT_{u}(x)-\frac{2}{\epsilon}ln\left(\frac{|R|}{\beta}\right)\right]\leq\beta
+Pr\left[u(M_{E}(x,u,R))\leq OPT_{u}(x)-\frac{2}{\epsilon}ln\left(\frac{|R|}{\beta}\right)\right]\leq\beta
 \]
 
 \end_inset
@@ -106,8 +194,11 @@ we want the gap to be at least
 \begin_inset Formula $\frac{2}{\epsilon}ln\left(\frac{|R|}{\beta}\right)$
 \end_inset
 
- and from the other hand in the recconcave we know that the gap is at least
  
+\end_layout
+
+\begin_layout Standard
+from the other hand in the RecConcave we know that the gap is at least 
 \begin_inset Formula $\frac{3\alpha}{8}r$
 \end_inset
 

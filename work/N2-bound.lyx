@@ -1,0 +1,211 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{culmus}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Description
+Thorem 
+\end_layout
+
+\begin_layout Description
+Proof we want to make sure that the 
+\begin_inset Formula $Exponential-Mechanism$
+\end_inset
+
+ outputs with high probability a good interval
+\end_layout
+
+\begin_layout Standard
+meaning that 
+\begin_inset Formula 
+\[
+Pr\left[q\left(S,j\right)<\frac{3\alpha}{\epsilon}r\right]<\beta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+by The Algorithmic Foundations of Differential Privacy
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+C.Dwork , A.roth
+\end_layout
+
+\end_inset
+
+ Theorem 3.11
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr\left[q(M_{E}(x,q,R))\leq OPT_{q}(x)-\frac{2\Delta q}{\epsilon}\left(ln\left(\frac{|R|}{|R_{OPT}|}\right)+t\right)\right]\leq e^{-t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and if we switch 
+\begin_inset Formula $e^{-t}=\beta$
+\end_inset
+
+ and take the specific parameters used in our case
+\begin_inset Formula $\Delta u=1,\ |R|=ln\left(T\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $|R_{OPT}|=1$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+we get 
+\begin_inset Formula 
+\[
+Pr\left[q(M_{E}(x,q,R))\leq OPT_{q}(x)-\frac{2}{\epsilon}ln\left(\frac{ln\left(T\right)}{\beta}\right)\right]\leq\beta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we also know that 
+\begin_inset Formula $\frac{\alpha}{2}r\leq OPT_{q}(x)\leq r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+if we combine all the above we get that we want 
+\begin_inset Formula 
+\[
+\frac{3\alpha}{8}r<\frac{\alpha}{2}r-\frac{2}{\epsilon}ln\left(\frac{T}{\beta}\right)\Rightarrow r>\frac{16}{\epsilon\alpha}ln\left(\frac{ln\left(T\right)}{\beta}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Remark we saw that for 
+\begin_inset Formula $A_{dist}$
+\end_inset
+
+to run we must have 
+\begin_inset Formula 
+\[
+r>\frac{8ln\left(\frac{1}{\beta\delta}\right)}{3\epsilon\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+notice that this bound will be less than the one above iff 
+\begin_inset Formula $\delta>\frac{\beta^{5}}{ln^{6}\left(T\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Proof 
+\begin_inset Formula 
+\[
+\frac{8ln\left(\frac{1}{\beta\delta}\right)}{3\epsilon\alpha}<\frac{16}{\epsilon\alpha}ln\left(\frac{ln\left(T\right)}{\beta}\right)\Rightarrow ln\left(\frac{1}{\beta\delta}\right)<6ln\left(\frac{ln\left(T\right)}{\beta}\right)\Rightarrow\frac{1}{\beta\delta}<\left(\frac{ln\left(T\right)}{\beta}\right)^{6}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Rightarrow\delta>\frac{\beta^{5}}{ln^{6}\left(T\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

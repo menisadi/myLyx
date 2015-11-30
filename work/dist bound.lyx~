@@ -66,24 +66,7 @@
 \begin_layout Description
 
 \lang english
-Theorem in algorithm RecConcave
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-
-\lang english
-A.
- Beimel, K.
- Nissim, and U.
- Stemmer.
- Private learning and sanitization- Pure vs.
- Approximate Differential Privacy
-\end_layout
-
-\end_inset
-
- for privacy parameters 
+Theorem in algorithm RecConcave for privacy parameters 
 \begin_inset Formula $\epsilon,\delta$
 \end_inset
 
