@@ -73,9 +73,9 @@ Proof we want to make sure that the
 \end_inset
 
  outputs with high probability a good interval
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Standard
 meaning that 
 \begin_inset Formula 
 \[
