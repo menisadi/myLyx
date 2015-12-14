@@ -115,7 +115,7 @@ return
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $P\leftarrow list\left(\left\{ x\in CD\ |\ 0\leq x\leq T\right\} \right)$
+\begin_inset Formula $P\leftarrow\left[\left\{ x\in CD\ |\ 0\leq x\leq T\right\} \right]$
 \end_inset
 
  # remove duplicates and points out of range
@@ -125,14 +125,14 @@ return
 \begin_inset Formula $S\leftarrow\left[min\left(Q\left(S,i\right),Q\left(S,i+2^{j}-1\right)\right)\ |\ i\in P\right]$
 \end_inset
 
-
+ # list
 \end_layout
 
 \begin_layout Enumerate
 \begin_inset Formula $E\leftarrow\left[min\left(Q\left(S,i-2^{j}+1\right),Q\left(S,i\right)\right)\ |\ i\in P\right]$
 \end_inset
 
-
+ # list
 \end_layout
 
 \begin_layout Enumerate

@@ -77,7 +77,7 @@ we also get as input two function
 status open
 
 \begin_layout Plain Layout
-for the implementation of them in a different file
+the implementation of them is in a different file
 \end_layout
 
 \end_inset
@@ -184,7 +184,7 @@ return
 
 \end_deeper
 \begin_layout Enumerate
-\begin_inset Formula $k\leftarrow Exponential-Mechanism(S,range(l+1),q,\epsilon)$
+\begin_inset Formula $k\leftarrow Exponential-Mechanism(S,[0,..,l],q,\epsilon)$
 \end_inset
 
 

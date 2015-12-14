@@ -63,6 +63,10 @@
 
 \begin_body
 
+\begin_layout Subsubsection*
+Implementation of RecConcave
+\end_layout
+
 \begin_layout Standard
 input: 
 \begin_inset Formula $S,T,Q,r,\alpha,\epsilon,\delta$
@@ -184,7 +188,7 @@ return
 
 \end_deeper
 \begin_layout Enumerate
-\begin_inset Formula $k\leftarrow Exponential-Mechanism(S,range(l+1),q,\epsilon)$
+\begin_inset Formula $k\leftarrow Exponential-Mechanism(S,[0,..,l],q,\epsilon)$
 \end_inset
 
 

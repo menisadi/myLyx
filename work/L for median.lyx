@@ -63,6 +63,10 @@
 
 \begin_body
 
+\begin_layout Subsubsection*
+L function for quality-median
+\end_layout
+
 \begin_layout Standard
 input: 
 \begin_inset Formula $S,T,j$
@@ -115,7 +119,7 @@ return
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $P\leftarrow list\left(\left\{ x\in CD\ |\ 0\leq x\leq T\right\} \right)$
+\begin_inset Formula $P\leftarrow\left[\left\{ x\in CD\ |\ 0\leq x\leq T\right\} \right]$
 \end_inset
 
  # remove duplicates and points out of range
