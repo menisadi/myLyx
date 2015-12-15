@@ -65,6 +65,19 @@
 
 \begin_layout Part*
 תהליכים סטוכסטים
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $6.10.15$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -711,7 +724,7 @@ p_{nj}
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Description
 דוגמה: בהילוך מקרי בגרף קשיר 
 \begin_inset Formula $G=\left\langle V,E\right\rangle $
 \end_inset
@@ -784,5 +797,752 @@ Pr\left[X_{t+1}=v|X_{t}\sim\pi\right]=\sum_{u}\pi_{u}p_{uv}=\sum_{u\in\Gamma\lef
 \end_layout
 
 \end_deeper
+\begin_layout Description
+למה
+\begin_inset space ~
+\end_inset
+
+
+\numeric on
+2
+\numeric off
+: אם 
+\begin_inset Formula $P$
+\end_inset
+
+ אי-פריקה קיימת התפלגרות מקובעת 
+\begin_inset Formula $\pi$
+\end_inset
+
+ וכן
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+
+\size normal
+\numeric on
+\begin_inset Formula $10.11.15$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall i\in S\ \pi_{i}>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+ההתפלגות 
+\begin_inset Formula $\pi$
+\end_inset
+
+ היא ההתפלגות המקובעת היחידה
+\end_layout
+
+\begin_layout Description
+הוכחה: בלמה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ראינו כי 
+\begin_inset Formula $rank\left(P-I\right)^{t}=rank\left(P-I\right)=n-1$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+ומכאן
+\begin_inset Formula 
+\[
+dim\left(ker\left(P-I\right)^{t}\right)=1
+\]
+
+\end_inset
+
+כלומר קיים וקטור 
+\begin_inset Formula $v\neq0$
+\end_inset
+
+ כך ש-
+\begin_inset Formula 
+\[
+\exists v\neq0\ \left(P-I\right)^{t}v=0
+\]
+
+\end_inset
+
+ומאחר ובמטריצה ריבועית דרגת השורות שווה לדרגת העמודות ולכן גם המימד של הגרעין
+ שלהם שווה ולכן
+\begin_inset Formula 
+\[
+v^{t}\left(P-I\right)\Rightarrow v^{t}P=v^{t}
+\]
+
+\end_inset
+
+והוקטור יחיד עד כדי מכפלה בסקלר
+\end_layout
+
+\begin_layout Standard
+בפרט קיים וקטור יחיד )ממש( 
+\begin_inset Formula $x$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $xP=x$
+\end_inset
+
+ ובנוסף הוא מייצג התפלגות כלומר 
+\begin_inset Formula $\sum_{i}x_{i}=1$
+\end_inset
+
+ )יש דרך אחת לנרמל כראוי את הסכום על ידי כפל בסקלר(
+\end_layout
+
+\begin_layout Standard
+עדיין נותר להראות ש 
+\begin_inset Formula $\forall i\ x_{i}>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נחלק את המצבים לפי 
+\begin_inset Formula $x$
+\end_inset
+
+ לשתי קבוצות
+\begin_inset Formula 
+\[
+S^{+}=\left\{ i|x_{i}>0\right\} \qquad S^{\leq0}=\left\{ i|x_{i}\leq0\right\} 
+\]
+
+\end_inset
+
+ונתבונן בסכום 
+\begin_inset Formula $\sum_{j\in S^{\leq0}}x_{j}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשים לב ש 
+\begin_inset Formula $xP=x$
+\end_inset
+
+ או במילים אחרות )כאשר 
+\begin_inset Formula $P_{j}$
+\end_inset
+
+ מסמל את העמודה ה 
+\begin_inset Formula $j$
+\end_inset
+
+( 
+\begin_inset Formula 
+\[
+\forall j\ x_{j}=xP_{j}=\sum_{i\in S}x_{i}P_{ji}
+\]
+
+\end_inset
+
+ולכן נקבל
+\begin_inset Formula 
+\[
+\sum_{j\in S^{\leq0}}x_{j}=\sum_{j\in S^{\leq0}}\left(\sum_{i\in S}x_{i}P_{ij}\right)=\sum_{j\in S^{\leq0}}\left(\sum_{i\in S^{\leq0}}x_{i}P_{ij}+\sum_{i\in S^{+}}x_{i}P_{ij}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\left(\sum_{j\in S}\sum_{i\in S^{\leq0}}x_{i}P_{ij}-\sum_{j\in S^{+}}\sum_{i\in S^{\leq0}}x_{i}P_{ij}\right)+\sum_{j\in S^{\leq0}}\sum_{i\in S^{+}}x_{i}P_{ij}
+\]
+
+\end_inset
+
+נזכור שכל שורה וכל עמודה של 
+\begin_inset Formula $P$
+\end_inset
+
+ מייצגת התפלגות ולכן
+\begin_inset Formula 
+\[
+\forall i\ \sum_{i\in S^{\leq0}}P_{j\in Sij}=1
+\]
+
+\end_inset
+
+נציב ונקבל
+\begin_inset Formula 
+\[
+\sum_{i\in S^{\leq0}}x_{i}-\sum_{j\in S^{+}}\sum_{i\in S^{\leq0}}x_{i}P_{ij}+\sum_{j\in S^{\leq0}}\sum_{i\in S^{+}}x_{i}P_{ij}
+\]
+
+\end_inset
+
+ובסה"כ קיבלנו את השיוויון 
+\begin_inset Formula 
+\[
+\sum_{j\in S^{\leq0}}x_{j}=\sum_{i\in S^{\leq0}}x_{i}-\sum_{j\in S^{+}}\sum_{i\in S^{\leq0}}x_{i}P_{ij}+\sum_{j\in S^{\leq0}}\sum_{i\in S^{+}}x_{i}P_{ij}
+\]
+
+\end_inset
+
+נצנצם ונעביר אגפים ונקבל 
+\begin_inset Formula 
+\[
+(*)\ \sum_{j\in S^{+}}\sum_{i\in S^{\leq0}}x_{i}P_{ij}=\sum_{j\in S^{\leq0}}\sum_{i\in S^{+}}x_{i}P_{ij}
+\]
+
+\end_inset
+
+נשים לב ש 
+\begin_inset Formula $P_{ij}$
+\end_inset
+
+ תמיד אי-שלילי ובנוסף מהאופן בו הגדרנו את הקבוצות מתקיים 
+\begin_inset Formula 
+\[
+\forall i\in S^{+}\ x_{i}>0,\ \forall i\in S^{\leq0}\ x_{i}\leq0
+\]
+
+\end_inset
+
+ולכן ב)*( צד ימין של השיוויון בהכרח אי-שלילי ולעומת זאת צד שמאל אי-חיובי,
+ כי הסימן נקבע על ידי ה 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ והם תלויים במקור של ה
+\begin_inset Formula $i$
+\end_inset
+
+ )
+\begin_inset Formula $j$
+\end_inset
+
+ לא משחק תפקיד בקביעת הסימן( ולכן בהכרח כל המחוברים בשני הצדדים שווה ל -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\end_layout
+
+\begin_layout Standard
+ובפרט 
+\begin_inset Formula 
+\[
+(**)\ \forall i\in S^{+},j\in S^{\leq0}:\ x_{i}P_{ij}=0
+\]
+
+\end_inset
+
+מצד שני 
+\begin_inset Formula 
+\[
+\forall i\ \sum_{i}x_{i}=1
+\]
+
+\end_inset
+
+ולכן בהכרח קיים 
+\begin_inset Formula $i$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $x_{i_{0}}>0$
+\end_inset
+
+ כלומר קיים 
+\begin_inset Formula $i_{0}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $i_{0}\in S^{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ועבור 
+\begin_inset Formula $i$
+\end_inset
+
+ זה מתקיים 
+\begin_inset Formula $i_{0}>0$
+\end_inset
+
+ ולכן אם קיים 
+\begin_inset Formula $j_{0}\in S^{\leq0}$
+\end_inset
+
+ ובנוסף מתקיים 
+\begin_inset Formula $P_{ij}>0$
+\end_inset
+
+ נקבל שעבור 
+\begin_inset Formula $i_{0},j_{0}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+x_{i_{0}}P_{i_{0}j_{0}}>0
+\]
+
+\end_inset
+
+ בסתירה ל)**(
+\end_layout
+
+\begin_layout Standard
+מסקנה: לכל 
+\begin_inset Formula $j$
+\end_inset
+
+ "שכן" של 
+\begin_inset Formula $i_{0}$
+\end_inset
+
+, כלומר שקיימת הסתברות חיובית למעבר מ
+\begin_inset Formula $i_{0}$
+\end_inset
+
+ ל-
+\begin_inset Formula $j_{0}$
+\end_inset
+
+ )כלומר 
+\begin_inset Formula $P_{i_{0}j_{0}}>0$
+\end_inset
+
+( בהכרח
+\begin_inset Formula 
+\[
+j_{0}\in S^{+}
+\]
+
+\end_inset
+
+ובסה"כ נקבל שלכל 
+\begin_inset Formula $i\in S^{+}$
+\end_inset
+
+ כל "שכן" 
+\begin_inset Formula $j$
+\end_inset
+
+ גם הוא ב 
+\begin_inset Formula $S^{+}$
+\end_inset
+
+ ומכאן, בגלל האי-פריקות, נמשיך באינדוקציה לשכנים של 
+\begin_inset Formula $j$
+\end_inset
+
+ ולשכנים שלהם וכן הלאה עד שנגיע לכל המצבים )כאמור, בגלל האי-פריקות( ונקבל
+ שכולם ב 
+\begin_inset Formula $S^{+}$
+\end_inset
+
+ או במילים אחרות 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall i\in S\ x_{i}>0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\blacksquare
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+השלב הבא יהיה להראות שבשרשראות מרקוב אי-פריקות תמיד נתכנס להתפלגות 
+\begin_inset Formula $\pi$
+\end_inset
+
+ המקובעת.
+ לשם כך נצטרך לסלק מצב בעייתי מסויים - כאשר יש מחזוריות בשרשרת.
+ במצב שבו יש מחזוריות קבוע נקבל שבהינתן מצד התחלתי )אם לצורך הדוגמה נגדיר
+ שההתפלגות ההתחלתית נותנת הסתברות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+למצב נתון ולשאר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\numeric off
+( בכל שלב לאחר מכן נקבל מחזוריות של ההתפלגויות )למשל בדוגמה נקבל שבכל שלב
+ נוכל ממש להגיד בדיוק איפה אנחנו אמורים להיות בתוך במחזור(.
+\end_layout
+
+\begin_layout Description
+הגדרה: שרשרת מרקוב היא 
+\bar under
+ארגודית
+\bar default
+ אם היא אי-פריקה ובנוסף )התנאים הבאים שקולים זה לזה(:
+\end_layout
+
+\begin_layout Enumerate
+אי-מחזורית.
+ כלומר 
+\begin_inset Formula $GCD\left(\left\{ \left|c\right||c\ -\ circle\ with\ positive\ probability\right\} \right)=1$
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+או במילים - "נאפשר" מעגלים חיוביים אבל לא באופן כזה שכל המעגלים יהיו מאורך
+ שהוא כפולה של מספר קבוע.
+ נניח אם כל המעגלים מאורך שהוא כפולה של
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+נקבל שיש מחזוריות מאורך
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בשרשרת ולכן היא לא ארגודית.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+קיים 
+\begin_inset Formula $n$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $i,j\in S$
+\end_inset
+
+ ו 
+\begin_inset Formula $t>n$
+\end_inset
+
+ : 
+\begin_inset Formula $Pr\left[x_{t}=j|x_{0}=i\right]>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula $i\in S$
+\end_inset
+
+ קיים 
+\begin_inset Formula $n>0$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $j\in S$
+\end_inset
+
+ : 
+\begin_inset Formula $Pr\left[x_{n}=j|x_{0}=i\right]>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הערה: לא נראה את ההוכחה לשקילות ההגדרות
+\end_layout
+
+\begin_layout Description
+משפט: תהי 
+\begin_inset Formula $X_{0},X_{1},...$
+\end_inset
+
+ שרשרת מרקוב ארגודית שבכל נקודת זמן 
+\begin_inset Formula $t$
+\end_inset
+
+ מתפלגת 
+\begin_inset Formula $X_{t}\sim q^{\left(t\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אזי 
+\begin_inset Formula 
+\[
+q^{\left(t\right)}\overset{{\scriptstyle t\rightarrow\infty}}{\longrightarrow}\pi
+\]
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
