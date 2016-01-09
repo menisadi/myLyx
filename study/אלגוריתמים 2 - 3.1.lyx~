@@ -1,0 +1,226 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+חישוב קוונטי
+\end_layout
+
+\begin_layout Section*
+רקע
+\end_layout
+
+\begin_layout Description
+הברה לא באמת צריך לדעת את הפיסיקה של תורת הקוונטים כדי לדעת לתכנן אלגוריתמים
+ קוונטיםת באותה מידה שלא היינו צריכים ידע באלקטרוניקה של של מחשב קלאסי כדי
+ לתכנן אלגוריתמים עד כה.
+\end_layout
+
+\begin_layout Subsection*
+ניסוי שני הסדקים
+\end_layout
+
+\begin_layout Standard
+אם נזרוק אבל לבריכה היא תכרום לגל שינוע ממקום הפגיע במים לכל הכיוונים.
+ אם נחסום את גל המים בקיר עם סדק הגל יעצר למעט הסדק מעבר לקיר ינויע גל שתחילתו
+ בסדק.
+ אם המים, לצורך הניסוי, יכתימו את צד הבריכה, נקבל שם כתם מקביל למקום הסדק
+ שככל שנתרחק ממנו הצבע יחלש.
+ אם בקיר יהיו שני סדקים ולא רק אחד, יווצרו מעבר לקיר שני גלים שיתנגשו.
+ שני גלים שמתנגשים יכולים או להתווסף זה לזה או לבטל זה את זה )תלוי במצב
+ של כל אחד, לא קריטי( ולכן נקבל בצד הבריכה לא כתם שהולך ודוהה בקצוות כמקודם
+ אלא תבנית מתחזקת ונחלשת לכל האורך )אם כי גם כאן הצבע יהיה יותר מודגש במרכז(.
+\end_layout
+
+\begin_layout Standard
+כמובן שתופעה זו נובעת מהאופי הגלי של תנועת המים.
+ אם היינו מנסים את אותו ניסוי עם חפץ חלקיקי כלשהו )כלומר עשוי חלקיקים, נניח,
+ אבן( החלקיקים, אלה שהיו מצליחים לעבור את הסדק, היו ממשיכים ישירות וצובעים
+ נקודה ותו לא.
+\end_layout
+
+\begin_layout Standard
+בתחילת המאה ה
+\numeric on
+19
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בוצע ניסוי שכזה עם אור, במטרה לקבוע אם האור הוא גל או חלקיק, התוצאה היית
+ שהאור התנהג כמו המים ממקודם, כלומר כמו גל.
+ מאוחר יותר התברר שיש לאור גם מאפיינים חלקיקיים והוא מורכב מחלקיקים ששמם
+ "פוטונים", האור, איכשהו, הוא גם גל וגם חלקיק.
+\end_layout
+
+\begin_layout Standard
+בתחילת המאה ה
+\numeric on
+20
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ניסו לבצע את הניסוי עם אלקטרונים.
+ למרבה ההפתעה גם האלקטרונים התנהגו כמו גלים ויצרו תבנית גלית על המסך שמאחורי
+ הסדקים.
+\end_layout
+
+\begin_layout Standard
+אז הוחלט לעשות את הניסוי מעט אחרת - במקום לירות כל פעם שני חלקיקים )פוטונים
+ במקרה הזה( אחד לכל סדק, הפעם ירו חלקיק אחד בלבד לכיוון שני הסדקים באופן
+ כזה שיש לו אפשרות לעבור בכל סדק )כתלות ב"ספין" מאפיין כלשהו של פוטונים.
+ הספין לא ידוע במהלך הניסוי(.
+ על המסך התקבלה תבנית מתחלפת כאילו ירינו לשני הסדקים בו זמנית.
+ במובן מסוים התברר שהפוטון הבודד "הפריע לעצמו".
+ 
+\end_layout
+
+\begin_layout Standard
+תורת הקוונטים סיפקה את ההסבר לתופעה - אין מיקום מוגדר לפוטון )וכן לגבי עוד
+ כמה מאפיינים( אלא מעין התפלגות מיקום במרחב, רק כאשר אנו מנסים למדוד את
+ המיקום ההתפלגות "קורסת" לערך מוגדר, כאילו יש משתנה אקראי שמגדיר את המיקום
+ וניסיון למדוד אותו גורם לו להדגם ולעשות למוחלט.
+ עקרון זה נקרא 
+\series bold
+עקרון הסופרפוזיציה
+\series default
+.
+\end_layout
+
+\begin_layout Section*
+לעניינו
+\end_layout
+
+\begin_layout Description
+הגדרה: קיוביט )
+\lang english
+qubit - quantum bit
+\lang hebrew
+( יחידת זכרון שיכולה להיות במצב קלאסי )כלומר 
+\begin_inset Formula $\left\{ 0,1\right\} $
+\end_inset
+
+ כמו שראינו עד כה( שאותם נסמן ב-
+\begin_inset Formula $|0>,|1>$
+\end_inset
+
+ או בסופרפוזיציה כלומר 
+\begin_inset Formula $\alpha_{0}|0>+\alpha_{1}|1>$
+\end_inset
+
+ לכל 
+\begin_inset Formula $\alpha_{0},\alpha_{1}\in\mathbb{C}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\left|\alpha_{0}\right|^{2}+\left|\alpha_{1}\right|^{2}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר לקיוביט שנמצא בסופרפוזיציה יש 
+\end_layout
+
+\end_body
+\end_document
