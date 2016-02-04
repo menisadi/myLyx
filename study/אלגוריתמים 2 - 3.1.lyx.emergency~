@@ -60,25 +60,21 @@
 
 \begin_body
 
-\begin_layout Standard
+\begin_layout Part*
 חישוב קוונטי
 \end_layout
 
-\begin_layout Standard
-הקדמה
+\begin_layout Section*
+רקע
 \end_layout
 
-\begin_layout Standard
-הברה - לא באמת צריך לדעת את הפיסיקה של תורת הקוונטים כדי לדעת לתכנן אלגוריתמים
+\begin_layout Description
+הברה לא באמת צריך לדעת את הפיסיקה של תורת הקוונטים כדי לדעת לתכנן אלגוריתמים
  קוונטיםת באותה מידה שלא היינו צריכים ידע באלקטרוניקה של של מחשב קלאסי כדי
  לתכנן אלגוריתמים עד כה.
 \end_layout
 
-\begin_layout Standard
-היסטוריה
-\end_layout
-
-\begin_layout Standard
+\begin_layout Subsection*
 ניסוי שני הסדקים
 \end_layout
 
@@ -173,13 +169,83 @@
  במקרה הזה( אחד לכל סדק, הפעם ירו חלקיק אחד בלבד לכיוון שני הסדקים באופן
  כזה שיש לו אפשרות לעבור בכל סדק )כתלות ב"ספין" מאפיין כלשהו של פוטונים.
  הספין לא ידוע במהלך הניסוי(.
- התברר 
+ על המסך התקבלה תבנית מתחלפת כאילו ירינו לשני הסדקים בו זמנית.
+ במובן מסוים התברר שהפוטון הבודד "הפריע לעצמו".
+ 
 \end_layout
 
 \begin_layout Standard
-אבל ההפתעה המשמעותית יותר היית כאשר ביצעו את הניסוי עם סדק אחד בלבד.
- היינו מצפים שנקבל פשוט נקודה על המסך )גם עם אור וגם אם אלקטרונים( אבל מה
- שקרה שגם כאן
+תורת הקוונטים סיפקה את ההסבר לתופעה - אין מיקום מוגדר לפוטון )וכן לגבי עוד
+ כמה מאפיינים( אלא מעין התפלגות מיקום במרחב, רק כאשר אנו מנסים למדוד את
+ המיקום ההתפלגות "קורסת" לערך מוגדר, כאילו יש משתנה אקראי שמגדיר את המיקום
+ וניסיון למדוד אותו גורם לו להדגם ולעשות למוחלט.
+ עקרון זה נקרא 
+\series bold
+עקרון הסופרפוזיציה
+\series default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+להמחשה של הנסוי 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://goo.gl/A5Cje0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+לעניינו
+\end_layout
+
+\begin_layout Description
+הגדרה: קיוביט )
+\lang english
+qubit - quantum bit
+\lang hebrew
+( יחידת זכרון שיכולה להיות במצב קלאסי )כלומר 
+\begin_inset Formula $\left\{ 0,1\right\} $
+\end_inset
+
+ כמו שראינו עד כה( שאותם נסמן ב-
+\begin_inset Formula $|0>,|1>$
+\end_inset
+
+ או בסופרפוזיציה כלומר 
+\begin_inset Formula $\alpha_{0}|0>+\alpha_{1}|1>$
+\end_inset
+
+ לכל 
+\begin_inset Formula $\alpha_{0},\alpha_{1}\in\mathbb{C}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\left|\alpha_{0}\right|^{2}+\left|\alpha_{1}\right|^{2}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר מצבו של קיוביט שנמצא בסופרפוזיציה הוא משהו שמזכיר הפתלגות אלא שהפעם
+ יש ל"הסתברות" כיוון.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body

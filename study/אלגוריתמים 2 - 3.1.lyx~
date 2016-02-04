@@ -183,6 +183,24 @@
 \series bold
 עקרון הסופרפוזיציה
 \series default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+להמחשה של הנסוי 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://goo.gl/A5Cje0"
+target "http://goo.gl/A5Cje0"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 .
 \end_layout
 
@@ -219,7 +237,8 @@ qubit - quantum bit
 \end_layout
 
 \begin_layout Standard
-כלומר לקיוביט שנמצא בסופרפוזיציה יש 
+כלומר מצבו של קיוביט שנמצא בסופרפוזיציה הוא משהו שמזכיר הפתלגות אלא שהפעם
+ יש ל"הסתברות" כיוון.
 \end_layout
 
 \end_body

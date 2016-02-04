@@ -89,6 +89,14 @@
 2
 \end_layout
 
+\begin_layout Standard
+מרצה: ד"ק ד”ר עדן כלמטץ'
+\end_layout
+
+\begin_layout Standard
+מסכם: מני סדיגורסקי
+\end_layout
+
 \begin_layout Part*
 
 \size largest
@@ -110,7 +118,7 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Description
 
 \series bold
 תזכורת
@@ -130,7 +138,69 @@ status open
 \begin_inset Formula $\mathcal{O}(n^{2})$
 \end_inset
 
+.
+ 
+\begin_inset Newline newline
+\end_inset
 
+כלומר אם אנו עובדים עם 
+\begin_inset Formula $m_{1},m_{2}\approx1024$
+\end_inset
+
+ אזי חיבור, לדוגמה, יתבצע בייצוג בינארי בזמן 
+\begin_inset Formula $\mathcal{O}\left(log_{2}\left(1024\right)\right)=\mathcal{O}\left(10\right)$
+\end_inset
+
+ ולא בזמן 
+\begin_inset Formula $\mathcal{O}\left(1024\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Description
+הערה: חשוב לשים לב שמצד שני אם נבנה אלגוריתמים שרצים בזמן ריצה שתלוי בגודל
+ הקלט )כלומר גודל המספר, נניח 
+\begin_inset Formula $1024$
+\end_inset
+
+( אזי התלות באורך הקלט כלומר )גודל הייצוג של הקלט נניח, 
+\begin_inset Formula $10$
+\end_inset
+
+ ביטים( תהיה גדולה אקספוננציאלית.
+ 
+\begin_inset Newline newline
+\end_inset
+
+לדוגמה בבעית הגנב 
+\begin_inset Formula $\left(Knapsack\ problem\right)$
+\end_inset
+
+ הראנו שניתן בעזרת תכנון דינאמי לבנות אלגוריתם שרץ בזמן שהוא לינארי בגודל
+ המספרי של הקלט 
+\begin_inset Formula $m$
+\end_inset
+
+ והיה נראה לנו שזה מצוין אלא שבעצם מה שחשוב בדרך כלל זה הייצוג כי זה אורך
+ הקלט של התוכנית ובמקרה הזה נקבל שזמן הריצה כתלות באורך הייצוג 
+\begin_inset Formula $n$
+\end_inset
+
+ הוא 
+\begin_inset Formula 
+\[
+n=log_{2}m\Rightarrow m=2^{n}\Rightarrow\mathcal{O}\left(m\right)=\mathcal{O}\left(2^{n}\right)
+\]
+
+\end_inset
+
+ כלומר למעשה האלגוריתם ירוץ זמן ריצה אקספוננציאלי ב
+\bar under
+אורך
+\bar default
+ הקלט.
 \end_layout
 
 \begin_layout Section*
@@ -208,7 +278,11 @@ m
 \begin_inset Newline newline
 \end_inset
 
+על פי ההגדרה 
+\begin_inset Formula $0\leq a,b<m$
+\end_inset
 
+ ומכאן ש 
 \begin_inset Formula $0\leq a+b<2m$
 \end_inset
 
@@ -216,8 +290,8 @@ m
 \begin_inset Formula 
 \begin{eqnarray*}
 \mathcal{O}(n) & \ni & \begin{cases}
-a+b & \Leftarrow a+b<m\\
-a+b-m & \Leftarrow a+b\geq m
+a+b\,(mod\, m)=a+b & \Leftarrow a+b<m\\
+a+b\,(mod\, m)=a+b-m & \Leftarrow a+b\geq m
 \end{cases}
 \end{eqnarray*}
 
@@ -345,7 +419,7 @@ m
 \begin_inset Newline newline
 \end_inset
 
-ב
+כמו שראינו בקורס באלגברה ב
 \begin_inset Formula $\mathbb{Z}_{m}$
 \end_inset
 
@@ -419,7 +493,7 @@ m
 \begin_inset Formula $\mathbb{Z}_{m}$
 \end_inset
 
- הוא לא רק חוג אלא שדה
+ הוא לא רק חוג אלא שדה.
 \end_layout
 
 \begin_layout Section*
@@ -459,7 +533,7 @@ m
 \begin_inset Formula $gcd(a,b)$
 \end_inset
 
- כאשר במהלך היון בה"כ 
+ כאשר במהלך היום בלי הגבלת הכלליות 
 \begin_inset Formula $a\leq b$
 \end_inset
 
@@ -502,34 +576,46 @@ m
 נימוק
 \series default
 : 
-\begin_inset Formula $c|a\wedge c|a\Rightarrow c|ab$
+\begin_inset Formula 
+\[
+c|a\wedge c|a\Rightarrow c|ab
+\]
+
 \end_inset
 
  ומנגד 
-\begin_inset Formula $c|a\wedge c|b-a\Rightarrow c|a+b-a=b$
+\begin_inset Formula 
+\[
+c|a\wedge c|\left(b-a\right)\Rightarrow c|\left(a+\left(b-a\right)\right)=b
+\]
+
 \end_inset
 
- 
-\begin_inset Newline newline
-\end_inset
 
-נחסר אם כך את 
+\end_layout
+
+\begin_layout Standard
+אם כך נוכל להמשיך טענה זו ולחסר את 
 \begin_inset Formula $a$
 \end_inset
 
-מ
+ מ 
 \begin_inset Formula $b$
 \end_inset
 
-שוב ושוב עד שנרד מתחת ל-
+ שוב ושוב )ועדיין להישאר עם אותו 
+\begin_inset Formula $gcd$
+\end_inset
+
+( עד שנרד מתחת ל-
 \begin_inset Formula $a$
 \end_inset
 
-ונקבל את בצד ימין 
+ ומה נקבל בתוצאת החיסור הוא 
 \begin_inset Formula $b\: mod\: a$
 \end_inset
 
-
+ או במילים אחרות - 
 \end_layout
 
 \begin_layout Description
@@ -537,11 +623,11 @@ m
 \begin_inset Formula $gcd(a,b)=gcd(a,b-ka)=gcd(a,b\: mod\: a)$
 \end_inset
 
- עבור 
-\begin_inset Formula $k$
-\end_inset
+ 
+\end_layout
 
- כלשהו ומכאן נקבל אלגוריתם רקורסיבי:
+\begin_layout Standard
+ומכאן נקבל אלגוריתם רקורסיבי:
 \end_layout
 
 \begin_layout Standard
@@ -617,6 +703,10 @@ m
 
 \end_layout
 
+\begin_layout Standard
+ננסה לחסום באופן טוב יותר.
+\end_layout
+
 \begin_layout Description
 טענה: 
 \begin_inset Formula $b\: mod\: a\leq\dfrac{b}{a}$
@@ -633,8 +723,8 @@ m
 \begin_inset Formula $a\leq\frac{b}{2}$
 \end_inset
 
- - 
-\begin_inset Formula $b\: mod\: a<a\leq\frac{b}{a}$
+ 
+\begin_inset Formula $b\: mod\: a<a\leq\frac{b}{2}\Leftarrow$
 \end_inset
 
 
@@ -644,7 +734,35 @@ m
 \begin_inset Formula $a>\frac{b}{2}$
 \end_inset
 
- - נקבל כי 
+ 
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+ כמו שראינו 
+\begin_inset Formula $b\ mod\ a=b-ka$
+\end_inset
+
+ מאחר ו 
+\begin_inset Formula $a>\frac{b}{2}$
+\end_inset
+
+ נקבל שאם 
+\begin_inset Formula $k>1$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+k>1\Rightarrow b\ mod\ a=b-ka\leq b-2a<0
+\]
+
+\end_inset
+
+ולכן בהכרח 
+\begin_inset Formula $k=1$
+\end_inset
+
+ ולכן נקבל כי 
 \begin_inset Formula $b\: mod\: a=b-a<b-\frac{b}{2}=\frac{b}{2}$
 \end_inset
 
@@ -652,7 +770,7 @@ m
 \end_layout
 
 \begin_layout Standard
-אם כך בכל צעד 
+אם כך בכל צעד, 
 \bar under
 אחד
 \bar default
@@ -660,11 +778,19 @@ m
 \begin_inset Formula $\Leftarrow$
 \end_inset
 
-מספר האיטרציות הוא לכל היותר 
-\begin_inset Formula $2log_{2}min(a,b)$
+כל שני צעדים, שני הפרמטרים קטנים בחצי 
+\begin_inset Formula $\Leftarrow$
 \end_inset
 
- ומאחר ו
+מספר האיטרציות הוא לכל היותר 
+\begin_inset Formula $2\cdot log_{2}min(a,b)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+מאחר ו
 \begin_inset Formula $a,b\leq2^{n}$
 \end_inset
 
@@ -672,11 +798,7 @@ m
 \begin_inset Formula $\mathcal{O}(n)$
 \end_inset
 
- איטרציות 
-\begin_inset Formula $\Leftarrow$
-\end_inset
-
-נבצע 
+ איטרציות, כלוומר נבצע 
 \begin_inset Formula $\mathcal{O}(n)$
 \end_inset
 
@@ -689,7 +811,7 @@ m
 
 \begin_layout Description
 משפט: אם 
-\begin_inset Formula $ $
+\begin_inset Formula $m$
 \end_inset
 
  ראשוני ו 
@@ -729,10 +851,14 @@ m
 \end_inset
 
 
-\begin_inset Formula $xa+yb=GCD(a,b)$
+\begin_inset Formula 
+\[
+xa+yb=GCD(a,b)
+\]
+
 \end_inset
 
-
+)נוכיח עוד מעט(
 \end_layout
 
 \begin_layout Description
@@ -753,7 +879,11 @@ m
 \end_inset
 
 
-\begin_inset Formula $GCD(a,m)=1\Rightarrow\exists x,y:\: xa+ym=1\Rightarrow xa=1+(-y)bm\Rightarrow xa=1(mod\: m)$
+\begin_inset Formula 
+\[
+GCD(a,m)=1\Rightarrow\exists x,y:\: xa+ym=1\Rightarrow xa=1+(-y)bm\Rightarrow xa=1(mod\: m)
+\]
+
 \end_inset
 
 
@@ -793,18 +923,16 @@ m
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Description
 \begin_inset Formula $GCD-Euclid(a,b)$
 \end_inset
 
-:
-\begin_inset Newline newline
-\end_inset
+ :
+\end_layout
 
-
+\begin_layout Itemize
 \begin_inset Formula $c=b\: mod\: a$
 \end_inset
 
@@ -817,21 +945,25 @@ m
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 אם 
 \begin_inset Formula $c=0$
 \end_inset
 
-: נחזיר את צש וגם 
+: נחזיר את 
+\begin_inset Formula $a$
+\end_inset
+
+ וגם את 
 \begin_inset Formula $y=0\; x=1$
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 אחרת: נחזיר את 
 \begin_inset Formula $GCD(c,a)$
 \end_inset
@@ -840,16 +972,24 @@ m
 \begin_inset Formula $y=x'\; x=y'-dx$
 \end_inset
 
- אותם קיבלנו מהרקורסיה
+ כאשר את 
+\begin_inset Formula $x',y'$
+\end_inset
+
+ קיבלנו מהרקורסיה
 \end_layout
 
 \begin_layout Description
 הסבר: נניח שהקריאה הרקורסיבית החזירה 
-\begin_inset Formula $x,y$
+\begin_inset Formula $x',y'$
 \end_inset
 
  כך ש 
-\begin_inset Formula $x'c+y'a=GCD(c,a)=GCD(a,b$
+\begin_inset Formula 
+\[
+x'c+y'a=GCD\left(c,a\right)=GCD\left(a,b\right)
+\]
+
 \end_inset
 
  בפעולה 
@@ -861,18 +1001,34 @@ m
 \end_inset
 
  כך ש 
-\begin_inset Formula $b=da+c$
-\end_inset
+\begin_inset Formula 
+\[
+b=da+c
+\]
 
-
-\begin_inset Newline newline
 \end_inset
 
 כלומר 
-\begin_inset Formula $x'c+y'a=x'(b-da)+y'a=x'b+(y'-dx')a$
+\begin_inset Formula 
+\[
+x'c+y'a=x'(b-da)+y'a=x'b+(y'-dx')a
+\]
+
 \end_inset
 
- כנדרש
+ ולכן נחזיר בנוסף ל
+\begin_inset Formula $GCD$
+\end_inset
+
+ גם את 
+\begin_inset Formula 
+\[
+y=x'\; x=y'-dx
+\]
+
+\end_inset
+
+כנדרש
 \end_layout
 
 \begin_layout Description
@@ -880,7 +1036,7 @@ m
 \begin_inset Formula $\mathcal{O}\left(n^{3}\right)$
 \end_inset
 
-
+ )ניתוח זמן הריצה לא השתנה מהאלגוריתם המקורי(
 \end_layout
 
 \begin_layout Part*
@@ -896,7 +1052,7 @@ m
 \end_inset
 
  באורך 
-\begin_inset Formula $m\geq$
+\begin_inset Formula $n\geq$
 \end_inset
 
  ביטים
@@ -927,7 +1083,7 @@ m
 \begin_inset Formula $\mathcal{O}\left(n2^{n}\right)$
 \end_inset
 
-
+ ולבצע פעולות על מספרים באורך כזה זו בעיה.
 \end_layout
 
 \begin_layout Description
@@ -936,7 +1092,11 @@ m
 \end_inset
 
  לאחר כל כפל.
- אלא שזה עדיין לא מספיק משום שאנחנו נדרשים לבצע 
+ 
+\end_layout
+
+\begin_layout Standard
+זה פותר את הבעיה שהזכרנו אבל עדיין זה לא מספיק משום שאנחנו נדרשים לבצע 
 \begin_inset Formula $b$
 \end_inset
 
@@ -944,7 +1104,11 @@ m
 \begin_inset Formula $b=\mathcal{O}\left(2^{n}\right)$
 \end_inset
 
+ כלומר נקבל זמן ריצה אקספוננציאלי באורך הקלט 
+\begin_inset Formula $n$
+\end_inset
 
+.
 \end_layout
 
 \begin_layout Description
@@ -957,10 +1121,14 @@ m
 \end_inset
 
 ושימושי: נחשב את הסדרה 
-\begin_inset Formula $a\: mod\: m,\; a^{2}\: mod\: m,\; a^{4}\: mod\: m,\;...\;,a^{2^{n}}\: mod\: m$
+\begin_inset Formula 
+\[
+a\: mod\: m,\; a^{2}\: mod\: m,\; a^{4}\: mod\: m,\;...\;,a^{2^{n}}\: mod\: m
+\]
+
 \end_inset
 
- - סדרה בת 
+סדרה בת 
 \begin_inset Formula $n$
 \end_inset
 
@@ -968,12 +1136,20 @@ m
 \begin_inset Newline newline
 \end_inset
 
-בשביל לחשב כל איבר בסדרה פשוט נעלה את קודמו בריבוע.
- נשים לב שמתכונות החשבון המודולורי תוצאת ה 
+בשביל לחשב כל איבר בסדרה פשוט נעלה את קודמו בריבוע 
+\begin_inset Formula 
+\[
+\left(a^{i}\: mod\: m\right)^{2}=a^{2i}\: mod\: m
+\]
+
+\end_inset
+
+נשים לב שמתכונות החשבון המודולורי תוצאת ה 
 \begin_inset Formula $mod$
 \end_inset
 
- תהיה זהה גם אם נבצע אותה אחרי כל העלאה בריבוע.
+ תהיה זהה גם אם נבצע אותה אחרי כל העלאה בריבוע, וכך נמנע מלבצע פעולות חשבוניות
+ עם מספרים גדולים מדי.
  
 \begin_inset Newline newline
 \end_inset
@@ -990,7 +1166,7 @@ m
 \begin_inset Newline newline
 \end_inset
 
-ולכן בסך הכל עבור ככל הסדרה נקבל 
+ולכן בסך הכל עבור ככל הסדרה נקבל שזמן החישוב הוא 
 \begin_inset Formula $\mathcal{O}\left(n^{3}\right)$
 \end_inset
 
@@ -1049,15 +1225,19 @@ m
 \noun default
 \color inherit
 כלומר 
-\begin_inset Formula $b=2^{x_{1}}+2^{x_{2}}+...$
+\begin_inset Formula 
+\[
+b=2^{x_{1}}+2^{x_{2}}+...
+\]
+
 \end_inset
 
-, נקבל, אם כך, כפל של חזקות 
-\begin_inset Formula $a^{b}=a^{s^{x_{1}}}a^{2^{x_{2}}}...$
-\end_inset
+נקבל, אם כך, שנוכל לחשב את פעולת העלאה בחזקה בעזרת חישוב כפל של חזקות 
+\begin_inset Formula 
+\[
+a^{b}=a^{2^{x_{1}}}\cdot a^{2^{x_{2}}}...
+\]
 
-
-\begin_inset Newline newline
 \end_inset
 
 גם כאן נכניס את פעולת ה 
@@ -1065,7 +1245,39 @@ m
 \end_inset
 
  פנימה ונקבל: 
-\begin_inset Formula $b=\sum2^{x_{k}}\Rightarrow a^{b}\: mod\: m=\prod_{k}(a^{2^{x_{k}}}\: mod\: m)$
+\begin_inset Formula 
+\[
+b=\sum2^{x_{k}}\Rightarrow a^{b}\: mod\: m=\prod_{k}(a^{2^{x_{k}}}\: mod\: m)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+דוגמה: 
+\begin_inset Formula 
+\[
+5^{13}\ mod\ 7
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+5\ mod\ 7,\Rightarrow\ 5^{2}=25\ mod\ 7=4\Rightarrow\ 5^{4}=4^{2}=2\ mod\ 7\Rightarrow5^{8}=2^{2}=4\ mod\ 7
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+5^{13}\ mod\ 7=5^{\sum\left(2^{3}+2^{2}+2^{0}\right)}\ mod\ 7=5^{8}\cdot5^{4}\cdot5^{1}\ mod\ 7=4\cdot2\cdot5=5\ mod\ 7
+\]
+
 \end_inset
 
 
@@ -1076,26 +1288,34 @@ m
 \begin_inset space ~
 \end_inset
 
-ריצה: עיבוד ראשוני - 
+ריצה:
+\end_layout
+
+\begin_layout Itemize
+עיבוד ראשוני - 
 \begin_inset Formula $\mathcal{O}\left(n^{3}\right)$
 \end_inset
 
  עבור חישוב הסדרה
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 בכל שלב עבור כל 
-\begin_inset Formula $x_{k}$
+\begin_inset Formula $2^{x_{k}}$
 \end_inset
 
- נכפיל - 
-\begin_inset Formula $(\prod_{j=1}^{k-1}a^{2^{x_{j}}}\: mod\: m)(a^{2^{x_{k}}}\: mod\: m)\: mod\: m$
+ נבצע - 
+\begin_inset Formula 
+\[
+(\prod_{j=1}^{k-1}a^{2^{x_{j}}}\: mod\: m)(a^{2^{x_{k}}}\: mod\: m)\: mod\: m
+\]
+
 \end_inset
 
-- כאשר הכופל השמאלי הוא מה שחושב עד כה והימני הוא החישוב המבוקש 
-\begin_inset Newline newline
-\end_inset
+כאשר הכופל השמאלי הוא מה שחושב עד כה והימני הוא החישוב הבא המבוקש 
+\end_layout
 
+\begin_layout Itemize
 ולכן מדובר בכל שלב בכפל + 
 \begin_inset Formula $mod$
 \end_inset
@@ -1254,11 +1474,11 @@ m
 \uwave default
 \noun default
 \color inherit
-נוכל למצוא ע"י את כל הגורמים של 
+נוכל למצוא בעזרתו את כל הגורמים של 
 \begin_inset Formula $m$
 \end_inset
 
- על ידי חילוק בגורם שמצאנו והפעלה חוזרת
+ - נחלק במה שמצאנו ונפעיל את האלגוריתם על תוצאת החילוק.
 \end_layout
 
 \begin_layout Standard
@@ -1312,7 +1532,7 @@ m
 \uwave default
 \noun default
 \color inherit
-היא בעיה קלה - שיערו שזה כך ואכן בשנת
+היא בעיה קלה - שיערו שזה כך, ואכן בשנת
 \family roman
 \series medium
 \shape up
@@ -1420,7 +1640,7 @@ m
 \uwave default
 \noun default
 \color inherit
-לעומת זאת נחשבת בעיה קשה - לא ידוע על אלגוריתם שפותר אותה בזמן סביר
+לעומת זאת נחשבת בעיה קשה - לא ידוע על אלגוריתם שפותר אותה בזמן סביר.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1475,7 +1695,7 @@ status open
 \begin_inset Newline newline
 \end_inset
 
-הראו ש 
+הם הראו ש 
 \begin_inset Formula $PRIMES\in CO-RP$
 \end_inset
 
@@ -1513,7 +1733,11 @@ status open
 \begin_inset Formula $m$
 \end_inset
 
- נתון, ההסתברות שנחזיר בכל הפעמים "כן" כאשר למעשה 
+ נתון, ההסתברות שנחזיר 
+\bar under
+בכל
+\bar default
+ הפעמים "כן" כאשר למעשה 
 \begin_inset Formula $m$
 \end_inset
 
@@ -1534,7 +1758,7 @@ status open
 \end_inset
 
  אלגוריתם ב 
-\begin_inset Formula $C-RP$
+\begin_inset Formula $CO-RP$
 \end_inset
 
  )כלומר עם שגיאה הסתברותית חד צדדית(, יעיל יותר )דרגת הפולינום נמוכה יותר(,
@@ -1591,7 +1815,7 @@ status open
 2001
 \numeric off
 : 
-\begin_inset Formula $Agravant-Kayst-Saysera$
+\begin_inset Formula $Agrawal,\ Kayal,\ Saxena$
 \end_inset
 
  הוכיחו ש 
@@ -1627,14 +1851,14 @@ status open
 \end_inset
 
 הראשוניים: נגדיר 
-\begin_inset Formula $\pi(x)=|\{p|p\leq x,\: p\: is\: prime\}|$
+\begin_inset Formula 
+\[
+\pi(x)=|\{p|p\leq x,\: p\: is\: prime\}|
+\]
+
 \end_inset
 
  אזי
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset Formula 
 \[
 \pi(x)=(1+o(1))\frac{x}{ln\left(x\right)}
@@ -1681,7 +1905,7 @@ Pr\left[m\ is\ prime\right]=\frac{(1+o(1))\frac{2^{n}}{ln\left(2^{n}\right)}}{2^
  חזרות ההסתברות להצלחה באחת מהן היא 
 \begin_inset Formula 
 \[
-1-Pr\left[failor\right]=1-\left(1-\frac{1-o\left(1\right)}{nln2}\right)^{kn}\geq1-\left(e^{-\frac{1-o\left(1\right)}{nln2}}\right)^{kn}=1-\left(e^{-\frac{1-o\left(1\right)}{ln2}}\right)^{k}>1-\left(\frac{1}{4}\right)^{k}
+1-Pr\left[failor\right]=1-\left(1-\frac{1+o\left(1\right)}{nln2}\right)^{kn}\geq1-\left(e^{-\frac{1+o\left(1\right)}{nln2}}\right)^{kn}=1-\left(e^{-\frac{1+o\left(1\right)}{ln2}}\right)^{k}>1-\left(\frac{1}{4}\right)^{k}
 \]
 
 \end_inset
@@ -1706,7 +1930,7 @@ Pr\left[m\ is\ prime\right]=\frac{(1+o(1))\frac{2^{n}}{ln\left(2^{n}\right)}}{2^
 \begin_inset Newline newline
 \end_inset
 
-התוצאה הכי טובה בדרך להוכחת ההשערה היא שפער לא גדול מ 
+התוצאה הכי טובה בדרך להוכחת ההשערה היא שהפער לא גדול מ 
 \begin_inset Formula $\frac{1}{n}2^{\frac{n}{2}}\approx$
 \end_inset
 
@@ -1762,7 +1986,7 @@ Pr\left[m\ is\ prime\right]=\frac{(1+o(1))\frac{2^{n}}{ln\left(2^{n}\right)}}{2^
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $p+q+2\;\begin{cases}
+\begin_inset Formula $p+q+2\Leftarrow\begin{cases}
 \text{p,2p,...}(q-1)p\\
 q,2q,...,(p-1)q
 \end{cases}$
@@ -1776,8 +2000,8 @@ q,2q,...,(p-1)q
 \end_layout
 
 \begin_layout Standard
-כלומר אם נגריל ההסתברות שנפגע בעד היא בערך 
-\begin_inset Formula $\mathcal{O}\left(\frac{1}{2^{n}}\right)2\frac{2^{n}}{2^{2n}}$
+כלומר אם נגריל מספר, ההסתברות שנפגע בעד היא בערך 
+\begin_inset Formula $\mathcal{O}\left(\frac{2\cdot2^{n}}{2^{2n}}\right)=\mathcal{O}\left(\frac{1}{2^{n}}\right)$
 \end_inset
 
  - לא יעיל!
@@ -1833,11 +2057,11 @@ q,2q,...,(p-1)q
 \end_inset
 
  ונסתכל על הקבוצה 
-\begin_inset Formula $A=\left\{ ai\: mod\: p\ |\ i=1...p-1\right\} $
-\end_inset
+\begin_inset Formula 
+\[
+A=\left\{ a\cdot i\: mod\: p\ |\ i=1...p-1\right\} 
+\]
 
-
-\begin_inset Newline newline
 \end_inset
 
 
@@ -1853,16 +2077,20 @@ q,2q,...,(p-1)q
 \end_inset
 
  כך ש 
-\begin_inset Formula $i\equiv j\: mod\: p\Leftarrow(i-j)a\bar{a}\equiv0\: mod\: p\Leftarrow(i-j)a\equiv0\Leftarrow ia\equiv ja$
-\end_inset
+\begin_inset Formula 
+\[
+i\equiv j\: mod\: p\Leftarrow(i-j)a\bar{a}\equiv0\: mod\: p\Leftarrow(i-j)a\equiv0\Leftarrow ia\equiv ja
+\]
 
-
-\begin_inset Newline newline
 \end_inset
 
 מנימוק דומה ניתן להראות שכל אברי הקבוצה שונים מ
 \numeric on
-0
+
+\begin_inset Formula $0$
+\end_inset
+
+
 \family roman
 \series medium
 \shape up
@@ -1902,12 +2130,12 @@ q,2q,...,(p-1)q
 ומכאן 
 \begin_inset Formula 
 \[
-0\ensuremath{\stackrel{*}{\neq}}\neq\prod_{i=1}^{p-1}i=\prod_{i=1}^{p-1}ai\; mod\; p
+0\ensuremath{\stackrel{*}{\neq}}\neq\prod_{i=1}^{p-1}i\equiv\prod_{i=1}^{p-1}ai\equiv a^{p-1}\prod_{i=1}^{p-1}i\;\left(mod\; p\right)
 \]
 
 \end_inset
 
-* בשדה אין כופלי אפס ולכן מכפלה של אברים שאינם אפס בהכרח שונה מאפס
+השיוויון * נובע מכך שבשדה מכפלה של אברים שאינם אפס בהכרח שונה מאפס.
 \begin_inset Newline newline
 \end_inset
 
@@ -1915,20 +2143,16 @@ q,2q,...,(p-1)q
 \begin_inset Formula $\left(\prod_{i=1}^{p-1}i\right)^{-1}$
 \end_inset
 
-
+ ולקבל
 \begin_inset Newline newline
 \end_inset
 
 
 \begin_inset Formula 
 \[
-a^{p-1}=\left(\prod_{i=1}^{p-1}i\right)\left(\prod_{i=1}^{p-1}i\right)^{-1}\equiv1\: mod\: p
+a^{p-1}\equiv\left(\prod_{i=1}^{p-1}i\right)\left(\prod_{i=1}^{p-1}i\right)^{-1}\equiv1\:\left(mod\: p\right)
 \]
 
-\end_inset
-
- 
-\begin_inset Newline newline
 \end_inset
 
 ציינו מקודם שאם 
@@ -1944,14 +2168,26 @@ a^{p-1}=\left(\prod_{i=1}^{p-1}i\right)\left(\prod_{i=1}^{p-1}i\right)^{-1}\equi
 \end_inset
 
  ובפרט 
-\begin_inset Formula $a^{m-1}\neq1\: mod\: m$
+\begin_inset Formula 
+\[
+a^{m-1}\neq1\: mod\: m
+\]
+
 \end_inset
 
  כי אם 
-\begin_inset Formula $c|a^{k}-jm\Leftarrow c|a,m$
+\begin_inset Formula $c|a,m$
 \end_inset
 
-כלומר חזקות של 
+ נקבל 
+\begin_inset Formula 
+\[
+\forall j,k:\ c|a^{k}-jm\Rightarrow c|a^{k}\ mod\ m
+\]
+
+\end_inset
+
+כלומר מחזקות של 
 \begin_inset Formula $a$
 \end_inset
 
@@ -1963,11 +2199,16 @@ a^{p-1}=\left(\prod_{i=1}^{p-1}i\right)\left(\prod_{i=1}^{p-1}i\right)^{-1}\equi
 \begin_inset Formula $m$
 \end_inset
 
-(
+( ולא נקבל 
+\begin_inset Formula $1$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-שאלה: הטענה יכולה חד משמעית לשלול ראשוניות )אם היא לא מתקיימת עבור 
+שאלה: בעזרת הטענה אפשר לשלול ראשוניות באופן חד משמעי )אם היא לא מתקיימת
+ עבור 
 \begin_inset Formula $a$
 \end_inset
 
@@ -1994,19 +2235,26 @@ a^{p-1}=\left(\prod_{i=1}^{p-1}i\right)\left(\prod_{i=1}^{p-1}i\right)^{-1}\equi
 \end_inset
 
  כך ש 
-\begin_inset Formula $GCD(a,m)=1$
+\begin_inset Formula 
+\[
+GCD(a,m)=1
+\]
+
 \end_inset
 
- ובנוסף 
+ובנוסף 
 \begin_inset Formula $a$
 \end_inset
 
  הוא עד לפריקות על פי פרמה כלומר 
-\begin_inset Formula $a^{m-1}\not\equiv1\: mod\: m$
+\begin_inset Formula 
+\[
+a^{m-1}\not\equiv1\: mod\: m
+\]
+
 \end_inset
 
-.
- או במילים אחרות 
+או במילים אחרות 
 \begin_inset Formula $a$
 \end_inset
 
@@ -2050,16 +2298,24 @@ a^{p-1}=\left(\prod_{i=1}^{p-1}i\right)\left(\prod_{i=1}^{p-1}i\right)^{-1}\equi
 \end_layout
 
 \begin_layout Description
-הוכחה: נגדיר 
-\begin_inset Formula $X=\left\{ 1\leq x\leq m-1|x^{m-1}\not\equiv1\: mod\: m\right\} $
+הוכחה: נניח שקיים 
+\begin_inset Formula $a$
 \end_inset
 
- ונסמן את שאר האיברים בטווח 
-\begin_inset Formula $Y=\left\{ 1\leq y\leq m-1|y^{m-1}\equiv1\: mod\: m\right\} $
+ כזה ונגדיר 
+\begin_inset Formula 
+\[
+X=\left\{ 1\leq x\leq m-1|x^{m-1}\not\equiv1\: mod\: m\right\} 
+\]
+
 \end_inset
 
+נסמן את שאר האיברים בטווח 
+\begin_inset Formula 
+\[
+Y=\left\{ 1\leq y\leq m-1|y^{m-1}\equiv1\: mod\: m\right\} 
+\]
 
-\begin_inset Newline newline
 \end_inset
 
 נראה ש 
@@ -2075,19 +2331,11 @@ a^{p-1}=\left(\prod_{i=1}^{p-1}i\right)\left(\prod_{i=1}^{p-1}i\right)^{-1}\equi
 \end_inset
 
  הבא:
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset Formula 
 \[
 y\in Y\mapsto ay\: mod\: m
 \]
 
-\end_inset
-
-
-\begin_inset Newline newline
 \end_inset
 
 נראה תחילה שזו אכן מעתיקה איברים מ 
@@ -2099,19 +2347,11 @@ y\in Y\mapsto ay\: mod\: m
 \end_inset
 
  
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset Formula 
 \[
 (ay)^{m-1}\equiv a^{m-1}y^{m-1}\equiv a^{m-1}\not\equiv1\: mod\: m\Rightarrow ay\in X
 \]
 
-\end_inset
-
-
-\begin_inset Newline newline
 \end_inset
 
 הראנו בעבר שגם אם 
@@ -2208,7 +2448,7 @@ ay\equiv az\: mod\: m\Rightarrow a^{-1}ay\equiv a^{-1}az\: mod\: m\Rightarrow y\
 \begin_inset Formula $m$
 \end_inset
 
- פריק אז או שתנאי הבדיקה של משפט פרמה הקטן יכשל ונזהה נכון את 
+ פריק אז - או שתנאי הבדיקה של משפט פרמה הקטן יכשל ונזהה נכון את 
 \begin_inset Formula $m$
 \end_inset
 
@@ -2274,11 +2514,24 @@ status open
 \begin_inset Formula $GCD(a,m)=1$
 \end_inset
 
- מתקיים 
+ ומתקיים 
 \begin_inset Formula $a^{m-1}\equiv1\: mod\: m$
 \end_inset
 
  
+\begin_inset Newline newline
+\end_inset
+
+כלומר זהו מספר שאין עבורו עדים מהסוג של משפט פרמה הקטן ועבורתם האלגוריתם
+ שתיארנו יכשל בסבירות 
+\begin_inset Formula $1$
+\end_inset
+
+ )ולא 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ כפי שרצינו(.
 \end_layout
 
 \begin_layout Description
@@ -2291,15 +2544,19 @@ status open
 \end_inset
 
  ביטים 
-\begin_inset Formula $Pr\left[m\ is\ Carmichael\ number\right]\leq e^{-\Omega\left(n\frac{log\left(log\left(n\right)\right)}{log\left(n\right)}\right)}$
-\end_inset
+\begin_inset Formula 
+\[
+Pr\left[m\ is\ Carmichael\ number\right]\leq e^{-\Omega\left(n\frac{log\left(log\left(n\right)\right)}{log\left(n\right)}\right)}
+\]
 
-
-\begin_inset Newline newline
 \end_inset
 
 לעומת זאת 
-\begin_inset Formula $Pr\left[m\; is\; prime\right]=\Theta\left(\frac{1}{n}\right)$
+\begin_inset Formula 
+\[
+Pr\left[m\; is\; prime\right]=\Theta\left(\frac{1}{n}\right)
+\]
+
 \end_inset
 
 
@@ -2308,19 +2565,29 @@ status open
 \begin_layout Standard
 ולכן האלגוריתם שראינו מספיק טוב כדי להגריל ולזהות מספר ראשוני בהסתברות גבוה
  מאוד.
- אבל בתור אלגוריתם לבדיקה של מספר נתון זה לא מספיק ולכן הוסיפו באלגוריתם
- שלב של בדיקה שמזהה מספרי קרמייקל.
+ אם נפלנו על ראשוני אז מצוין.
+ אם נפלנו על סתם מספר פריק בהרבה הרצות של הבדיקה נקבל סיכוי נמוך מאוד שנטעה
+ ונחשוב שהוא ראשוני והסיכוי שכל הבדיקה נכשלה כי נפלנו על מספר קרמייקל הוא
+ גם קלוש כי הם ממש נדירים.
+ 
 \end_layout
 
 \begin_layout Standard
+אבל בתור אלגוריתם לבדיקה של מספר נתון זה לא מספיק, כי כאשר כבר נתון מספר
+ לא מעניינת אותנו ההסתברות לקבל דווקא אותו ואם נפלנו על אחד בעייתי ניכשל
+ בוודאות בלי קשר לכמה פעמים נבדוק.
+ לכן הוסיפו באלגוריתם שלב של בדיקה שמזהה מספרי קרמייקל.
+\end_layout
+
+\begin_layout Description
 אבחנה: אם 
 \begin_inset Formula $p$
 \end_inset
 
  ראשוני 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 ומתקיים 
 \begin_inset Formula $x^{2}\equiv1\: mod\: p$
 \end_inset
@@ -2352,7 +2619,7 @@ p|(x+1)(x-1)\Rightarrow p|x+1\ or\ p|x-1\Rightarrow x\equiv\pm1\: mod\: m
 
 \end_inset
 
- ולכן עד נוסף לפריקות 
+ ולכן עד נוסף לפריקות - 
 \begin_inset Formula $m$
 \end_inset
 
@@ -2425,7 +2692,11 @@ p|(x+1)(x-1)\Rightarrow p|x+1\ or\ p|x-1\Rightarrow x\equiv\pm1\: mod\: m
 
 \begin_layout Itemize
 נחשב את הסדרה 
-\begin_inset Formula $a_{0}=a^{q}\ mod\ m,a_{1}=a^{2q}\ mod\ m,...,a_{t}=a^{2^{t}q}\ mod\ m=a^{m-1}\ mod\ m=1$
+\begin_inset Formula 
+\[
+a_{0}=a^{q}\ mod\ m,a_{1}=a^{2q}\ mod\ m,...,a_{t}=a^{2^{t}q}\ mod\ m=a^{m-1}\ mod\ m=1
+\]
+
 \end_inset
 
 
@@ -2453,6 +2724,42 @@ p|(x+1)(x-1)\Rightarrow p|x+1\ or\ p|x-1\Rightarrow x\equiv\pm1\: mod\: m
 
 \end_deeper
 \begin_layout Description
+הסבר
+\begin_inset space ~
+\end_inset
+
+לצעד
+\begin_inset space ~
+\end_inset
+
+הנוסף: אם קיים 
+\begin_inset Formula $j$
+\end_inset
+
+ כמו שמתואר בצעד כלומר קיים 
+\begin_inset Formula 
+\[
+a_{j}=a^{2^{j}q}=\left(a^{2^{j-1}q}\right)^{2}=1\ mod\ m
+\]
+
+\end_inset
+
+ובנוסף 
+\begin_inset Formula 
+\[
+a^{2^{t-1}q}=a_{j-1}\neq1\ mod\ m
+\]
+
+\end_inset
+
+ ולכן 
+\begin_inset Formula $a_{j-1}$
+\end_inset
+
+ הוא עד לפריקות כפי שהראנו מקודם.
+\end_layout
+
+\begin_layout Description
 משפט: אם 
 \begin_inset Formula $m$
 \end_inset
@@ -2465,6 +2772,1390 @@ p|(x+1)(x-1)\Rightarrow p|x+1\ or\ p|x-1\Rightarrow x\equiv\pm1\: mod\: m
 \end_layout
 
 \begin_layout Description
+זמן
+\begin_inset space ~
+\end_inset
+
+ריצה: 
+\end_layout
+
+\begin_layout Itemize
+חישוב 
+\begin_inset Formula $a^{m}\ mod\ m$
+\end_inset
+
+ : 
+\begin_inset Formula $\mathcal{O}\left(n^{3}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+לחשב 
+\begin_inset Formula $a_{0}=a^{q}\ mod\ m$
+\end_inset
+
+ : 
+\begin_inset Formula $\mathcal{O}\left(n^{3}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+חישוב 
+\begin_inset Formula $a_{j}=a_{j-1}\cdot a_{j-1}\ mod\ m$
+\end_inset
+
+ : 
+\begin_inset Formula $\mathcal{O}\left(n^{2}\right)$
+\end_inset
+
+ ונבצע זאת מספר פעמים : 
+\begin_inset Formula $t\leq log\left(m\right)=\mathcal{O}\left(n\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ולכן סב"כ - 
+\begin_inset Formula $\mathcal{O}\left(n^{3}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+קריפטוגרפיה
+\end_layout
+
+\begin_layout Standard
+הצפנה במובן הקלאסי דורשת מפתח שבעזרתו ניתן להצפין הודעות ולפענח אותם.
+ הצפנה שכזאת מכונה - הצפנה סימטרית.
+\end_layout
+
+\begin_layout Standard
+בשנת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1977
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+פרסמו 
+\begin_inset Formula $Diffie,Hellman$
+\end_inset
+
+ מאמר ובו העלו את הרעיון שניתן לבנות מערכות הצפנה שאינן סימטריותץ הם אף
+ תיארו פרוטוקול ראשוני בעל אופי לא סימטרי.
+\end_layout
+
+\begin_layout Standard
+סכימה כללית של פרוטוקול הצפנה במפתח ציבורי:
+\end_layout
+
+\begin_layout Enumerate
+בוריס מייצר )לפי אלגוריתם אקראי( את המפתחות 
+\begin_inset Formula $\left(e,d\right)$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $d=private\ key,\ e=public\ key$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+בוריס מפרסם את 
+\begin_inset Formula $e$
+\end_inset
+
+ ושומר אצלו את 
+\begin_inset Formula $d$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+אנסטסיה מצפינה את המסר 
+\begin_inset Formula $x$
+\end_inset
+
+ באמצעות 
+\begin_inset Formula $E\left(x,e\right)=y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+בוריס מפענח את המסר 
+\begin_inset Formula $y$
+\end_inset
+
+ באמצעות 
+\begin_inset Formula $D\left(y,d\right)=x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הנחת
+\begin_inset space ~
+\end_inset
+
+הקושי: אי אפשר לגלות את 
+\begin_inset Formula $x$
+\end_inset
+
+ בהסתברות סבירה בלי 
+\begin_inset Formula $d$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הנחה
+\begin_inset space ~
+\end_inset
+
+יותר
+\begin_inset space ~
+\end_inset
+
+פורמלית
+\begin_inset space ~
+\end_inset
+
+)ויותר
+\begin_inset space ~
+\end_inset
+
+מחמירה(: לכל אלגוריתם 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ ולכל שתי הודעות 
+\begin_inset Formula $x_{1},x_{2}$
+\end_inset
+
+ מתקיים
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+למעשה יש הגדרה עוד יותר פורמלית שמגדירה במדויק מה הכוונה 
+\begin_inset Formula $\approx$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+Pr\left[A\left(E\left(x_{1},e\right),e\right)=1\right]\approx Pr\left[A\left(E\left(x_{2},e\right),e\right)=1\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $RSA$
+\end_inset
+
+
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $8.11.15$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ייצור המפתחות:
+\end_layout
+
+\begin_layout Itemize
+בוריס מגריל באקראי שני מספרים ראשוניים גדולים - 
+\begin_inset Formula $p,q$
+\end_inset
+
+ ומחשב 
+\begin_inset Formula $N=p\cdot q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+בוחר 
+\begin_inset Formula $e$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $GCD\left(e,\left(p-1\right)\left(q-1\right)\right)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+מחשב באמצעות האלגוריתם של אוקלידס את 
+\begin_inset Formula $d$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $ed=1\ mod\ \left(p-1\right)\left(q-1\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+מפרסם את 
+\begin_inset Formula $\left(N,e\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+שומר לעצמו את 
+\begin_inset Formula $\left(d\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אנסטסיה רוצה לשלוח לבוריס את ההודעה 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+מצפינה את 
+\begin_inset Formula $x$
+\end_inset
+
+ באופן הבא 
+\begin_inset Formula $y=x^{e}\ mod\ N$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+שולחת לבוריס את 
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בוריס רוצה לפענח:
+\end_layout
+
+\begin_layout Itemize
+מחשב את 
+\begin_inset Formula $y^{d}\ mod\ N$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Description
+טענה: 
+\begin_inset Formula $y^{d}\ mod\ N=x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הוכחה
+\begin_inset space ~
+\end_inset
+
+קצרה
+\begin_inset space ~
+\end_inset
+
+ולא
+\begin_inset space ~
+\end_inset
+
+סחומר: גודל החבורה 
+\begin_inset Formula $\mathbb{Z}_{N}^{*}$
+\end_inset
+
+ )חבורת המספרים הזרים ל
+\begin_inset Formula $N$
+\end_inset
+
+( היא 
+\begin_inset Formula $\varphi\left(N\right)=\left(p-1\right)\left(q-1\right)$
+\end_inset
+
+ ועל פי משפט מתורת החבורות 
+\begin_inset Formula 
+\[
+\forall a,b\in\mathbb{Z}_{N}^{*}:\ a^{b}\equiv a^{b\ mod\ \varphi\left(N\right)}\ mod\ N
+\]
+
+\end_inset
+
+ולכן מאחר ו 
+\begin_inset Formula $ed=1\ mod\ \varphi\left(N\right)$
+\end_inset
+
+ נקבל 
+\begin_inset Formula 
+\[
+y^{d}=\left(x^{e}\right)^{d}=x^{ed}\equiv x^{1}\equiv x\ mod\ N
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הוכחה
+\begin_inset space ~
+\end_inset
+
+קצרה
+\begin_inset space ~
+\end_inset
+
+פחות
+\begin_inset space ~
+\end_inset
+
+וכן
+\begin_inset space ~
+\end_inset
+
+בחומר: לפי המשפט הקטן של פרמה 
+\begin_inset Formula 
+\[
+x^{p-1}=1\ mod\ p,\ x^{q-1}=1\ mod\ q
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula 
+\[
+ed=1\ mod\ \left(p-1\right)\left(q-1\right)\Rightarrow ed=1+c\left(p-1\right)\left(q-1\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Rightarrow y^{d}=\left(x^{e}\right)^{d}=x^{ed}=x^{1+c\left(p-1\right)\left(q-1\right)}=x\left(x^{p-1}\right)^{c\left(q-1\right)}
+\]
+
+\end_inset
+
+אבל 
+\begin_inset Formula $x^{p-1}=1\ mod\ p$
+\end_inset
+
+ ולכן 
+\begin_inset Formula 
+\[
+\Rightarrow x^{ed}=x\cdot1^{c\left(q-1\right)}\ mod\ p=x\ mod\ p
+\]
+
+\end_inset
+
+באותו אופן נקבל 
+\begin_inset Formula 
+\[
+x^{ed}=x\ mod\ q
+\]
+
+\end_inset
+
+ומכאן נקבל ש 
+\begin_inset Formula $x^{ed}-x$
+\end_inset
+
+ מתחלק ב-
+\begin_inset Formula $p$
+\end_inset
+
+ וגם ב-
+\begin_inset Formula $q$
+\end_inset
+
+ ומאחר והם ראשוניים הוא מתחלק גם במכפלה 
+\begin_inset Formula $pq=N$
+\end_inset
+
+ ולכן בסה"כ 
+\begin_inset Formula 
+\[
+x^{ed}-x=0\ mod\ N\Rightarrow x^{ed}=x\ mod\ N\qquad\blacksquare
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אם יבגני )שמצוטט לקו ומנסה להבין מה המסר שעבר מאנסטסיה לבוריס( ידע לפרק
+ את 
+\begin_inset Formula $N$
+\end_inset
+
+ אזי הוא יוכל לעשות את אותם חישובים בדיוק כמו בוריס ולפענח את המסר המוצפן.
+\end_layout
+
+\begin_layout Description
+הנחת
+\begin_inset space ~
+\end_inset
+
+קושי: בהינתן 
+\begin_inset Formula $y,e,N$
+\end_inset
+
+ קשה לחשב את 
+\begin_inset Formula $x$
+\end_inset
+
+ בלי לדעת את 
+\begin_inset Formula $d$
+\end_inset
+
+ )לא קיימת הוכחה
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+בתרגיל בית ראינו את "הצפנת רבין" ועבורה הראנו שקילות לבעיית הפירוק לגורמים
+\end_layout
+
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Section*
+הפרד ומשול
+\end_layout
+
+\begin_layout Subsection*
+כפל מספרים
+\end_layout
+
+\begin_layout Standard
+נרצה לנסות לחסוך בפעולות הדרושות לשם חישוב כפל.
+\end_layout
+
+\begin_layout Standard
+נתבונן אם כך בשני מספרים בינארים מאורך 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ - 
+\begin_inset Formula $a,b$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+נחלק כל אחד מהם לשרשור של שני חלקים שווים: 
+\begin_inset Formula 
+\[
+a=a_{1}a_{2}=\overbrace{...a_{1}...}^{\nicefrac{n}{2}\ bits}\overbrace{...a_{2}...}^{\nicefrac{n}{2}\ bits}=a_{1}\cdot2^{\frac{n}{2}}+a_{2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+b=b_{1}b_{2}=\overbrace{...b_{1}...}^{\nicefrac{n}{2}\ bits}\overbrace{...b_{2}...}^{\nicefrac{n}{2}\ bits}=b_{1}\cdot2^{\frac{n}{2}}+b_{2}
+\]
+
+\end_inset
+
+והכפל ביניהם יתן 
+\begin_inset Formula 
+\[
+a\cdot b=a_{1}b_{1}2^{n}+\left(a_{1}b_{2}+a_{2}b_{1}\right)2^{\frac{n}{2}}+a_{2}b_{2}
+\]
+
+\end_inset
+
+נשים לב שהכפלה ב
+\begin_inset Formula $2^{k}$
+\end_inset
+
+ פירושה הזזה של תוצאת הכפל ב
+\begin_inset Formula $k$
+\end_inset
+
+ ביטים.
+ פעולה לא משמעותית מבחינת זמן הריצה.
+\end_layout
+
+\begin_layout Standard
+הרעיון הוא לנסות לבצע ברקורסיה את הכפל בין החצאים השונים.
+ אלא שבמצב הנוכחי בכל שלב ברקורסיה נבצע
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+קריאות רקורסיביות 
+\begin_inset Formula 
+\[
+1.\ a_{1}b_{1}\ 2.\ a_{1}b_{2}\ 3.\ a_{2}b_{1}\ 4.\ a_{2}b_{2}
+\]
+
+\end_inset
+
+ונקבל בדיוק את אותו זמן ריצה כמו באלגוריתם הנאיבי שאנו מכירים )נראה את חישוב
+ זמן הריצה בהמשך(.
+\end_layout
+
+\begin_layout Standard
+אבל נשים לב שמתקיים
+\begin_inset Formula 
+\[
+a_{1}b_{2}+a_{2}b_{1}=\left(a_{1}+a_{2}\right)\left(b_{1}+b_{2}\right)-a_{1}b_{1}-a_{2}b_{2}
+\]
+
+\end_inset
+
+ואת 
+\begin_inset Formula $a_{1}b_{2}$
+\end_inset
+
+ ואת 
+\begin_inset Formula $a_{2}b_{1}$
+\end_inset
+
+ אנו מחשבים ממילא ולכן נוכל בעזרת השיוויון הזה לחסוך קריאה רקורסיבית אחת.
+\end_layout
+
+\begin_layout Paragraph*
+אלגוריתם קרצובה 
+\begin_inset Formula $Karatsuba\left(a,b,n\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula $n=1$
+\end_inset
+
+: נחזיר את 
+\begin_inset Formula $a\cdot b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+אחרת: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נחלק את 
+\begin_inset Formula $a,b$
+\end_inset
+
+ ל 
+\begin_inset Formula $a_{1},a_{2},b_{1},b_{2}$
+\end_inset
+
+ כמו שתיארנו למעלה )מדובר בסך הכל בכמה פועלות הזזה(
+\end_layout
+
+\begin_layout Itemize
+נחשבת רקורסיבית : 
+\begin_inset Formula 
+\[
+k_{1}\leftarrow Karatsuba\left(a_{1},b_{1},\frac{n}{2}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+k_{2}\leftarrow Karatsuba\left(a_{2},b_{2},\frac{n}{2}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+k_{3}\leftarrow Karatsuba\left(\left(a_{1}+a_{2}\right),\left(b_{1}+b_{2}\right),\frac{n}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+ונחזיר 
+\begin_inset Formula 
+\[
+k_{2}+2^{n}k_{1}+2^{\frac{n}{2}}\left(k_{3}-k_{2}-k_{1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+זמן
+\begin_inset space ~
+\end_inset
+
+ריצה: 
+\end_layout
+
+\begin_layout Standard
+קריאה אחת בלי רקורסיה : 
+\begin_inset Formula $\mathcal{O}\left(n\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+עבור הקריאות הרקורסיביות:
+\end_layout
+
+\begin_layout Standard
+נסמן ב 
+\begin_inset Formula $T\left(n\right)$
+\end_inset
+
+את זמן הריצה עבור מספר באורך 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נקבל 
+\begin_inset Formula 
+\[
+T\left(n\right)=3T\left(\frac{n}{2}\right)+\mathcal{O}\left(n\right)
+\]
+
+\end_inset
+
+בכל שלב ברקורסיה נקרא ל
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+קריאות.
+ מאחר ובכל קריאה אנחנו מחלקםי את 
+\begin_inset Formula $n$
+\end_inset
+
+ ב
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עומק הרקורסיה יהיה 
+\begin_inset Formula $log_{2}\left(n\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לא נחשב במדויק )ראינו בעבר שיטות איך לעשות זאת( אלא נתאר באופן כללי עץ קריאות
+ רקורסיביות.
+ לכל קודקוד בעץ יהיו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בנים ועומק העץ יהיה 
+\begin_inset Formula $log_{2}\left(n\right)$
+\end_inset
+
+ ולכן מספר העלים יהיה 
+\begin_inset Formula 
+\[
+3^{log_{2}\left(n\right)}=n^{log_{2}3}\approx n^{1.584}
+\]
+
+\end_inset
+
+זמן הריצה שכל קודקוד מתאר הוא למעשה סכום של הבנים שלו ועוד זמן לינארי שלא
+ משפיע על החישוב.
+ לכן נקבל שזמן הריצה הסופי שווה אסימפטוטית למספר העליםץ כלומר 
+\begin_inset Formula 
+\[
+T\left(n\right)=\mathcal{O}\left(n^{log_{2}3}\right)\approx\mathcal{O}\left(n^{1.584}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שזה שיפור לעומת ה 
+\begin_inset Formula $\mathcal{O}\left(n^{2}\right)$
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+נשים לב שאם לא היינו מצמצמים אלא נשארים עם
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+קריאות רקורסיביות בכל שלב היינו מקבלים זמן ריצה 
+\begin_inset Formula $\mathcal{O}\left(4^{log_{2}n}\right)=\mathcal{O}\left(n^{log_{2}4}\right)=\mathcal{O}\left(n^{2}\right)$
+\end_inset
+
+ כלומר זהה לאלגוריתם הנאיבי.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מאז נעשו עוד שיפורים בזמן הריצה.
+ האלגוריתם הכי יעיל שידוע כיום הוא של 
+\begin_inset Formula $Fürer\ -\ 2007$
+\end_inset
+
+ שרץ בזמן - 
+\begin_inset Formula $\mathcal{O}\left(n\cdot log\left(n\right)\cdot2^{\Theta\left(log^{*}\left(n\right)\right)}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+מכפלת מטריצות
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula $A,B$
+\end_inset
+
+ מטריצות 
+\begin_inset Formula $nxn$
+\end_inset
+
+ נרצה לייעל את זמן הריצה של פעולת ההכפלה ביניהם.
+\end_layout
+
+\begin_layout Standard
+יש 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+ תוצאות שצריך לחשב ולכן זמן הריצה יהיה לכל הפחות 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אלגוריתם נאיבי - לכל תא במטריצה נבצע את הכפלת השורה והעמודה המתאימות כלומר
+ נבצע 
+\begin_inset Formula $\mathcal{O}\left(n\right)$
+\end_inset
+
+ פעולות כאורך עמודה/שורה.
+ בסה"כ נקבל 
+\begin_inset Formula $\mathcal{O}\left(n^{3}\right)$
+\end_inset
+
+ עבור כל החישוב.
+\end_layout
+
+\begin_layout Standard
+ננסה לצמצם את מספר הפעולות באופן הדומה לזה שראינו באלגוריתם קרצובה.
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ נחלק אותם ל
+\numeric on
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מטריצות בלוקים כל אחד בגודל 
+\begin_inset Formula $\nicefrac{n}{2}x\nicefrac{n}{2}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+X=\begin{pmatrix}A & B\\
+C & D
+\end{pmatrix},\ Y=\begin{pmatrix}E & F\\
+G & H
+\end{pmatrix}
+\]
+
+\end_inset
+
+תוצאת הכפל תהיה בייצוג הזה 
+\begin_inset Formula 
+\[
+XY=\begin{pmatrix}AE+BG & AF+BH\\
+CE+DG & CF+DH
+\end{pmatrix}
+\]
+
+\end_inset
+
+אם ננסה כעת לחשב ברקורסיה את כל המכפלות נקבל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+קריאות רקורסיביות בדומה לחישוב שראינו לגבי כפל מספרים נקבל זמן ריצה 
+\begin_inset Formula 
+\[
+\mathcal{O}\left(8^{log_{2}n}\right)=\mathcal{O}\left(n^{log_{2}8}\right)=\mathcal{O}\left(n^{3}\right)
+\]
+
+\end_inset
+
+כמו באלגוריתם הנאיבי.
+ משום כך ננסה לצמצם את מספר הקריאות, אפילו הורדה של קריאה אחת כבר תהווה
+ שיפור בזמן הריצה.
+\end_layout
+
+\begin_layout Paragraph*
+אלגוריתם שטראסן 
+\begin_inset Formula $Strassen-1969$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\[
+P_{1}=A\left(F-H\right),P_{2}=\left(A+B\right)H,P_{3}=\left(C+D\right)E,P_{4}=D\left(G+E\right),
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P_{5}=\left(A+D\right)\left(E+H\right),P_{6}=\left(B-D\right)\left(G+H\right),P_{7}=\left(A-C\right)\left(E+F\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+והתוצאה תתקבל על ידי 
+\begin_inset Formula 
+\[
+XY=\begin{pmatrix}P_{4}+P_{5}+P_{6}-P_{2} & P_{1}+P_{2}\\
+P_{3}+P_{4} & P_{4}+P_{5}-P_{7}
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+זמן ריצה: 
+\end_layout
+
+\begin_layout Standard
+אחרי האלגוריתם של שטראסן התקבלו הרבה מאוד תוצאות ושיפורים וצמח תחום שלם
+ של אלגוריתמים לחישוב כפל מטריצות.
+ ובעקבות זאת החליטו לתת סימון מיוחד כדי לסמן את זמני הריצה של אלגוריתמים
+ בתחום - 
+\begin_inset Formula $\omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+האלגוריתם שראינו עכשיו נותן 
+\begin_inset Formula $\omega=log_{2}7$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בשנים שאחרי התקבלו התוצאות הבאות 
+\begin_inset Formula 
+\[
+\omega=2.796,2.78,2.548,2.5222,2.517,2.416,2.409,2.376
+\]
+
+\end_inset
+
+התוצאה האחרונה ברשימה התקבלה בסוף שנות ה
+\numeric on
+80
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ומאז במשך שנים אף אחד לא הצליח לשפר.
+ לפני
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שנים 
+\begin_inset Formula $Wiliams$
+\end_inset
+
+ הצליחה להשיג 
+\begin_inset Formula $\omega=2.3727$
+\end_inset
+
+ ]התברר אחרי זה שמאסטרנט בשם 
+\begin_inset Formula $Stathers$
+\end_inset
+
+ הצליח כמה חודשים לפני להשיג 
+\begin_inset Formula $\omega=2.3275$
+\end_inset
+
+ אבל אף אחד לא שמע על זה כי הוא לא טרח לפרסם את זה כמו שצריך[
+\end_layout
+
+\begin_layout Subsection*
+כפל פולינומים והתמרת פורייה 
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $12.11.15$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

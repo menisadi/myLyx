@@ -924,7 +924,7 @@ Pr\left[q_{1}=0\right]=Pr\left[q_{1}q_{2}=0q\right]=\frac{1}{2}
 \color inherit
 הרי שההקיוביט השני חייב להיות 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 למעשה, במצב שהתקבל ברור שמדידת הקיוביט השני תחזיר
@@ -953,6 +953,10 @@ status open
 \noun default
 \color inherit
 0
+\numeric off
+ - 
+\series bold
+לבדוק את הנקודה
 \end_layout
 
 \end_inset
@@ -1162,7 +1166,7 @@ status collapsed
  הראו שוב ושוב שדווקא פרשנות קופנהגן תואמת את הנתונים ושלא יתכן להניח את
  קיומם של משתנים חבויים
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 או כמו שהגיב הפיזיקאי נילס בוהר בתגובה לאימרה של איינשטיין "תפסיק לומר לאלוקים
