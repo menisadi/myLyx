@@ -4159,5 +4159,1030 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+נתונים שני פולינומים ממשיים נדרגה 
+\begin_inset Formula $n\geq$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+a\left(x\right)=\sum_{i=0}^{n}a_{i}x^{i},\ b\left(x\right)=\sum_{i=0}^{n}b_{i}x^{i}
+\]
+
+\end_inset
+
+הייצוג של הפולינומים, שהוא למעשה הנתון שלנו, יהיה, בשלב זה, על ידי סדרת
+ המקדמים של הפולינום.
+ כלומר נתונות לנו שתי סדרות של מקדמים מששיים.
+\end_layout
+
+\begin_layout Standard
+רוצים למצוא את המכפלה שלהם 
+\begin_inset Formula 
+\[
+a\left(x\right)b\left(x\right)=c\left(x\right)=\sum_{i=0}^{n}c_{i}x^{i}
+\]
+
+\end_inset
+
+כלומר רוצים למצוא את סדרת המקדמים 
+\begin_inset Formula $\left\{ c_{0},...,c_{n}\right\} $
+\end_inset
+
+ כך ש 
+\begin_inset Formula 
+\[
+c_{k}=\sum_{j=0}^{k}a_{j}b_{k-j}
+\]
+
+\end_inset
+
+ אם נחשב כל מקדם באופן הנאיבי הזה, עבור כל מקדם 
+\begin_inset Formula $c_{k}$
+\end_inset
+
+ נבצע 
+\begin_inset Formula $\mathcal{O}\left(k\right)$
+\end_inset
+
+ פעולות כפל.
+ מאחר ויש 
+\begin_inset Formula $\mathcal{O}\left(n\right)$
+\end_inset
+
+ מקדמים נקבל בסה"כ 
+\begin_inset Formula 
+\[
+1+2+...+n=\mathcal{O}\left(n^{2}\right)
+\]
+
+\end_inset
+
+נשים לב לפער בין מספר פעולות הכפל שקיבלנו לבין אורך ה
+\bar under
+פלט
+\bar default
+ )באופן כללי אורך הפלט מהווה חסם תחתון לזמן הריצה, שהרי המינימום אותו יש
+ לעשות הוא להדפיס את הפלט.
+ הרבה פעמים לא ניתן להגיע ממש עד לחסם התחתון הזה אבל ננסה כמה שניתן לצמצם
+ את הפער עד אליו(.
+ 
+\end_layout
+
+\begin_layout Standard
+אנו נראה איך ניתן לשפר את התוצאה הזאת עד כדי 
+\begin_inset Formula $\mathcal{O}\left(n\cdot log\left(n\right)\right)$
+\end_inset
+
+ בעזרת מושג שנקרא "התמרת פורייה".
+\end_layout
+
+\begin_layout Standard
+כדי להתעסק בנושא נתחיל בתזכורת/מבוא על פונקציות מרוכבות:
+\end_layout
+
+\begin_layout Subsubsection*
+פונקציות מרוכבות - על רגל אחת
+\end_layout
+
+\begin_layout Standard
+אנו מתעסקים במרחב המספרים המרוכבים 
+\begin_inset Formula 
+\[
+\mathbb{C}=\left\{ a+bi\ |\ a,b\in\mathbb{R},i=\sqrt{-1}\right\} to
+\]
+
+\end_inset
+
+נוסחת אויילר אומרת ש- 
+\begin_inset Formula 
+\[
+e^{i\pi}-1=0
+\]
+
+\end_inset
+
+למה זה נכון? נתבונן בטור טיילור של פונקציית האקספוננט 
+\begin_inset Formula 
+\[
+e^{x}=\sum_{n=0}^{\infty}\frac{x^{n}}{n!}
+\]
+
+\end_inset
+
+נזכור שמתקיים 
+\begin_inset Formula 
+\[
+i^{0}=1,\ i^{1}=i,\ i^{2}=-1,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+i^{3}=-1\cdot i=-i,\ i^{4}=-i\cdot i=-\left(-1\right)=1
+\]
+
+\end_inset
+
+ולכן אם נציב בפונקציה 
+\begin_inset Formula $xi$
+\end_inset
+
+ נקבל 
+\begin_inset Formula 
+\[
+e^{xi}=\frac{\left(xi\right)^{0}}{1}+\frac{\left(xi\right)^{1}}{1}+\frac{\left(xi\right)^{2}}{2}+\frac{\left(xi\right)^{3}}{6}+\frac{\left(xi\right)^{4}}{24}...
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{x^{0}}{1}1+\frac{x^{1}}{1}i+\frac{x^{2}}{2}\left(-1\right)+\frac{x^{3}}{6}\left(-i\right)+\frac{x^{4}}{24}1...
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{x^{0}}{1}+\frac{x^{1}}{1}i-\frac{x^{2}}{2}-\frac{x^{3}}{6}i+\frac{x^{4}}{24}...
+\]
+
+\end_inset
+
+נפריד את הסכום לשניים - האיברים שמוכפלים ב
+\begin_inset Formula $i$
+\end_inset
+
+ ואלה שלא 
+\begin_inset Formula 
+\[
+e^{xi}=\begin{cases}
+\frac{1}{1}-\frac{x^{2}}{2}+\frac{x^{4}}{4!}+...\\
++\left(\frac{x}{1}-\frac{x^{3}}{3!}+\frac{x^{5}}{5!}+...\right) & i
+\end{cases}
+\]
+
+\end_inset
+
+ואלה למעשה טורי טיילור של פונקציות 
+\begin_inset Formula $cos\left(x\right)$
+\end_inset
+
+ ו 
+\begin_inset Formula $sin\left(x\right)$
+\end_inset
+
+ ולכן 
+\begin_inset Formula 
+\[
+e^{xi}=cos\left(x\right)+i\cdot sin\left(x\right)
+\]
+
+\end_inset
+
+או בסימון מקוצר
+\begin_inset Formula 
+\[
+e^{xi}=cis\left(x\right)
+\]
+
+\end_inset
+
+כעת אם נציב 
+\begin_inset Formula $x=\pi$
+\end_inset
+
+ נקבל 
+\begin_inset Formula 
+\[
+e^{\pi i}=cos\left(\pi\right)+i\cdot sin\left(\pi\right)=-1+i\cdot0=-1
+\]
+
+\end_inset
+
+באופן מקביל אפשר להתייחס אל 
+\begin_inset Formula $r\cdot e^{\theta i}$
+\end_inset
+
+ בתור דרך הצגה אחרת של מספרים מרוכבים.
+ 
+\end_layout
+
+\begin_layout Standard
+אפשר לראות כל מספר מרוכב כנקודה במישור המרוכב הדו-מימדי.
+ לכל נקודה כזאת נתבונן בישר ממנה לראשית הצירים )המספר המרוכב 
+\begin_inset Formula $0+0i$
+\end_inset
+
+( ונסמן ב 
+\begin_inset Formula $\theta$
+\end_inset
+
+ את הזווית מהישר לציר 
+\begin_inset Formula $x$
+\end_inset
+
+ וב 
+\begin_inset Formula $r$
+\end_inset
+
+ את האורך של הישר.
+ במילים אחתרחקים מהראשית על הציר הממשי )"ציר 
+\begin_inset Formula $x$
+\end_inset
+
+"( לפי 
+\begin_inset Formula $r$
+\end_inset
+
+ ואז "מסתובבים" בזווית 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ הצגה זו 
+\begin_inset Formula $\left(r,\theta\right)$
+\end_inset
+
+ נקראית - "הצגה פולרית" או "הצגה קובטית".
+\end_layout
+
+\begin_layout Standard
+אם נעשה את החשבון )לא נעשה אותו כעת( נוכל לראות שהמעבר מהצגה זו להצגה ה"רגילה"
+ של 
+\begin_inset Formula $a+bi$
+\end_inset
+
+ ממירה נקודה בייצוג פולרי 
+\begin_inset Formula $\left(r,\theta\right)$
+\end_inset
+
+ לנקודה 
+\begin_inset Formula 
+\[
+r\left(cos\left(\theta\right)+i\cdot sin\left(\theta\right)\right)=r\cdot e^{\theta i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אם נתיחחס למקרה הפרטי בו 
+\begin_inset Formula $r=1$
+\end_inset
+
+ נקבל ש 
+\begin_inset Formula $e^{xi}$
+\end_inset
+
+ מייצג למעשה נקודות על מעגל היחידה )המרחק 
+\begin_inset Formula $r$
+\end_inset
+
+ מהראשית הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+, הזווית היא המשתנה(.
+\end_layout
+
+\begin_layout Standard
+הבצגה הזאת כפל של מספרים מרוכבים נעשה פשוט וברור יותר 
+\begin_inset Formula 
+\[
+z_{1}=r_{1}\cdot cis\left(\theta_{1}\right),\ z_{2}=r_{2}\cdot cis\left(\theta_{2}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+z_{1}\cdot z_{2}=r_{1}\cdot e^{\theta_{1}i}\cdot r_{2}\cdot e^{\theta_{2}i}=\left(r_{1}r_{2}\right)e^{\left(\theta_{1}+\theta_{2}\right)i}=\left(r_{1}r_{2}\right)cis\left(\theta_{1}+\theta_{2}\right)
+\]
+
+\end_inset
+
+ובאותו אופן נקבל שהעלאה בריבוע של 
+\begin_inset Formula $e^{\theta i}$
+\end_inset
+
+ תיתן 
+\begin_inset Formula 
+\[
+e^{\theta i}\cdot e^{\theta i}=e^{2\theta i}
+\]
+
+\end_inset
+
+אם נחזור לפרשנות הגיאומטרית שהכזרנו למעלה, המשמעות של פעולת העלאה בריבוע
+ היא סיבוב של נקודה על מעגל היחידה, זווית הסיבוב היא 
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+עבור מספר מרוכב כללי 
+\begin_inset Formula $r\cdot e^{\theta i}$
+\end_inset
+
+ העלאה בריבע תגרום לסיבוב הנקודה בזווית 
+\begin_inset Formula $\theta$
+\end_inset
+
+ ובנוסף להגדלת המרחק מהראשית פי 
+\begin_inset Formula $r$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+באופן כללי נוכל להראות באינדוקציה שהעלאה בחזקה היא
+\begin_inset Formula 
+\[
+\left(e^{\theta i}\right)^{n}=e^{n\theta i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הערה: ההצגה לא יחידה שהרי 
+\begin_inset Formula 
+\[
+r\cdot e^{\theta i}=r\cdot e^{\left(2\pi k+\theta\right)i}
+\]
+
+\end_inset
+
+עבור חזקות שלמות )כלומר 
+\begin_inset Formula $\left(r\cdot e^{\theta i}\right)^{n}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $n\in\mathbb{Z}$
+\end_inset
+
+( נקבל ש 
+\begin_inset Formula 
+\[
+\left(r\cdot e^{\theta i}\right)^{n}=r^{n}\cdot e^{n\theta i}=r^{n}\cdot e^{2\pi nk+n\theta i}=\left(r\cdot e^{2\pi k+\theta i}\right)^{n}
+\]
+
+\end_inset
+
+ולכן יש לנו סוג של "סגירות" תחת 
+\begin_inset Formula $+2\pi k$
+\end_inset
+
+ ולכן חוסר היחידות לא באמת מהווה בעיה.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+אבל עבור חזקות לא שלמות נקבל שיש לנו בעיה של הגדרה, למעשה ההצגה הזאת לא
+ לגמרי מוגדרת היטב.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+ערך מוחלט מוגדר כ
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+נסמן ב 
+\begin_inset Formula $\bar{z}$
+\end_inset
+
+ את המספר ה"צמוד" ל
+\begin_inset Formula $z$
+\end_inset
+
+.
+ כלומר 
+\begin_inset Formula $z=a+bi\Rightarrow\bar{z}=a-bi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left|z\right|=\begin{cases}
+\left|a+bi\right| & =\sqrt{a^{2}+b^{2}}=\sqrt{z\cdot\bar{z}}\\
+\left|r\cdot cis\left(\theta\right)\right| & =r
+\end{cases}
+\]
+
+\end_inset
+
+אפשר לומר שהערך המוחלט מודד את המרחק מהמספר 
+\begin_inset Formula $0$
+\end_inset
+
+ ולכן, בהתאם להסבר הגיאומטרי לעיל, מתבקש שאכן בהצגה הזאת נקבל שהוא פשוט
+ שווה ל 
+\begin_inset Formula $r$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+הגדרה: פולינום מרוכב 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+עבור 
+\begin_inset Formula $\theta$
+\end_inset
+
+- פרמטר קבוע כלשהו.
+ נסמן 
+\begin_inset Formula 
+\[
+x=e^{\theta i}
+\]
+
+\end_inset
+
+נקבל ש 
+\begin_inset Formula 
+\[
+x^{k}=e^{k\theta i}
+\]
+
+\end_inset
+
+נשים לב שעבור "סיבוב" אחד של 
+\begin_inset Formula $x$
+\end_inset
+
+ על מעגל היחידה 
+\begin_inset Formula $x^{k}$
+\end_inset
+
+ יבצע 
+\begin_inset Formula $k$
+\end_inset
+
+ "סיבובים".
+ כלומר עבור הערכים 
+\begin_inset Formula $\theta\in\left[0,2\pi\right]$
+\end_inset
+
+ שעבורם המשתנה 
+\begin_inset Formula $x$
+\end_inset
+
+ יתן את כל הערכים על מעגל היחידה פעם אחת, 
+\begin_inset Formula $x^{k}$
+\end_inset
+
+ יתן את כל הערכים, כל אחד 
+\begin_inset Formula $k$
+\end_inset
+
+ פעמים.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+העשרה
+\end_layout
+
+\begin_layout Paragraph*
+המשפט היסודי של האלגברה )עבור 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+לכל פולינום 
+\begin_inset Formula $p\left(x\right)\in\mathbb{R}\left[\text{x}\right]$
+\end_inset
+
+ )פולינום עם מקדמים מ 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+( יש שורש.
+ כלומר קיים 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $p\left(x_{0}\right)=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Verse
+ההוכחה תושלם כשיהיה לי זמן )זה לא חלק מהחומר פשוט עדן אמר ש"חבל לדלג על
+ זה.
+ זאת הכוחה ממש יפה"(
+\end_layout
+
+\begin_layout Subsubsection*
+טורי פורייה והתמרת פורייה על רגל אחת
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $15.11.15$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נתעסק במרחב הוקטורי של פונקציות מהסוג 
+\begin_inset Formula 
+\[
+f:\left[-\pi,\pi\right]\rightarrow\mathbb{R}
+\]
+
+\end_inset
+
+כאשר חיבור פונקציות מוגדר 
+\begin_inset Formula 
+\[
+\left(f+g\right)\left(x\right)=f\left(x\right)+g\left(x\right)
+\]
+
+\end_inset
+
+וכפל בסקלר באופן דומה 
+\begin_inset Formula 
+\[
+\left(\lambda f\right)\left(x\right)=\lambda\cdot f\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הגדרה: מרחב מטרי הוא מרחב שבו הוספנו פונקציית מרחק בין איברים במרחב )מטרי
+ מלשון "מטר" כלומר דרך למדוד מרחקים(
+\end_layout
+
+\begin_layout Description
+תזכורת: מרחב מכפלה פנימית הוא מרחב וקטורי שהוספנו לו אפשרות של כפל בעל תכונות
+ מסויימות המכונה "מכפלה פנימית".
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+המכפלה הפנימית מאפשר גם למדוד אורכים/גדלים של איברים במרחב.
+ גודל זה נקרא "נורמה".
+\end_layout
+
+\begin_layout Standard
+ניתן להגדיר פונקציית מרחק/מטריקה בעזרת הנורמה - המרחק בין איברים יוגדר להיות
+ ההפרש בין הנורמות.
+\end_layout
+
+\end_deeper
+\begin_layout Description
+במקרה
+\begin_inset space ~
+\end_inset
+
+שלנו: המכפלה הפנימית מוגדרת להיות
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+ההגדרה היא רק עבור 
+\begin_inset Formula $\left[-\pi,\pi\right]$
+\end_inset
+
+ כי צמצמנו את המרחב לתחום הזה בלבד
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\left\langle f,g\right\rangle =\intop_{-\pi}^{\pi}f\left(x\right)g\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+המטריקה שמקבלים ממכפלה פנימית זו נקראית מטריקה 
+\begin_inset Formula $L_{2}$
+\end_inset
+
+ )עבור פונקציות(
+\end_layout
+
+\begin_layout Standard
+והיא מוגדרת באופן הבא 
+\begin_inset Formula 
+\[
+\left\Vert f-g\right\Vert _{2}=\sqrt{\intop_{-\pi}^{\pi}\left|f\left(x\right)-g\left(x\right)\right|^{2}dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+והיא למעשה מהווה הרחבה )עבור פונקציות( של פונקציית המרחק האוקלידית המוכרת
+ בין שתי נקודות במרחב דו-מימדי.
+\end_layout
+
+\end_deeper
+\begin_layout Description
+משפט: אם נצמצם את המרחב לפונקציות "נחמדות"
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+חסומות, אינטגרביליות ובעלות מספר סופי של נקודות אי-רציפות וקיצון
+\end_layout
+
+\end_inset
+
+ אזי ניתן להגדיר למרחב בסיס אורתונורמלי
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+נשים לב שהמרחב, בניגוד לרוב המרחבים שהתעסקנו בהם באלגברה, הוא אינסוף מימדי,
+ ולכן גם הבסיס יהיה אינסופי
+\end_layout
+
+\end_inset
+
+ מהצורה 
+\begin_inset Formula 
+\[
+\frac{1}{2\sqrt{\pi}},\ \frac{1}{\sqrt{\pi}}\cos x,\ \frac{1}{\sqrt{\pi}}\sin x,\ \frac{1}{\sqrt{\pi}}\cos\left(2x\right),\ \frac{1}{\sqrt{\pi}}\sin\left(2x\right),...
+\]
+
+\end_inset
+
+או בכתיב אחר 
+\begin_inset Formula 
+\[
+B=\left\{ \frac{1}{2\sqrt{\pi}}\right\} \cup\left\{ \frac{1}{\sqrt{\pi}}\cos\left(nx\right)|n\in\mathbb{N}\right\} \cup\left\{ \frac{1}{\sqrt{\pi}}\sin\left(nx\right)|n\in\mathbb{N}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+המשמעות היא שכל פונקציה "נחמדה" ניתנן לייצג כסכום של 
+\begin_inset Formula $\frac{1}{2\sqrt{\pi}}$
+\end_inset
+
+ ופונקציות מהצורה 
+\begin_inset Formula $\frac{1}{\sqrt{\pi}}\cos\left(nx\right),\frac{1}{\sqrt{\pi}}\sin\left(nx\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+למעשה כפי שראינו באלגברה ניתן גם לבטא הצגה זו באופן מפורש 
+\begin_inset Formula 
+\[
+f\left(x\right)=\left(\intop_{-\pi}^{\pi}\frac{1}{2\sqrt{\pi}}f\left(t\right)dt\right)\frac{1}{2\sqrt{\pi}}+
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{\text{n}=1}^{\infty}\left(\intop_{-\pi}^{\pi}\frac{1}{\sqrt{\pi}}\cos\left(nt\right)f\left(t\right)dt\right)\frac{1}{\sqrt{\pi}}\cos\left(nx\right)+
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{n=1}^{\infty}\left(\intop_{-\pi}^{\pi}\frac{1}{\sqrt{\pi}}\sin\left(nt\right)f\left(t\right)dt\right)\frac{1}{\sqrt{\pi}}\sin\left(nx\right)
+\]
+
+\end_inset
+
+טור פורייה
+\end_layout
+
+\begin_layout Standard
+תזכורת: כאשר עסקנו בכפל פולינומים ראינו ש 
+\begin_inset Formula 
+\[
+a\left(x\right)b\left(x\right)=\sum c_{k}x^{k}
+\]
+
+\end_inset
+
+כאשר 
+\begin_inset Formula 
+\[
+c_{k}=\sum_{i=0}^{k}a_{i}b_{k-i}
+\]
+
+\end_inset
+
+ורצינו למצוא את המקדמים 
+\begin_inset Formula $c_{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+המטרה שלנו היא לנסות להמיר את הפולינומים שלנו לייצוג של טורי פורייה )נראה
+ תכף מה זה( ובמקרה הזה יהיה לנו הרבה יותר קל לחשב את המקדמים.
+\end_layout
+
+\begin_layout Standard
+ראינו ש 
+\begin_inset Formula $e^{xi}=cos\left(x\right)+i\cdot sin\left(x\right)$
+\end_inset
+
+ על ידי העברת אגפים ועל פי זהויות טריגונומטריות נקבל ש 
+\begin_inset Formula 
+\[
+cos\left(x\right)=\frac{e^{xi}-e^{-xi}}{2},sin\left(x\right)=\frac{e^{xi}-e^{-xi}}{2i}
+\]
+
+\end_inset
+
+נציב ערכים אלו בהצגה שראינו מקודם של 
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+ ונקבל 
+\begin_inset Formula 
+\[
+f\left(x\right)=\frac{1}{2\sqrt{\pi}}\sum_{n=-\infty}^{\infty}c_{n}e^{nxi}
+\]
+
+\end_inset
+
+כאשר 
+\begin_inset Formula 
+\[
+c_{n}=\intop_{-\pi}^{\pi}e^{-nti}f\left(t\right)dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הערה: הפונקציה שמקבלת 
+\begin_inset Formula $f$
+\end_inset
+
+ ומחזירה פונקציה 
+\begin_inset Formula $F\left(n\right):=c_{n}$
+\end_inset
+
+ נקראת התמרת פורייה
+\end_layout
+
+\begin_layout Standard
+כדי להרחב את ההגדרה ולייצג פונקציה מהצורה 
+\begin_inset Formula $f:\mathbb{R}\rightarrow\mathbb{R}$
+\end_inset
+
+ מה שעושים זה להגדיר פונקציה מהצורה 
+\begin_inset Formula $f:\left[-k,k\right]\rightarrow\mathbb{R}$
+\end_inset
+
+ ומשאיפים את 
+\begin_inset Formula $k$
+\end_inset
+
+ לאינסוף.
+ לאחר חישובים רבים שנוותר עליהם מקבלים ש 
+\begin_inset Formula 
+\[
+f\left(x\right)=\intop_{-\infty}^{\infty}\hat{f}\left(\xi\right)e^{-2\pi xi\xi}d\xi
+\]
+
+\end_inset
+
+כאשר 
+\begin_inset Formula 
+\[
+\hat{f}\left(\xi\right)=\intop_{-\infty}^{\infty}f\left(x\right)e^{2\pi xi\xi}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הגדרה: קונבולוציה
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula $f,g$
+\end_inset
+
+ פונקציות הקונבולוציה של 
+\begin_inset Formula $f$
+\end_inset
+
+ ו 
+\begin_inset Formula $g$
+\end_inset
+
+ מוגדרת להיות 
+\begin_inset Formula 
+\[
+\left(f\star g\right)\left(x\right)=\int_{-\infty}^{\infty}f\left(y\right)g\left(x-y\right)dy
+\]
+
+\end_inset
+
+אפשר להסתכל על קונבולוגציה כעל מעין הרחבה של כפל טורים למקרה הרציף.
+\end_layout
+
+\begin_layout Standard
+משפט: משפט הקונבולוציה
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\left(fg\right)}\left(\xi\right)=\left(\hat{f}\star\hat{g}\right)\left(\xi\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\hat{\left(f\star g\right)}\left(\xi\right)=\left(\hat{f}\hat{g}\right)\left(\xi\right)
+\]
+
+\end_inset
+
+)ניסוח אחר אבל מעט שונה אומר שהתמרת פורייה של קונבולוציה של שתי פונקציות
+ שווה למכפלת ההתמרות(
+\end_layout
+
+\begin_layout Standard
+למה: לכל 
+\begin_inset Formula $x_{1},...,x_{d}$
+\end_inset
+
+ שונים זה מזה ו 
+\begin_inset Formula $y_{1},...,y_{d}$
+\end_inset
+
+ )לאו דווקא שונים( קיים פולינום יחיד מדרגה 
+\begin_inset Formula $d-1\geq$
+\end_inset
+
+ 
+\begin_inset Formula $p\left(x\right)$
+\end_inset
+
+ כך ש 
+\begin_inset Formula 
+\[
+\forall1\leq k\leq d:\ p\left(x_{k}\right)=y_{k}
+\]
+
+\end_inset
+
+מקרה פרטי של הלמה הזאת - בין כל שתי נקודות 
+\begin_inset Formula $\left(x_{1},y_{1}\right),\left(x_{2},y_{2}\right)$
+\end_inset
+
+ עובר קיו ישר אחד )פולינום ממעהל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $1$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+בהינתן
+\end_layout
+
+\begin_layout Standard
+בחזרה לכפל פולינומים
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $19.11.15$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
