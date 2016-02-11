@@ -5104,6 +5104,10 @@ f\left(x\right)=\intop_{-\infty}^{\infty}\hat{f}\left(\xi\right)e^{-2\pi xi\xi}d
 \end_layout
 
 \begin_layout Standard
+כפי שנראה בהמשך
+\end_layout
+
+\begin_layout Standard
 למה: לכל 
 \begin_inset Formula $x_{1},...,x_{d}$
 \end_inset
@@ -5164,7 +5168,575 @@ f\left(x\right)=\intop_{-\infty}^{\infty}\hat{f}\left(\xi\right)e^{-2\pi xi\xi}d
 \end_layout
 
 \begin_layout Standard
-בהינתן
+מסקנה: ניתן לייצג פולינום ממעלה 
+\begin_inset Formula $n$
+\end_inset
+
+ על ידי רשימה של 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $x_{1},...,x_{n+1}$
+\end_inset
+
+ שונים זה מזה ורשימה של ערך הפולינום עבור ערכי 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ אלו.
+\end_layout
+
+\begin_layout Standard
+נשים לב שעבור שני פולינומים 
+\begin_inset Formula $a\left(x\right),b\left(x\right)$
+\end_inset
+
+ ותוצאת המכפלה שלהם 
+\begin_inset Formula $a\left(x\right)b\left(x\right)=c\left(x\right)$
+\end_inset
+
+ אם נחשב בנקודה מסויימת את הערך של 
+\begin_inset Formula $y_{a}=a\left(x_{0}\right)$
+\end_inset
+
+ ואת הערך של 
+\begin_inset Formula $y_{b}=b\left(x_{0}\right)$
+\end_inset
+
+ הערך שנקבל מהפולינום 
+\begin_inset Formula $c\left(x\right)$
+\end_inset
+
+ בנקודה זו שווה למכפלת התוצואת כלומר 
+\begin_inset Formula 
+\[
+c\left(x_{0}\right)=y_{a}y_{b}
+\]
+
+\end_inset
+
+ולכן אם נמיר את הייצוג הנוכחי של הפולינום כרשימת מקדמים לייצוג כרשימת ערכים
+ )עבור רשימת 
+\begin_inset Formula $x$
+\end_inset
+
+-ים שנבחרו מראש( נוכל לקבל את 
+\begin_inset Formula $c\left(x\right)$
+\end_inset
+
+ בייצוג כרשימת ערכים בקלות רבה.
+ 
+\end_layout
+
+\begin_layout Standard
+אם נבחר את רשימת ה
+\begin_inset Formula $x$
+\end_inset
+
+-ים באופן אקראי, חישוב ערך פולינום ממעלה 
+\begin_inset Formula $n$
+\end_inset
+
+ בנקודה 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ כלשהי דורש 
+\begin_inset Formula $\mathcal{O}\left(n\right)$
+\end_inset
+
+ פעולות העלאה בחזקה ו 
+\begin_inset Formula $\mathcal{O}\left(n\right)$
+\end_inset
+
+ פעולות חיבור.
+ אפילו אם נתייחס אל העלאה בחזקה בתור פעולה בזמן 
+\begin_inset Formula $\mathcal{O}\left(1\right)$
+\end_inset
+
+ עדיין נקבל שעלינו לבצע 
+\begin_inset Formula $\mathcal{O}\left(n\right)$
+\end_inset
+
+ פעולות לכל 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ ויש לנו 
+\begin_inset Formula $n+1$
+\end_inset
+
+ כאלה ולכן נקבל לכל הפחות 
+\begin_inset Formula $\mathcal{O}\left(n^{2}\right)$
+\end_inset
+
+ כמו באלגוריתם הנאיבי.
+\end_layout
+
+\begin_layout Standard
+הטריק הוא צריך למצוא רשימת 
+\begin_inset Formula $x$
+\end_inset
+
+-ים שתאפשר לנו חישוב מהיר של ערכי 
+\begin_inset Formula $a\left(x\right),b\left(x\right)$
+\end_inset
+
+ עבורם.
+\end_layout
+
+\begin_layout Standard
+בהינתן פולינום נפצל אותו לחזקות זוגיות וחזקות אי-זוגיות 
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+a\left(x\right) & = & a_{0}+a_{1}x+a_{2}x^{2}+a_{3}x^{3}+...\\
+ & = & \left(a_{0}+a_{2}x^{2}+a_{4}x^{4}+...\right)\\
+ &  & +\left(a_{1}x+a_{3}x^{3}+a_{5}x^{5}+...\right)\\
+ & = & \left(a_{0}+a_{2}x^{2}+a_{4}x^{4}+...\right)\\
+ &  & +x\left(a_{1}+a_{3}x^{2}+a_{5}x^{4}+...\right)\\
+ & = & \left(a_{0}+a_{2}\left(x^{2}\right)+a_{4}\left(x^{2}\right)^{2}+...\right)\\
+ &  & +x\left(a_{1}+a_{3}\left(x^{2}\right)+a_{5}\left(x^{2}\right)^{2}+...\right)
+\end{array}
+\]
+
+\end_inset
+
+כפי שניתן לראות קיבלנו בתור הסוגריים שני פולינומים שהמשתנה בהם הוא 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+ נקרא לראשון 
+\begin_inset Formula $a_{even}\left(x\right)$
+\end_inset
+
+ ולשני 
+\begin_inset Formula $a_{odd}\left(x\right)$
+\end_inset
+
+.
+ כלומר 
+\begin_inset Formula 
+\[
+a_{odd}\left(x\right)=a_{0}+a_{2}x+a_{4}x^{2}+...
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+a_{even}\left(x\right)=a_{1}+a_{3}x+a_{5}x^{2}+...
+\]
+
+\end_inset
+
+הפולינום שלנו מתקבל מהם באופן הבא 
+\begin_inset Formula 
+\[
+a\left(x\right)=a_{even}\left(x^{2}\right)+x\cdot a_{odd}\left(x^{2}\right)
+\]
+
+\end_inset
+
+ בכך פיצלנו את 
+\begin_inset Formula $a\left(x\right)$
+\end_inset
+
+ לשני פולינומים צדרגה 
+\begin_inset Formula $\frac{n}{2}\geq$
+\end_inset
+
+.
+ השלב הבא והמתבקש יהיה להשתמש ברקורסיה כדי לחשב את הערכים עבור הפולינומים
+ החדשים.
+\end_layout
+
+\begin_layout Standard
+כעת נשים לב שמאחר והמשתנה של הפולינומים החדשים הוא 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+ הם נותנים את אותו ערך עבור 
+\begin_inset Formula $\pm x_{0}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ משום כך אם נרכיב את רשימת ה
+\begin_inset Formula $x$
+\end_inset
+
+-ים שלנו מזוגות של מספרים הופכיים, נצטרך לחשב רק חצי מהערכים ונחסוך זמן.
+\end_layout
+
+\begin_layout Standard
+אילו 
+\begin_inset Formula $x$
+\end_inset
+
+-ים נבחר?
+\end_layout
+
+\begin_layout Standard
+נתבונן במקרים הבסיסיים:
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula $n=1$
+\end_inset
+
+ נבחר 
+\begin_inset Formula $x_{1}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula $n=2$
+\end_inset
+
+ אז נבחר 
+\begin_inset Formula $x_{1}=1,x_{2}=-1$
+\end_inset
+
+ וכפי שראינו נחסוך כך חצי מהפעולות על ידי רקורסיה.
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula $n=4$
+\end_inset
+
+ אנו מעוניינים בזוגות של ערכים שכל זוג הוא מסוג 
+\begin_inset Formula $\pm x$
+\end_inset
+
+.
+ בנוסף נרצה לאפשר קריאה לרקורסיה כלומר אם 
+\begin_inset Formula $x$
+\end_inset
+
+ ברשימה נרצה לחשב את הפולינומים 
+\begin_inset Formula $a_{odd}\left(x\right),a_{even}\left(x\right)$
+\end_inset
+
+ עבור 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+.
+ הפולינומים האלה הם מדרגה 
+\begin_inset Formula $n=2$
+\end_inset
+
+ ולכן נרצה שעבורם נקבל את הערכים 
+\begin_inset Formula $\pm1$
+\end_inset
+
+ כלומר נרצה ש 
+\begin_inset Formula $x^{2}=\pm1$
+\end_inset
+
+ ולכן נבחר 
+\begin_inset Formula 
+\begin{eqnarray*}
+x^{2}= & \pm1\\
+\Rightarrow &  & x_{1},x_{2}=\sqrt{1}\\
+ &  & x_{3},x_{4}=\sqrt{-1}\\
+\Rightarrow &  & x_{1}=1,x_{2}=-1\\
+ &  & x_{3}=i,x_{4}=-i
+\end{eqnarray*}
+
+\end_inset
+
+כאמור בחרנו ב 
+\begin_inset Formula $n=2$
+\end_inset
+
+ את 
+\begin_inset Formula $\pm1$
+\end_inset
+
+ כלומר 
+\begin_inset Formula $x$
+\end_inset
+
+-ים המקיימים 
+\begin_inset Formula $x^{2}=1$
+\end_inset
+
+ ולכן במקרה של 
+\begin_inset Formula $n=4$
+\end_inset
+
+ למעשה נבחר את
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הערכים המקיימים 
+\begin_inset Formula 
+\[
+\left(x^{2}\right)^{2}=x^{4}=1
+\]
+
+\end_inset
+
+או במילים אחרות נבחר את את השורשים מסדר 
+\numeric on
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של 
+\begin_inset Formula $1$
+\end_inset
+
+ ב 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+באופן כללי עבור 
+\begin_inset Formula $n$
+\end_inset
+
+ כלשהו נבחר את 
+\begin_inset Formula $n$
+\end_inset
+
+ השורישים מסדר 
+\begin_inset Formula $n$
+\end_inset
+
+ של 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ לשם כך נגדיר:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\omega=e^{\frac{1}{n}2\pi i}
+\]
+
+\end_inset
+
+כזכור הפרשנות הגיאומטרית של 
+\begin_inset Formula $e^{xi}$
+\end_inset
+
+ היא נקודה על מעגל היחידה בזווית 
+\begin_inset Formula $x$
+\end_inset
+
+ ולכן מאחר וזווית 
+\begin_inset Formula $2\pi$
+\end_inset
+
+ מתארת מעגל שלם 
+\begin_inset Formula $x=\nicefrac{2\pi}{n}$
+\end_inset
+
+ מתארת זווית שהיא 
+\begin_inset Formula $\frac{1}{n}$
+\end_inset
+
+ ממעגל שלם.
+ 
+\end_layout
+
+\begin_layout Standard
+נשים לב שמתקיים 
+\begin_inset Formula 
+\[
+\omega^{k}=\left(e^{\frac{1}{n}2\pi i}\right)^{k}=e^{\frac{k}{n}2\pi i}
+\]
+
+\end_inset
+
+וקיבלנו, בדומה להסבר הקודם, זווית שהיא 
+\begin_inset Formula $\frac{n}{k}$
+\end_inset
+
+ ממעגל שלם.
+ ולכן אם נתבונן בקבוצה 
+\begin_inset Formula 
+\[
+\left\{ \omega^{k}|k=0,...,n-1\right\} 
+\]
+
+\end_inset
+
+נקבל בעצם חלוקה של מעגל היחידה ל
+\begin_inset Formula $n$
+\end_inset
+
+ חלקים כאשר הקבוצה היא אוסף הנקודות על המעגל המתאימות לחלוקה שכזאת.
+\end_layout
+
+\begin_layout Standard
+לדוגמה - עבור 
+\begin_inset Formula $n=4$
+\end_inset
+
+ נקבל פשוט חלוקה של המעגל ל
+\numeric on
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ולכן נקבל 
+\begin_inset Formula 
+\[
+\left\{ e^{0i},e^{\nicefrac{\pi}{2}i},e^{\pi i},e^{\nicefrac{3\pi}{2}i}\right\} =\left\{ 1,i,-1,-i\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נבחר אם כן, בתור הרשימה 
+\begin_inset Formula $x_{0},..,x_{n-1}$
+\end_inset
+
+ את הרשימה 
+\begin_inset Formula $\omega^{0},...,\omega^{n-1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+עבור 
+\begin_inset Formula $x$
+\end_inset
+
+-ים אלו מתקיים:
+\end_layout
+
+\begin_layout Itemize
+הערכים מתחלקים לזוגות 
+\begin_inset Formula 
+\[
+x_{k+\frac{n}{2}}=\omega^{k+\frac{n}{2}}=\omega^{k}\omega^{\frac{n}{2}}=\omega^{k}e^{\frac{n}{2}\frac{1}{n}2\pi i}=\omega^{k}e^{\pi i}=-\omega^{k}=-x_{k}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
