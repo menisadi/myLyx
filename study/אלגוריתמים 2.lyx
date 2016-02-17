@@ -24,6 +24,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement !tph
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -4753,6 +4754,16 @@ status open
 
 \end_layout
 
+\begin_layout Description
+הערה: המבוא הזה, להבנתי, לא לגמרי נחוץ כדי להבין איך ולמה אלגוריתם 
+\begin_inset Formula $FFT$
+\end_inset
+
+ עובד.
+ למי שאין כוח להתעמק בהקשר הרחב יותר של התמרת פורייה אפשר לדלג עד הכותרת
+ "בחזרה לפולינומים"
+\end_layout
+
 \begin_layout Standard
 נתעסק במרחב הוקטורי של פונקציות מהסוג 
 \begin_inset Formula 
@@ -5105,6 +5116,10 @@ f\left(x\right)=\intop_{-\infty}^{\infty}\hat{f}\left(\xi\right)e^{-2\pi xi\xi}d
 
 \begin_layout Standard
 כפי שנראה בהמשך
+\end_layout
+
+\begin_layout Subsubsection*
+בחזרה לפולינומים
 \end_layout
 
 \begin_layout Standard
@@ -5727,8 +5742,20 @@ x^{2}= & \pm1\\
 -ים אלו מתקיים:
 \end_layout
 
-\begin_layout Itemize
-הערכים מתחלקים לזוגות 
+\begin_layout Enumerate
+הערכים מתחלקים לזוגות כלומר לכל 
+\begin_inset Formula $x^{k}$
+\end_inset
+
+ קיים 
+\begin_inset Formula $x^{j}$
+\end_inset
+
+ יחיד שעבורו 
+\begin_inset Formula $-x^{k}=x^{j}$
+\end_inset
+
+ 
 \begin_inset Formula 
 \[
 x_{k+\frac{n}{2}}=\omega^{k+\frac{n}{2}}=\omega^{k}\omega^{\frac{n}{2}}=\omega^{k}e^{\frac{n}{2}\frac{1}{n}2\pi i}=\omega^{k}e^{\pi i}=-\omega^{k}=-x_{k}
@@ -5739,7 +5766,79 @@ x_{k+\frac{n}{2}}=\omega^{k+\frac{n}{2}}=\omega^{k}\omega^{\frac{n}{2}}=\omega^{
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
+גם אם נעלה בריבוע את הסדרה היא עדיין תתחלק לזוגות.
+ כלומר לכל 
+\begin_inset Formula $\left(x^{k}\right)^{2}$
+\end_inset
+
+ קיים איבר בסדרה 
+\begin_inset Formula $x^{j}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\left(x^{j}\right)^{2}=-\left(x^{k}\right)^{2}$
+\end_inset
+
+.
+ נשים לב שכאשר אנו מעלים בריבוע את כל אברי הסדרה, בגלל תכונה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ומאחר ו 
+\begin_inset Formula $x=-y\Rightarrow x^{2}=y^{2}$
+\end_inset
+
+ נקבל סדרה קצרה בחצי מזו שהיית לנו )בהנחה שאנחנו לא סופרים כפילויות(.
+\end_layout
+
+\begin_layout Subsubsection*
 בחזרה לכפל פולינומים
 \begin_inset Marginal
 status open
@@ -5754,6 +5853,498 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+נתון פולינום 
+\begin_inset Formula 
+\[
+a\left(x\right)=a_{0}+a_{1}x+...+a_{n-1}x^{n-1}
+\]
+
+\end_inset
+
+כזכור רצינו לבחור 
+\begin_inset Formula $x_{0},...,x_{n-1}$
+\end_inset
+
+ ולחשב את 
+\begin_inset Formula 
+\[
+\forall0\leq i\leq n-1:\ A_{i}=a\left(x_{i}\right)
+\]
+
+\end_inset
+
+ובחרנו את 
+\begin_inset Formula 
+\[
+x_{k}=\omega^{k}=e^{\frac{2\pi i}{n}k}
+\]
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $\omega$
+\end_inset
+
+ הוא שורש יחידה מסדר 
+\begin_inset Formula $n$
+\end_inset
+
+ והסדרה למעשה יוצרת "חלוקה" של מעגל היחידה ל
+\begin_inset Formula $n$
+\end_inset
+
+ חלקים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/meni/Downloads/fig853_02.jpg
+	scale 35
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+דוגמה עבור 
+\begin_inset Formula $n=$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+נציב כעת ערך זה בפולינום ונקבל 
+\begin_inset Formula 
+\[
+A_{k}=a\left(\omega^{k}\right)=a\left(e^{\frac{2\pi i}{n}k}\right)=\sum_{j=0}^{n-1}a_{j}\left(e^{\frac{2\pi i}{n}k}\right)^{j}
+\]
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+תזכורת )למי שראה( בטורי פורייה מקדמי פורייה היו דומים למדי לביטוי הזה
+\begin_inset Formula 
+\[
+\hat{f}\left(k\right)=\intop_{-\infty}^{\infty}f\left(x\right)e^{-2\pi kix}dx
+\]
+
+\end_inset
+
+ומכאן הקשר להתמרת פורייה.
+ אנו עושים שימוש במשהו שדומה לגרסה דיסקרטית של התמרת פורייה
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כפי שראינו ניתן להציג את הפולינום כצירוף של שני פולינומים במשתנה 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+a\left(x\right)=a_{even}\left(x^{2}\right)+x\cdot a_{odd}\left(x^{2}\right)
+\]
+
+\end_inset
+
+עבור 
+\begin_inset Formula $x=\omega^{k}$
+\end_inset
+
+ נקבל 
+\begin_inset Formula 
+\[
+a\left(\omega^{k}\right)=a_{even}\left(\left(\omega^{k}\right)^{2}\right)+\omega^{k}\cdot a_{odd}\left(\left(\omega^{k}\right)^{2}\right)
+\]
+
+\end_inset
+
+מאחר ו 
+\begin_inset Formula $\omega$
+\end_inset
+
+ הוא שורש יחידה מסדר 
+\begin_inset Formula $n$
+\end_inset
+
+ 
+\begin_inset Formula $\omega^{2}$
+\end_inset
+
+ הוא שורש יחידה מסדר 
+\begin_inset Formula $\frac{n}{2}$
+\end_inset
+
+ ולכן כפי שראינו מתקיים 
+\begin_inset Formula 
+\[
+\left(\omega^{k}\right)^{2}=\left(\omega^{2}\right)^{k}=\left(\omega^{2}\right)^{k+\frac{n}{2}}=\left(\omega^{k+\frac{n}{2}}\right)^{2}
+\]
+
+\end_inset
+
+ולכן כאשר נרצה לחשב את 
+\begin_inset Formula $a\left(\omega^{k}\right)$
+\end_inset
+
+ נחשב רקורסיבית את 
+\begin_inset Formula $a_{even}\left(\left(\omega^{k}\right)^{2}\right),\ a_{odd}\left(\left(\omega^{k}\right)^{2}\right)$
+\end_inset
+
+ כאשר בקריאה הרקורסיבית 
+\begin_inset Formula 
+\[
+a_{even}\left(\left(\omega^{2}\right)^{k}\right)=a_{even}\left(\left(\omega^{2}\right)^{k+\frac{n}{2}}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+a_{odd}\left(\left(\omega^{2}\right)^{k}\right)=a_{odd}\left(\left(\omega^{2}\right)^{k+\frac{n}{2}}\right)
+\]
+
+\end_inset
+
+מאחר ואנו מעוניינים לחשב את 
+\begin_inset Formula 
+\[
+a_{even}\left(\left(\omega^{2}\right)^{k}\right),a_{odd}\left(\left(\omega^{2}\right)^{k}\right),\ k=0,...,n-1
+\]
+
+\end_inset
+
+נוכל לחשבת 
+\begin_inset Formula 
+\[
+a_{even}\left(\left(\omega^{2}\right)^{k}\right),a_{odd}\left(\left(\omega^{2}\right)^{k}\right),\ k=0,...,\frac{n}{2}-1
+\]
+
+\end_inset
+
+ונקבל "בחינם", על פי השיוויון הקודם, את 
+\begin_inset Formula 
+\[
+a_{even}\left(\left(\omega^{2}\right)^{k}\right),a_{odd}\left(\left(\omega^{2}\right)^{k}\right),\ k=\frac{n}{2},...,n-1
+\]
+
+\end_inset
+
+ומכאן נקבל את 
+\begin_inset Formula 
+\[
+a\left(\omega^{k}\right)=a_{even}\left(\left(\omega^{k}\right)^{2}\right)+\omega^{k}\cdot a_{odd}\left(\left(\omega^{k}\right)^{2}\right),\ k=0,...,n-1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ובאופן הזה נחסוך חצי מהקריאות.
+\end_layout
+
+\begin_layout Subsubsection*
+אלגוריתם 
+\begin_inset Formula $FFT\left(a\left(\cdot\right),\omega\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר 
+\begin_inset Formula $a\left(\cdot\right)$
+\end_inset
+
+ נתון כסדרה של מקדמים.
+ 
+\begin_inset Formula $\omega=e^{\frac{2\pi i}{n}k}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $=n$
+\end_inset
+
+מספר המקדמים.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula $\omega=1=e^{\frac{2\pi i}{1}k}$
+\end_inset
+
+ : כלומר 
+\begin_inset Formula $a\left(\cdot\right)=a_{0}$
+\end_inset
+
+ ולכן נחזיר את 
+\begin_inset Formula $a_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+אחרת : 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נקרא ל 
+\begin_inset Formula $FFT\left(a_{even}\left(\cdot\right),\omega^{2}\right)$
+\end_inset
+
+ נקבל חזרה את 
+\begin_inset Formula 
+\[
+a_{even}\left(\left(\omega^{2}\right)^{0}\right),a_{even}\left(\left(\omega^{2}\right)^{1}\right),...,a_{even}\left(\left(\omega^{2}\right)^{\frac{n}{2}-1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+נקרא ל
+\begin_inset Formula $FFT\left(a_{odd}\left(\cdot\right),\omega^{2}\right)$
+\end_inset
+
+ נקבל חזרה את 
+\begin_inset Formula 
+\[
+a_{odd}\left(\left(\omega^{2}\right)^{0}\right),a_{odd}\left(\left(\omega^{2}\right)^{1}\right),...,a_{odd}\left(\left(\omega^{2}\right)^{\frac{n}{2}-1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+כעת עבור 
+\begin_inset Formula $k=0,...,n-1$
+\end_inset
+
+ נחשב ונחזיר:
+\begin_inset Formula 
+\[
+a\left(\omega^{k}\right)\leftarrow a_{even}\left(\left(\omega^{2}\right)^{k}\right)+\omega^{k}\cdot a_{odd}\left(\left(\omega^{2}\right)^{k}\right)
+\]
+
+\end_inset
+
+כאשר את הערכים 
+\begin_inset Formula $k=\frac{n}{2},...,n-1$
+\end_inset
+
+ מתקבלים ע"י 
+\begin_inset Formula 
+\[
+a_{even}\left(\left(\omega^{2}\right)^{k}\right)=a_{even}\left(\left(\omega^{2}\right)^{k+\frac{n}{2}}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+a_{odd}\left(\left(\omega^{2}\right)^{k}\right)=a_{odd}\left(\left(\omega^{2}\right)^{k+\frac{n}{2}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+ניתוח: נסמן את מספר הקריאות הרקורסיביות עבור 
+\begin_inset Formula $n$
+\end_inset
+
+ ב 
+\begin_inset Formula $T\left(n\right)$
+\end_inset
+
+.
+ בכל שלב יש שתי קריאות רקורסיביות לחישוב 
+\begin_inset Formula $a_{even}\left(\omega^{2}\right),a_{odd}\left(\omega^{2}\right)$
+\end_inset
+
+.
+ כפי שראינו בכל אחת מהקריאות מספר הקריאות הנדרשות לצורך החישוב קטנות בחצי.
+ כאשר אנו קוראים ל 
+\begin_inset Formula $a_{even}\left(\omega^{2}\right)$
+\end_inset
+
+ אנו נדרשים לחשב רק עבור 
+\begin_inset Formula $k=0,...,\frac{n}{2}-1$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+מלבד זאת בכל שלב עלינו לחשב את הסכום 
+\begin_inset Formula $a_{even}\left(\left(\omega^{2}\right)^{k}\right)+\omega^{k}\cdot a_{odd}\left(\left(\omega^{2}\right)^{k}\right)$
+\end_inset
+
+ עבור 
+\begin_inset Formula $k=0,...,n-1$
+\end_inset
+
+ כלומר 
+\begin_inset Formula $\mathcal{O}\left(n\right)$
+\end_inset
+
+ פעולות בכל שלב מעבר לקריאות הרקורסיביות.
+\begin_inset Newline newline
+\end_inset
+
+ולכן 
+\begin_inset Formula 
+\[
+T\left(n\right)=2T\left(\frac{n}{2}\right)+\mathcal{O}\left(n\right)\Rightarrow T\left(n\right)=\mathcal{O}\left(n\cdot log\left(n\right)\right)
+\]
+
+\end_inset
+
+דרך אחרת להבין את המעבר אחרון אפשר לראות שבכל שלב 
+\begin_inset Formula $n$
+\end_inset
+
+ קטן בחצי ולכן עומק הרקורסיה הוא 
+\begin_inset Formula $log\left(n\right)$
+\end_inset
+
+.
+ בכל רמה של עץ הרקורסיה יש
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+קריאות כל אחת מהן מגודל 
+\begin_inset Formula $\frac{n}{2}$
+\end_inset
+
+ ולכן כל רמה לוקחת 
+\begin_inset Formula $\mathcal{O}\left(n\right)$
+\end_inset
+
+ ולכן סה"כ כל הרמות יחד נקבל 
+\begin_inset Formula $\mathcal{O}\left(n\cdot log\left(n\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כעת, לאחר שחישבנו את ערכם של 
+\begin_inset Formula $a\left(\cdot\right)$
+\end_inset
+
+ ו
+\begin_inset Formula $b\left(\cdot\right)$
+\end_inset
+
+ ב 
+\begin_inset Formula $n$
+\end_inset
+
+ נקודות שונים, נוכל לחשב את 
+\begin_inset Formula $c\left(\cdot\right)=a\left(\cdot\right)b\left(\cdot\right)$
+\end_inset
+
+ באותם נקודות.
+ כעת כל שנותר הוא לחשב את המקדמים של 
+\begin_inset Formula $c\left(\cdot\right)$
+\end_inset
+
+ מתוך רשימה של 
+\begin_inset Formula $n$
+\end_inset
+
+ ערכים.
+ כלומר, מה שנותר לעשות הוא אינטרפולציה.
 \end_layout
 
 \end_body
