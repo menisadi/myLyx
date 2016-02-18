@@ -5596,8 +5596,228 @@ x^{2}= & \pm1\\
 .
 \end_layout
 
+\begin_layout Description
+הסבר
+\begin_inset space ~
+\end_inset
+
+איטואיטיבי
+\begin_inset space ~
+\end_inset
+
+למה
+\begin_inset space ~
+\end_inset
+
+שהולך
+\begin_inset space ~
+\end_inset
+
+לקרות
+\begin_inset space ~
+\end_inset
+
+עכשיו - כמו שאנחנו רואים במקרים הפרטיים שהצגנו עכשיו, נרצה לפעול באופן רקורסיבי.
+ ההפעלה של הפולינום על ערך 
+\begin_inset Formula $x$
+\end_inset
+
+ שקולה להפעלה של שני פולינומים )אחרים, מדרגה קטנה ממנו פי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\numeric off
+( על 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+.
+ משום כך בכל כניסה פנימה ברקורסיה אנחנו מעלים בריבוע את ה
+\begin_inset Formula $x$
+\end_inset
+
+-ים שלנו.
+ מה שנרצה שיקרה הוא שבכל שלב נקבל ערכים שמתחלקים לזוגות מהצורה 
+\begin_inset Formula $\pm x$
+\end_inset
+
+ כך שכאשר נעלה אותם בריבוע בשלב הבא התוצאה של הפעלת הפולינום על 
+\begin_inset Formula $\left(x\right)^{2}$
+\end_inset
+
+ שווה לתוצאה של הפעלה שלו על 
+\begin_inset Formula $\left(-x\right)^{2}$
+\end_inset
+
+ ונוכל לחשב רק אחד מהם ונחסוך חצי מהחישוב בכל רמה.
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
-באופן כללי עבור 
+בסיס הרקורסיה כמובן נבחר לחשב פולינום ממעלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על המספר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+.
+ לכן בשלב אחד לפני נבחר שני ערכים שאם נעלה אותם בריבוע נקבל 
+\begin_inset Formula $1$
+\end_inset
+
+ כלומר את השורשים הריבועיים של 
+\begin_inset Formula $1$
+\end_inset
+
+ שהם 
+\begin_inset Formula $\pm1$
+\end_inset
+
+.
+ בשלב לפני כן נבחר את השורשים שלהם - 
+\begin_inset Formula $\pm1,\pm i$
+\end_inset
+
+ שהם למעשה השורשים של 
+\begin_inset Formula $1$
+\end_inset
+
+ מסדר 
+\begin_inset Formula $4$
+\end_inset
+
+ )כלומר 
+\begin_inset Formula $^{4}\sqrt{1}$
+\end_inset
+
+( ובשלב לפני כן את השורשים שלהם וכן הלאה.
+ אם כך אם נתחיל מפולינום דרגה 
+\begin_inset Formula $n$
+\end_inset
+
+, נניח ש 
+\begin_inset Formula $n$
+\end_inset
+
+ חזקה כלשהי של 
+\begin_inset Formula $2$
+\end_inset
+
+, נבחר בתור ערכים התחלתיים את 
+\begin_inset Formula $\vec{x}={}^{n}\sqrt{1}$
+\end_inset
+
+ )נזכור שזו רשימה של 
+\begin_inset Formula $n$
+\end_inset
+
+ ערכים( וכאשר נקרא לרקורסיה ונעלה אותם בריבוע נקבל את 
+\begin_inset Formula $\vec{x^{2}}=^{\frac{n}{2}}\sqrt{1}$
+\end_inset
+
+ וכך נמשיך עד שנגיע לבסיס הרקורסיה 
+\begin_inset Formula $1$
+\end_inset
+
+ כפי שרצינו.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+באופן פחות אינטואיטיבי ויותר פורמלי עבור 
 \begin_inset Formula $n$
 \end_inset
 
@@ -6345,6 +6565,874 @@ T\left(n\right)=2T\left(\frac{n}{2}\right)+\mathcal{O}\left(n\right)\Rightarrow 
 
  ערכים.
  כלומר, מה שנותר לעשות הוא אינטרפולציה.
+\end_layout
+
+\begin_layout Standard
+נסמן ב 
+\begin_inset Formula $FFT^{-1}$
+\end_inset
+
+ את הפעולה ההפועה -מקבלים שערכוים )מה הפולינום, שאיננו ידוע, מחזיר עבור
+ רשימה של 
+\begin_inset Formula $x$
+\end_inset
+
+-ים( ומחזירים את מקדמי הפולינום.
+ נראה בהמשך ש 
+\begin_inset Formula $FFT^{-1}$
+\end_inset
+
+ רצה באותו זמן ריצה של 
+\begin_inset Formula $FFT$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נסכם את כל מה שראינו ונתאר את האלגוריתם השלם להכפלת פולינומים:
+\end_layout
+
+\begin_layout Subsubsection*
+אלגוריתם כפל פולינומים
+\end_layout
+
+\begin_layout Standard
+קלט: פולינומים 
+\begin_inset Formula $a\left(\cdot\right),b\left(\cdot\right)$
+\end_inset
+
+ מדרגה 
+\begin_inset Formula $d\geq$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+נפעיל 
+\begin_inset Formula $FFt$
+\end_inset
+
+ על 
+\begin_inset Formula $a\left(\cdot\right),b\left(\cdot\right)$
+\end_inset
+
+ ונקבל הערכה שלהם על 
+\begin_inset Formula $n$
+\end_inset
+
+ 
+\begin_inset Formula $x$
+\end_inset
+
+-ים בזמן - 
+\begin_inset Formula $\mathcal{O}\left(n\cdot log\left(n\right)\right)$
+\end_inset
+
+ )נבהיר בהמשך מי זה 
+\begin_inset Formula $n$
+\end_inset
+
+( 
+\end_layout
+
+\begin_layout Itemize
+נחשב 
+\begin_inset Formula $c\left(\omega^{i}\right)=a\left(\omega^{i}\right)b\left(\omega^{i}\right),\ i=0,...,n-1$
+\end_inset
+
+ בזמן - 
+\begin_inset Formula $\mathcal{O}\left(n\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+נפעיל 
+\begin_inset Formula $FFT^{-1}$
+\end_inset
+
+ על רשימת השערוכים של 
+\begin_inset Formula $c\left(\cdot\right)$
+\end_inset
+
+ שקיבלנו ונקבל את מקדמי 
+\begin_inset Formula $c\left(\cdot\right)$
+\end_inset
+
+ בזמן - 
+\begin_inset Formula $\mathcal{O}\left(n\cdot log\left(n\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+בסך
+\begin_inset space ~
+\end_inset
+
+הכל: זמן ריצה 
+\begin_inset Formula $\mathcal{O}\left(n\cdot log\left(n\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הערה: 
+\begin_inset Formula $c\left(\cdot\right)$
+\end_inset
+
+ מדרגה 
+\begin_inset Formula $2d\geq$
+\end_inset
+
+ ולכן )ממשפט האינטרפולציה שראינו( כדי לקבל אותו עלינו למצוא 
+\begin_inset Formula $2d+1$
+\end_inset
+
+ שערוכים שלו.
+ מצד שני, 
+\begin_inset Formula $FFT$
+\end_inset
+
+ עובד עם שערוך של מספר נקודות שהוא חזקה שלמה של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\numeric off
+.
+ כלומר 
+\begin_inset Formula $n$
+\end_inset
+
+- מספר הנקודות )שאותו נכניס כקלט של 
+\begin_inset Formula $FFT$
+\end_inset
+
+( צריך להיות 
+\begin_inset Formula $2^{k}$
+\end_inset
+
+ המינימלי כך ש 
+\begin_inset Formula 
+\[
+2d+1\leq2^{k}=n
+\]
+
+\end_inset
+
+במקרה הכי גרוע 
+\begin_inset Formula $2d+1$
+\end_inset
+
+ גדול ב
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מחזקה שלמה של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)ולכן הפער עד החזקה הבאה הוא מקסימלי(.
+ במצב כזה 
+\begin_inset Formula $2d=2^{k}$
+\end_inset
+
+ עבור 
+\begin_inset Formula $k$
+\end_inset
+
+ כלשהו ולכן 
+\begin_inset Formula 
+\[
+2d+1=2^{k}+1\Rightarrow n=2^{k+1}=2\cdot2^{k}=2\left(2d\right)=4d
+\]
+
+\end_inset
+
+כלומר גם במקרה גרוע 
+\begin_inset Formula 
+\[
+n=\mathcal{O}\left(d\right)
+\]
+
+\end_inset
+
+ומשום כך זמן הריצה שקיבלנו שקול לזמן ריצה 
+\begin_inset Formula 
+\[
+\mathcal{O}\left(d\cdot log\left(d\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset Formula $FFT^{-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+סימון: 
+\begin_inset Formula $C_{k}$
+\end_inset
+
+ )אות גדולה( מסמל ערך שמתקבל כאשר מציבים 
+\begin_inset Formula $\omega^{k}$
+\end_inset
+
+ בפולינום 
+\begin_inset Formula $c\left(\cdot\right)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $c_{k}$
+\end_inset
+
+ )אות קטנה( מסמל את המקדם ה
+\begin_inset Formula $k$
+\end_inset
+
+ בפולינום 
+\begin_inset Formula $c\left(\cdot\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+כזכור קיבלנו 
+\begin_inset Formula $C_{0},...,C_{n-1}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $C_{k}=c\left(\omega^{k}\right)$
+\end_inset
+
+ ואנו רוצים למצוא את 
+\begin_inset Formula $c_{0},...,c_{n-1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+נכתוב את הפולינום באופן מפורש 
+\begin_inset Formula 
+\[
+c\left(\cdot\right)=\sum_{j=0}^{n-1}c_{j}x^{j}
+\]
+
+\end_inset
+
+והנתון שלנו משמעותו ש 
+\begin_inset Formula 
+\[
+c\left(\omega^{0}\right)=\sum_{j=0}^{n-1}c_{j}\left(\omega^{0}\right)^{j}=c_{0}+c_{1}+...+c_{n-1}=C_{0}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+c\left(\omega^{1}\right)=\sum_{j=0}^{n-1}c_{j}\left(\omega^{1}\right)^{j}=c_{0}+c_{1}\omega+...+c_{n-1}\omega^{n-1}=C_{1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+c\left(\omega^{2}\right)=\sum_{j=0}^{n-1}c_{j}\left(\omega^{2}\right)^{j}=c_{0}+c_{1}\omega^{2}+...+c_{n-1}\left(\omega^{2}\right)^{n-1}=C_{1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+...
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+c\left(\omega^{n-1}\right)=\sum_{j=0}^{n-1}c_{j}\left(\omega^{n-1}\right)^{j}=c_{0}+c_{1}\omega^{n-1}+...+c_{n-1}\left(\omega^{n-1}\right)^{n-1}=C_{n-1}
+\]
+
+\end_inset
+
+קיבלנו 
+\begin_inset Formula $n$
+\end_inset
+
+ משוואות לינאריות ב 
+\begin_inset Formula $n$
+\end_inset
+
+ נעלמים 
+\begin_inset Formula $c_{0},...,c_{n-1}$
+\end_inset
+
+ ולכן נוכל לכתוב בכתיב אלגברי 
+\begin_inset Formula 
+\[
+\begin{pmatrix}C_{0}\\
+C_{1}\\
+.\\
+.\\
+.\\
+C_{n-1}
+\end{pmatrix}=\begin{pmatrix}1 & 1 & 1 & . & . & . & 1\\
+1 & \omega & \omega^{2} & . & . & . & \omega^{n-1}\\
+1 & \omega^{2} & \omega^{4} & . & . & . & \left(\omega^{2}\right)^{n-1}\\
+. & . & . &  &  &  & .\\
+. & . & . &  &  &  & .\\
+. & . & . &  &  &  & .\\
+1 & \omega^{n-1} & \left(\omega^{n-1}\right)^{2} & . & . & . & \left(\omega^{n-1}\right)^{n-1}
+\end{pmatrix}\cdot\begin{pmatrix}c_{0}\\
+c_{1}\\
+.\\
+.\\
+.\\
+c_{n-1}
+\end{pmatrix}
+\]
+
+\end_inset
+
+נשים לב שקיבלנו מטריצה 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $n\times n$
+\end_inset
+
+ שמזכירה מאוד את מטריצת 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ואן-דרמונדה נסמנה ב 
+\begin_inset Formula $W$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+כדי לפתור את מערכת המשוואות ולקבל את 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $c_{0},...,c_{n-1}$
+\end_inset
+
+ כל שעלינו לעשות הוא לעפוך את המטריצה 
+\begin_inset Formula $W$
+\end_inset
+
+ שקיבלנו.
+ 
+\end_layout
+
+\begin_layout Standard
+סתם כך להפוך מטריצה לוקח 
+\begin_inset Formula $\mathcal{O}\left(n^{2}\right)$
+\end_inset
+
+ אלא שכאן מדובר במקרה מיוחד שבו אנו יודעים מה המטריצה ההופכית.
+ 
+\end_layout
+
+\begin_layout Standard
+מתקיים 
+\begin_inset Formula 
+\[
+\begin{pmatrix}1 & 1 & \cdots & 1\\
+1 & \omega & \cdots & \omega^{n-1}\\
+1 & \omega^{2} & \cdots & \left(\omega^{2}\right)^{n-1}\\
+\vdots & \vdots &  & \vdots\\
+1 & \omega^{n-1} & \cdots & \left(\omega^{n-1}\right)^{n-1}
+\end{pmatrix}\cdot\begin{pmatrix}1 & 1 & \cdots & 1\\
+1 & \omega^{-1} & \cdots & \omega^{-n+1}\\
+1 & \omega^{-2} & \cdots & \left(\omega^{-2}\right)^{n-1}\\
+\vdots & \vdots &  & \vdots\\
+1 & \omega^{-n+1} & \cdots & \left(\omega^{-n+1}\right)^{n-1}
+\end{pmatrix}=\begin{pmatrix}n & 0 & \cdots & 0\\
+0 & n\\
+\vdots &  & \ddots\\
+0 & \cdots & \cdots & n
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+נימוק: האברים על האלכסון מתקבלים מכפל של שורה ועמודה בעלי אינקדס זהה 
+\begin_inset Formula 
+\[
+\sum_{j=0}^{n-1}\omega^{kj}\omega^{-kj}=\sum_{j=0}^{n-1}\omega^{0}=\sum_{j=0}^{n-1}1=n
+\]
+
+\end_inset
+
+שאר האיברים מתקבלים מכפל של עמודה 
+\begin_inset Formula $k_{1}$
+\end_inset
+
+ ושורה 
+\begin_inset Formula $k_{2}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $k_{1}\ne k_{2}$
+\end_inset
+
+ נסמן את התוצאה ב 
+\begin_inset Formula $s$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{j=0}^{n-1}\omega^{k_{1}j}\omega^{-k_{2}j}=\sum_{j=0}^{n-1}\omega^{j\left(k_{1}-k_{2}\right)}=s
+\]
+
+\end_inset
+
+נחשב כעת 
+\begin_inset Formula 
+\[
+\omega^{k_{1}-k_{2}}\cdot s=\sum_{j=0}^{n-1}\omega^{j\left(k_{1}-k_{2}\right)}\omega^{\omega k_{1}-k_{2}}=\sum_{j=0}^{n-1}\omega^{\left(j+1\right)\left(k_{1}-k_{2}\right)}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left[i=j+1\right]=\sum_{i=0}^{n}\omega^{i\left(k_{1}-k_{2}\right)}
+\]
+
+\end_inset
+
+ולבסוף נחשב 
+\begin_inset Formula 
+\[
+\left(\omega^{k_{1}-k_{2}}-1\right)\cdot s=\omega^{k_{1}-k_{2}}\cdot s-\omega^{k_{1}-k_{2}}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{i=0}^{n}\omega^{i\left(k_{1}-k_{2}\right)}-\sum_{j=0}^{n-1}\omega^{j\left(k_{1}-k_{2}\right)}=\omega^{n\left(k_{1}-k_{2}\right)}-\omega^{0\left(k_{1}-k_{2}\right)}=0
+\]
+
+\end_inset
+
+המעבר האחרון נובע מקח 
+\begin_inset Formula $\omega^{0\left(k_{1}-k_{2}\right)}=1$
+\end_inset
+
+ ובנוסף מאחר ו 
+\begin_inset Formula $\omega$
+\end_inset
+
+ הינו שורש יחידה מסדר 
+\begin_inset Formula $n$
+\end_inset
+
+ נקבל 
+\begin_inset Formula 
+\[
+\omega^{n\left(k_{1}-k_{2}\right)}=\left(\omega^{n}\right)^{\left(k_{1}-k_{2}\right)}=1^{\left(k_{1}-k_{2}\right)}=1
+\]
+
+\end_inset
+
+אבל הרי 
+\begin_inset Formula $k_{1}\ne k_{2}$
+\end_inset
+
+ ושניהם מספרים בין
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $0$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ל
+\begin_inset Formula $n-1$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $0<k_{1}-k_{2}<n$
+\end_inset
+
+ ומכאן נקבל שבהכרח 
+\begin_inset Formula 
+\[
+\omega^{k_{1}-k_{2}}-1\ne0
+\]
+
+\end_inset
+
+אבל ראינו ש 
+\begin_inset Formula 
+\[
+\left(\omega^{k_{1}-k_{2}}-1\right)\cdot s=0
+\]
+
+\end_inset
+
+ולכן המסקנה היא ש 
+\begin_inset Formula 
+\[
+\sum_{j=0}^{n-1}\omega^{j\left(k_{1}-k_{2}\right)}=s=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+בחזרה לאלגוריתם למציאת המקדמים:
+\end_layout
+
+\begin_layout Standard
+כדי לקבל את המקדמים 
+\begin_inset Formula $c_{0},...,c_{n-1}$
+\end_inset
+
+ נחשב 
+\begin_inset Formula 
+\[
+\begin{pmatrix}c_{0}\\
+c_{1}\\
+.\\
+.\\
+.\\
+c_{n-1}
+\end{pmatrix}\leftarrow\begin{pmatrix}1 & 1 & 1 & . & . & . & 1\\
+1 & \omega^{-1} & \omega^{-2} & . & . & . & \omega^{-n+1}\\
+1 & \omega^{-2} & \omega^{-4} & . & . & . & \left(\omega^{-2}\right)^{n-1}\\
+. & . & . &  &  &  & .\\
+. & . & . &  &  &  & .\\
+. & . & . &  &  &  & .\\
+1 & \omega^{-n+1} & \left(\omega^{-n+1}\right)^{2} & . & . & . & \left(\omega^{-n+1}\right)^{n-1}
+\end{pmatrix}\cdot\begin{pmatrix}C_{0}\\
+C_{1}\\
+.\\
+.\\
+.\\
+C_{n-1}
+\end{pmatrix}
+\]
+
+\end_inset
+
+כעת נשים לב שאם היינו רוצים לקבל את תוצאת המכפלה של המטריצה 
+\begin_inset Formula $W$
+\end_inset
+
+ בוקטור כלשהו המשמעות היא למעשה להפעיל 
+\begin_inset Formula $FFT$
+\end_inset
+
+ על הוקטור הזה )בתור וקטור של מקדמים של פולינום( וכך היינו מקבלים את תוצאת
+ המכפלה באופן מהיר יותר.
+ שהרי תוצאת 
+\begin_inset Formula $FFT$
+\end_inset
+
+ מקיימת את המשוואה האלגברית הראשונה שראינו.
+\end_layout
+
+\begin_layout Standard
+באותה מידה נשים לב שנוכל לקבל את תוצאת ההכפלה של המטריצה 
+\begin_inset Formula $W^{-1}$
+\end_inset
+
+ בוקטור נתון ע"י הפעלה של 
+\begin_inset Formula $FFT$
+\end_inset
+
+ אלא שאת 
+\begin_inset Formula $\omega$
+\end_inset
+
+ נחליף ב 
+\begin_inset Formula $\omega^{-1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\omega^{-1}$
+\end_inset
+
+ הוא גם שורש יחידה.
+ אם נזכר במשמעות הגיאומטרית של 
+\begin_inset Formula $\omega$
+\end_inset
+
+ - חילקנו את מעגל היחידה ל 
+\begin_inset Formula $n$
+\end_inset
+
+ חלקים ו 
+\begin_inset Formula $\omega$
+\end_inset
+
+ הוא הנקודה הראשונה מעל הציר הממשי )זווית 
+\begin_inset Formula $\frac{2\pi}{n}$
+\end_inset
+
+( והחזקות שלו היו שאר הנקודות )חזקה 
+\begin_inset Formula $k$
+\end_inset
+
+ נמצאת בזווית 
+\begin_inset Formula $\frac{2\pi}{n}k$
+\end_inset
+
+(.
+ באותו אופן 
+\begin_inset Formula 
+\[
+\omega^{-1}=e^{-\frac{2\pi}{n}i}=e^{2\pi-\frac{2\pi}{n}}=e^{\frac{2\pi}{n}\left(n-1\right)}=\omega^{n-1}
+\]
+
+\end_inset
+
+במילים אחרות 
+\begin_inset Formula $\omega^{-1}$
+\end_inset
+
+ הוא הנקודה שנקבל אם נזוז על מעגל היחידה בזווית 
+\begin_inset Formula $\frac{2\pi}{n}$
+\end_inset
+
+ כלפי "מטה" )בכיוון ההפוך לזה הלכנו כדי לקבל את 
+\begin_inset Formula $\omega$
+\end_inset
+
+( והחזקות שלו יתנו את אותם ערכים שקיבלנו מהחזקות של 
+\begin_inset Formula $\omega$
+\end_inset
+
+ בסדר הפוך.
+ ולכן ניתן לבנות אלגוריתם 
+\begin_inset Formula $FFT^{-1}$
+\end_inset
+
+ באותו אופן בדיוק כמו 
+\begin_inset Formula $FFT$
+\end_inset
+
+ כאשר השינוי היחיד הוא שימוש ב 
+\begin_inset Formula $\omega^{-1}$
+\end_inset
+
+ במקום 
+\begin_inset Formula $\omega$
+\end_inset
+
+ )האלגוריתם זהה למעט החלפה זו(.
+ 
+\end_layout
+
+\begin_layout Standard
+מסקנה: השלב האחרון באלגוריתם הכפלת הפולינומים אכן דורש זמן 
+\begin_inset Formula $\mathcal{O}\left(n\cdot log\left(n\right)\right)$
+\end_inset
+
+ כפי שרצינו.
 \end_layout
 
 \end_body
