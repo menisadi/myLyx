@@ -98,6 +98,15 @@
 מסכם: מני סדיגורסקי
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part*
 
 \size largest
@@ -3313,11 +3322,11 @@ status collapsed
 (
 \end_layout
 
-\begin_layout Section*
+\begin_layout Part*
 הפרד ומשול
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 כפל מספרים
 \end_layout
 
@@ -3806,7 +3815,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 מכפלת מטריצות
 \end_layout
 
@@ -4143,7 +4152,7 @@ P_{3}+P_{4} & P_{4}+P_{5}-P_{7}
  אבל אף אחד לא שמע על זה כי הוא לא טרח לפרסם את זה כמו שצריך[
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 כפל פולינומים והתמרת פורייה 
 \begin_inset Marginal
 status open
@@ -4738,7 +4747,7 @@ x^{k}=e^{k\theta i}
 \end_layout
 
 \begin_layout Subsubsection*
-טורי פורייה והתמרת פורייה על רגל אחת
+טורי פורייה והתמרת פורייה - על רגל אחת
 \begin_inset Marginal
 status open
 
@@ -6130,7 +6139,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/meni/Downloads/fig853_02.jpg
+	filename /home/meni/Documents/Lyx/my notes/study/fig853_02.jpg
 	scale 35
 
 \end_inset
@@ -7078,20 +7087,20 @@ c_{n-1}
 מתקיים 
 \begin_inset Formula 
 \[
-\begin{pmatrix}1 & 1 & ... & 1\\
-1 & \omega & ... & \omega^{n-1}\\
-1 & \omega^{2} & ... & \left(\omega^{2}\right)^{n-1}\\
+\begin{pmatrix}1 & 1 & \cdots & 1\\
+1 & \omega & \cdots & \omega^{n-1}\\
+1 & \omega^{2} & \cdots & \left(\omega^{2}\right)^{n-1}\\
 \vdots & \vdots &  & \vdots\\
-1 & \omega^{n-1} & ... & \left(\omega^{n-1}\right)^{n-1}
-\end{pmatrix}\cdot\begin{pmatrix}1 & 1 & ... & 1\\
-1 & \omega^{-1} & ... & \omega^{-n+1}\\
-1 & \omega^{-2} & ... & \left(\omega^{-2}\right)^{n-1}\\
+1 & \omega^{n-1} & \cdots & \left(\omega^{n-1}\right)^{n-1}
+\end{pmatrix}\cdot\begin{pmatrix}1 & 1 & \cdots & 1\\
+1 & \omega^{-1} & \cdots & \omega^{-n+1}\\
+1 & \omega^{-2} & \cdots & \left(\omega^{-2}\right)^{n-1}\\
 \vdots & \vdots &  & \vdots\\
-1 & \omega^{-n+1} & ... & \left(\omega^{-n+1}\right)^{n-1}
-\end{pmatrix}=\begin{pmatrix}n & 0 & .\text{..} & 0\\
+1 & \omega^{-n+1} & \cdots & \left(\omega^{-n+1}\right)^{n-1}
+\end{pmatrix}=\begin{pmatrix}n & 0 & \cdots & 0\\
 0 & n\\
 \vdots &  & \ddots\\
-0 & ... &  & n
+0 & \cdots & \cdots & n
 \end{pmatrix}
 \]
 
@@ -7433,6 +7442,1649 @@ C_{n-1}
 \end_inset
 
  כפי שרצינו.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+לצערי, בשל קוצר זמן, אני לא אספיק לסכם את הנושא של זיווגים.
+ מקווה אחרי המבחן לעשות את זה.
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+תהליכים סטוכסטים
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $6.10.15$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הגדרות: 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+תהליך סטוכסטי
+\series default
+ )בדיד, סופי( הוא סדרה של משתנים מקריים 
+\begin_inset Formula $X_{0},X_{1},...$
+\end_inset
+
+ מעל קבוצה סופית של מצבים 
+\begin_inset Formula $S$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+נאמר שלתהליך יש את 
+\series bold
+תכונת מרקוב
+\series default
+ אם לכל 
+\begin_inset Formula $i>0$
+\end_inset
+
+ המשתנה המקרי 
+\begin_inset Formula $X_{t}|X_{t-1}$
+\end_inset
+
+ בלתי תלוי בכל המשתנים 
+\begin_inset Formula $X_{0},...,X_{t-2}$
+\end_inset
+
+ כלומר בכל "רגע" מה יהיה מצב הבא בתהליך תלוי אך ורק במצב שקדם לא )כאילו
+ "לא זוכרים" את המצבים הקודים(
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+שרשרת מרקוב
+\series default
+ 
+\begin_inset Formula $(Markov\ Chain)$
+\end_inset
+
+ הינה תהליך סטוכסטי בעל תכונת מרקוב, כך שקיימים 
+\begin_inset Formula $\left\{ p_{ij}|i,j\in S\right\} $
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $t>0$
+\end_inset
+
+ 
+\begin_inset Formula $i,j\in S$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula 
+\[
+Pr\left[X_{t}=j|X_{t-1}=i\right]=p_{ij}
+\]
+
+\end_inset
+
+כלומר לכל שני מצבים 
+\begin_inset Formula $i,j\in S$
+\end_inset
+
+ קיימת ההסתברות למעבר ממצב 
+\begin_inset Formula $i$
+\end_inset
+
+ למצב 
+\begin_inset Formula $j$
+\end_inset
+
+ והיא קבוע )
+\begin_inset Formula $p_{i,j}$
+\end_inset
+
+( ולא תלויה בזמן שבו היא מתרחשת.
+ כל שרשרת מרקוב ניתן להגדיר על ידי מטריצת מעברים, המטריצה תכיל את הערך 
+\begin_inset Formula $p_{ij}$
+\end_inset
+
+ בשורה 
+\begin_inset Formula $i$
+\end_inset
+
+ בעמודה 
+\begin_inset Formula $j$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+דוגמה:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+הילוך מקרי בגרף
+\end_layout
+
+\begin_layout Standard
+הסבר אינטואיטיבי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ - נתו ןלנו גרף ונקודת התחלה.
+ אנו מגדירים את ההסתברות למעבר בין כל שתי נקודות.
+ כלומר לכל שני קודקודים 
+\begin_inset Formula $u,v\in V$
+\end_inset
+
+ בגרף נתייחס למאורע שהגענו איכשהו ל 
+\begin_inset Formula $u$
+\end_inset
+
+ ונקבע מה ההסבתרות שבצעד הבא נלך ל 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ באופן כזה נקבל סדרה של משתנים מקריים שכל אחד מהם 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ נותן לנו התפלגות מה ההסתברות להיות בכל אחד מהקודקודים בצעד ה 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+פורמלית - נתון גרף 
+\begin_inset Formula $G=\left\langle V,E\right\rangle $
+\end_inset
+
+ נגדיר את המצבים להיות הקודקודים 
+\begin_inset Formula $S=V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ומטריצת המעברים תהיה 
+\begin_inset Formula $P=\left\{ p_{u,v}\right\} _{u,v\in V}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula 
+\[
+p_{u,v}=\begin{cases}
+0 & \left(u,v\right)\notin E\\
+\frac{1}{deg\left(u\right)} & \left(u,v\right)\in E
+\end{cases}
+\]
+
+\end_inset
+
+כלומר מכל קודקוד 
+\begin_inset Formula $u$
+\end_inset
+
+ ההסתברות להתקדם בצעד הבא אל קודקוד שאיננו מחובר אליו בקשת הינה - 
+\begin_inset Formula $0$
+\end_inset
+
+ לעומת זאת ההסתברות להתקדם אל כל אחד מהקודקודים שכן מחוברים אליו בקשת מתפלגת
+ באופן אחיד.
+\end_layout
+
+\end_deeper
+\begin_layout Description
+דוגמה
+\begin_inset space ~
+\end_inset
+
+לדוגמה: עבור הגרף הבא 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename simple.bmp
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+גרף לדוגמה
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ נקבל את מטריצת המעברים 
+\begin_inset Formula 
+\[
+P=\begin{bmatrix}0 & \frac{1}{2} & \frac{1}{2} & 0\\
+\frac{1}{3} & 0 & \frac{1}{3} & \frac{1}{3}\\
+\frac{1}{2} & \frac{1}{2} & 0 & 0\\
+0 & 1 & 0 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כל סדרת משתנים מקריים כזאת, מוגדרת היטב על ידי התפלגות המצב הראשון 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+ ומטריצת המעברים )למעשה נראה עוד מעט שמההתפלגות הראשונה, המייצגת את ההסתברות
+ להמצאות בכל מצב ברגע הראשוני, ההתפלגות אחרי 
+\begin_inset Formula $n$
+\end_inset
+
+ צעדים, תתקבל ע"י הכפלת 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+ במטריצה 
+\begin_inset Formula $n$
+\end_inset
+
+ פעמים(
+\end_layout
+
+\begin_layout Standard
+באופן פורמלי לכל סדרת מצבים 
+\begin_inset Formula $\sigma_{0},...,\sigma_{n}$
+\end_inset
+
+ נוכל לשאול מה ההסתברות שזה המסלול שנעבור ב 
+\begin_inset Formula $n$
+\end_inset
+
+ הצעדים הראשונים ונקבל 
+\begin_inset Formula 
+\[
+Pr\left[X_{0}=\sigma_{0},...,X_{n}=\sigma_{n}\right]=Pr\left[X_{0}=\sigma_{0}\right]\cdot\prod_{t=1}^{n}p_{\sigma_{t-1},\sigma_{t}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הגדרה: שרשרת מרקוב המוגדרת על ידי מטריצת המעברים 
+\begin_inset Formula $P$
+\end_inset
+
+ היא אי-פריקה אם לכל 
+\begin_inset Formula $i,j\in S$
+\end_inset
+
+ יש מסלול עם הסתברות חיובית מ
+\begin_inset Formula $i$
+\end_inset
+
+ ל
+\begin_inset Formula $j$
+\end_inset
+
+ לפי 
+\begin_inset Formula $P$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+בדוגמה של הילוך מקרי בגרף ההגדרה הזאת שקולה לדרישה שהגרף יהיה קשיר
+\end_layout
+
+\end_deeper
+\begin_layout Description
+נשים
+\begin_inset space ~
+\end_inset
+
+לב: בהינתן מצב, אם נסכום את ההסתברויות למעבר ממנו לשאר המצבים, מהגדרה של
+ הסתברות נקבל 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ במילים אחרות לכל 
+\begin_inset Formula $i$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula 
+\[
+\sum_{j\in S}p_{i,j}=1
+\]
+
+\end_inset
+
+בכתיב אלגברי יותר - מאחר והכפלה בוקטור אחדות בעצם מחזירה את הסכום בכל שורה,
+ והסכום הזה הרי שווה ל
+\begin_inset Formula $1$
+\end_inset
+
+ ולכן 
+\begin_inset Formula 
+\[
+P\cdot\begin{bmatrix}1\\
+.\\
+.\\
+.\\
+1
+\end{bmatrix}=\begin{bmatrix}1\\
+.\\
+.\\
+.\\
+1
+\end{bmatrix}\Rightarrow\left(P-I\right)\begin{bmatrix}1\\
+.\\
+.\\
+.\\
+1
+\end{bmatrix}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+למה
+\series bold
+\numeric on
+1
+\begin_inset space ~
+\end_inset
+
+
+\series default
+\numeric off
+: 
+\begin_inset Formula $rank\left(P-I\right)=n-1$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $n=|S|$
+\end_inset
+
+ והשרשרת-מרקוב היא אי-פריקה
+\end_layout
+
+\begin_layout Description
+טענת
+\begin_inset space ~
+\end_inset
+
+עזר: לכל 
+\begin_inset Formula $x=\left(x_{1},...,x_{n}\right)\in\mathbb{R}^{n}$
+\end_inset
+
+ אם 
+\begin_inset Formula $\left(P-I\right)x=0$
+\end_inset
+
+ אזי 
+\begin_inset Formula $x_{1}=x_{_{2}}=...=x_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+כלומר לא רק שוקטור האחדות מאפס את 
+\begin_inset Formula $P-I$
+\end_inset
+
+ כמו שראינו הוא גם היחיד )עד כדי כפל בסקלר(
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+אם נוכיח את טענת העזר נוכל להוכיח את הלמה תוך שימוש במשפט מאלגברה )מימד
+ הגרעין
+\begin_inset Formula $n-$
+\end_inset
+
+ = דרגת מטריצה( 
+\begin_inset Formula 
+\[
+dim\left(ker\left(P-I\right)\right)=1\Rightarrow rank\left(P-I\right)=n-dim\left(ker\left(P-I\right)\right)=n-1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+טריק
+\begin_inset space ~
+\end_inset
+
+שימושי: פונקציות הרמוניות
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+תהי 
+\begin_inset Formula $f:\left\{ 1,...,n\right\} \rightarrow\mathbb{R}$
+\end_inset
+
+ ונתון כי 
+\begin_inset Formula 
+\[
+\forall t\in\left\{ 1,..,n\right\} :\ f(t)=\frac{f\left(t+1\right)-f\left(t\right)}{2}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+וכמו כן מספרים לנו שבנקודה 
+\begin_inset Formula $k$
+\end_inset
+
+ הפונקציה מקבל מקסימום כלומר 
+\begin_inset Formula $argmax(f)=k$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+אזי בהכרח 
+\begin_inset Formula 
+\[
+f\left(k+1\right)=f\left(k\right)=f\left(k-1\right)
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Description
+הסבר: הערך בכל נקודה הוא הממוצע של שני הערכים השכנים לו.
+ עבור נקודה 
+\begin_inset Formula $k$
+\end_inset
+
+ שבה נקבל מקסימום - אם אחד השכנים קטן ממנה השכן השני היה צריך להיות גדול
+ ממנה כדי לאזן )שהרי ממוצע של שני מספרים נמצא תמיד בין שניהם(, מאחר ו 
+\begin_inset Formula $k$
+\end_inset
+
+ מקסימלי הרי אין שכן שגדול ממנו ולכן האפשרות היחידה היא שאף אחד מהם גם לא
+ קטן ממנו אלא שניהם שווים לו.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+הטענה נכונה באופן מקביל גם למינימום של 
+\begin_inset Formula $f$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+מסקנה: בקצוות הקטע, הפונקציה מקבלת מקסימום או מינימום
+\end_layout
+
+\begin_layout Description
+הוכחת
+\begin_inset space ~
+\end_inset
+
+הטענה: יהי 
+\begin_inset Formula $x=\begin{bmatrix}x_{1}\\
+.\\
+.\\
+.\\
+x_{n}
+\end{bmatrix}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\left(P-I\right)x=0$
+\end_inset
+
+ או במילים אחרות 
+\begin_inset Formula $Px=x$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+נקבל 
+\begin_inset Formula 
+\[
+\forall i\ x_{i}=\left(p_{1},...,p_{n}\right)\cdot\begin{bmatrix}x_{1}\\
+.\\
+.\\
+.\\
+x_{n}
+\end{bmatrix}=\sum_{j}p_{ij}x_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ הוא "ממוצע משוקלל" של השכנים של 
+\begin_inset Formula $i$
+\end_inset
+
+ )של הערכים 
+\begin_inset Formula $\left\{ x_{j}|p_{ij}>0\right\} $
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+ומכאן - בהינתן 
+\begin_inset Formula $i_{0}\in S$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $x_{i_{0}}=\underset{j}{max\left(x_{j}\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לכל 
+\begin_inset Formula $k$
+\end_inset
+
+כך ש 
+\begin_inset Formula $p_{ij}>0$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $x_{j}=x_{i_{0}}\underset{i}{max\left(x_{i}\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כי אחרת אם קיים "שכן" של 
+\begin_inset Formula $i_{0}$
+\end_inset
+
+ , כלומר מצב 
+\begin_inset Formula $j$
+\end_inset
+
+ שההסתברות למעבר מ
+\begin_inset Formula $i_{0}$
+\end_inset
+
+ אליו היא חיובית, כך ש 
+\begin_inset Formula $x_{j}<x_{i_{0}}$
+\end_inset
+
+ ואז כדי "לאזן" את הממוצע המשוקלל שיהיה שווה ל
+\begin_inset Formula $x_{i_{0}}$
+\end_inset
+
+ היה חייב להיות שכן אחר של 
+\begin_inset Formula $i_{0}$
+\end_inset
+
+ שמקיים 
+\begin_inset Formula $x_{j'}>x_{i_{0}}$
+\end_inset
+
+ בסתירה למקסימליות של 
+\begin_inset Formula $x_{i_{0}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כיוון שהשרשרת היא אי-פריקה לכל מצב 
+\begin_inset Formula $j\in S$
+\end_inset
+
+ קיים מסלול בעל הסתברות חיובית להתרחשות מ 
+\begin_inset Formula $i_{0}$
+\end_inset
+
+ עד אליו ולכן מאותו הטיעון היינו מקבלים באינקודציה שהערך של כל השכנים של
+ 
+\begin_inset Formula $x_{i_{0}}$
+\end_inset
+
+ שווה לערך של 
+\begin_inset Formula $max\left(x_{i}\right)=x_{i_{o}}$
+\end_inset
+
+ והערך של כל השכנים שלהם גם שווה לזה וכן הלאה עד ל
+\begin_inset Formula $x_{j}$
+\end_inset
+
+, כלומר קיבלנו ש 
+\begin_inset Formula $\forall j\in S\ x_{j}=x_{i_{0}}\left(=max\left(x_{i}\right)\right)$
+\end_inset
+
+ ובסה"כ נקבל 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{1}=...=x_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+נשים
+\begin_inset space ~
+\end_inset
+
+לב: אם בזמן 
+\begin_inset Formula $t$
+\end_inset
+
+ ההתפלגות של המשתנה המקרי 
+\begin_inset Formula $X_{t}$
+\end_inset
+
+ נתונה על ידי 
+\begin_inset Formula $q=\left(q_{1},...,q_{n}\right)$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $Pr\left[X_{t}=i\right]=q_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+אזי בזמן 
+\begin_inset Formula $t+1$
+\end_inset
+
+ ההתפלגות של 
+\begin_inset Formula $X_{t+1}$
+\end_inset
+
+ היא 
+\begin_inset Formula $qP$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+הסבר: נסמן 
+\begin_inset Formula $qP=\left(q_{1}',...,q_{n}'\right)$
+\end_inset
+
+ כאשר
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+המעבר האחרון )*( נובע מנוסחאת ההסתברות השלמה
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+q_{i}'=q\cdot\begin{bmatrix}p_{1j}\\
+.\\
+.\\
+.\\
+p_{nj}
+\end{bmatrix}=\sum_{i\in S}q_{i}p_{ij}=\sum_{i\in S}Pr\left[X_{t+1}=j|X_{t}=i\right]\stackrel{*}{=}Pr\left[X_{t+1}=j\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הגדרה: התפלגות 
+\begin_inset Formula $\pi=\left(\pi_{1},...,\pi_{n}\right)$
+\end_inset
+
+ נקראת התפלגות מקובעת אם 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi P=\pi
+\]
+
+\end_inset
+
+כלומר אם בזמן 
+\begin_inset Formula $t$
+\end_inset
+
+ ההתפלגות הנוכחית היא 
+\begin_inset Formula $\pi$
+\end_inset
+
+ אזי גם בזמן 
+\begin_inset Formula $t+1$
+\end_inset
+
+ היא תישאר 
+\begin_inset Formula $\pi$
+\end_inset
+
+ )ובעצם גם בזמן הבא וכן הלאה, ההתפלגות בעצם מתקבעת מכאן והלאה(
+\end_layout
+
+\end_deeper
+\begin_layout Description
+דוגמה: בהילוך מקרי בגרף קשיר 
+\begin_inset Formula $G=\left\langle V,E\right\rangle $
+\end_inset
+
+ ההתפלגות המקובעת היא
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi_{v}=\frac{deg\left(v\right)}{2|E|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+למה זה נכון? 
+\end_layout
+
+\begin_layout Enumerate
+זאת התפלגות - 
+\begin_inset Formula 
+\[
+\sum_{v}\pi_{v}=\frac{\sum_{v}deg\left(v\right)}{2|E|}=1
+\]
+
+\end_inset
+
+כי כזכור סכום הדרגות בגרף שווה ל 
+\begin_inset Formula $2|E|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+היא מקובעת - 
+\begin_inset Formula 
+\[
+Pr\left[X_{t+1}=v|X_{t}\sim\pi\right]=\sum_{u}\pi_{u}p_{uv}=\sum_{u\in\Gamma\left(v\right)}\frac{deg\left(u\right)}{2|E|}\cdot\frac{1}{deg\left(u\right)}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{1}{2|E|}\sum_{u\in\Gamma\left(v\right)}1=\frac{1}{2|E|}deg\left(v\right)=\pi_{v}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+כלומר גם 
+\begin_inset Formula $X_{t+1}$
+\end_inset
+
+ מתפלג בהתפלגות 
+\begin_inset Formula $\pi$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+למה
+\begin_inset space ~
+\end_inset
+
+
+\numeric on
+2
+\numeric off
+: אם 
+\begin_inset Formula $P$
+\end_inset
+
+ אי-פריקה קיימת התפלגרות מקובעת 
+\begin_inset Formula $\pi$
+\end_inset
+
+ וכן
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+
+\size normal
+\numeric on
+\begin_inset Formula $10.11.15$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall i\in S\ \pi_{i}>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+ההתפלגות 
+\begin_inset Formula $\pi$
+\end_inset
+
+ היא ההתפלגות המקובעת היחידה
+\end_layout
+
+\begin_layout Description
+הוכחה: בלמה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ראינו כי 
+\begin_inset Formula $rank\left(P-I\right)^{t}=rank\left(P-I\right)=n-1$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+ומכאן
+\begin_inset Formula 
+\[
+dim\left(ker\left(P-I\right)^{t}\right)=1
+\]
+
+\end_inset
+
+כלומר קיים וקטור 
+\begin_inset Formula $v\neq0$
+\end_inset
+
+ כך ש-
+\begin_inset Formula 
+\[
+\exists v\neq0\ \left(P-I\right)^{t}v=0
+\]
+
+\end_inset
+
+ומאחר ובמטריצה ריבועית דרגת השורות שווה לדרגת העמודות ולכן גם המימד של הגרעין
+ שלהם שווה ולכן
+\begin_inset Formula 
+\[
+v^{t}\left(P-I\right)\Rightarrow v^{t}P=v^{t}
+\]
+
+\end_inset
+
+והוקטור יחיד עד כדי מכפלה בסקלר
+\end_layout
+
+\begin_layout Standard
+בפרט קיים וקטור יחיד )ממש( 
+\begin_inset Formula $x$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $xP=x$
+\end_inset
+
+ ובנוסף הוא מייצג התפלגות כלומר 
+\begin_inset Formula $\sum_{i}x_{i}=1$
+\end_inset
+
+ )יש דרך אחת לנרמל כראוי את הסכום על ידי כפל בסקלר(
+\end_layout
+
+\begin_layout Standard
+עדיין נותר להראות ש 
+\begin_inset Formula $\forall i\ x_{i}>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נחלק את המצבים לפי 
+\begin_inset Formula $x$
+\end_inset
+
+ לשתי קבוצות
+\begin_inset Formula 
+\[
+S^{+}=\left\{ i|x_{i}>0\right\} \qquad S^{\leq0}=\left\{ i|x_{i}\leq0\right\} 
+\]
+
+\end_inset
+
+ונתבונן בסכום 
+\begin_inset Formula $\sum_{j\in S^{\leq0}}x_{j}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשים לב ש 
+\begin_inset Formula $xP=x$
+\end_inset
+
+ או במילים אחרות )כאשר 
+\begin_inset Formula $P_{j}$
+\end_inset
+
+ מסמל את העמודה ה 
+\begin_inset Formula $j$
+\end_inset
+
+( 
+\begin_inset Formula 
+\[
+\forall j\ x_{j}=xP_{j}=\sum_{i\in S}x_{i}P_{ji}
+\]
+
+\end_inset
+
+ולכן נקבל
+\begin_inset Formula 
+\[
+\sum_{j\in S^{\leq0}}x_{j}=\sum_{j\in S^{\leq0}}\left(\sum_{i\in S}x_{i}P_{ij}\right)=\sum_{j\in S^{\leq0}}\left(\sum_{i\in S^{\leq0}}x_{i}P_{ij}+\sum_{i\in S^{+}}x_{i}P_{ij}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\left(\sum_{j\in S}\sum_{i\in S^{\leq0}}x_{i}P_{ij}-\sum_{j\in S^{+}}\sum_{i\in S^{\leq0}}x_{i}P_{ij}\right)+\sum_{j\in S^{\leq0}}\sum_{i\in S^{+}}x_{i}P_{ij}
+\]
+
+\end_inset
+
+נזכור שכל שורה וכל עמודה של 
+\begin_inset Formula $P$
+\end_inset
+
+ מייצגת התפלגות ולכן
+\begin_inset Formula 
+\[
+\forall i\ \sum_{i\in S^{\leq0}}P_{j\in Sij}=1
+\]
+
+\end_inset
+
+נציב ונקבל
+\begin_inset Formula 
+\[
+\sum_{i\in S^{\leq0}}x_{i}-\sum_{j\in S^{+}}\sum_{i\in S^{\leq0}}x_{i}P_{ij}+\sum_{j\in S^{\leq0}}\sum_{i\in S^{+}}x_{i}P_{ij}
+\]
+
+\end_inset
+
+ובסה"כ קיבלנו את השיוויון 
+\begin_inset Formula 
+\[
+\sum_{j\in S^{\leq0}}x_{j}=\sum_{i\in S^{\leq0}}x_{i}-\sum_{j\in S^{+}}\sum_{i\in S^{\leq0}}x_{i}P_{ij}+\sum_{j\in S^{\leq0}}\sum_{i\in S^{+}}x_{i}P_{ij}
+\]
+
+\end_inset
+
+נצנצם ונעביר אגפים ונקבל 
+\begin_inset Formula 
+\[
+(*)\ \sum_{j\in S^{+}}\sum_{i\in S^{\leq0}}x_{i}P_{ij}=\sum_{j\in S^{\leq0}}\sum_{i\in S^{+}}x_{i}P_{ij}
+\]
+
+\end_inset
+
+נשים לב ש 
+\begin_inset Formula $P_{ij}$
+\end_inset
+
+ תמיד אי-שלילי ובנוסף מהאופן בו הגדרנו את הקבוצות מתקיים 
+\begin_inset Formula 
+\[
+\forall i\in S^{+}\ x_{i}>0,\ \forall i\in S^{\leq0}\ x_{i}\leq0
+\]
+
+\end_inset
+
+ולכן ב)*( צד ימין של השיוויון בהכרח אי-שלילי ולעומת זאת צד שמאל אי-חיובי,
+ כי הסימן נקבע על ידי ה 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ והם תלויים במקור של ה
+\begin_inset Formula $i$
+\end_inset
+
+ )
+\begin_inset Formula $j$
+\end_inset
+
+ לא משחק תפקיד בקביעת הסימן( ולכן בהכרח כל המחוברים בשני הצדדים שווה ל -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\end_layout
+
+\begin_layout Standard
+ובפרט 
+\begin_inset Formula 
+\[
+(**)\ \forall i\in S^{+},j\in S^{\leq0}:\ x_{i}P_{ij}=0
+\]
+
+\end_inset
+
+מצד שני 
+\begin_inset Formula 
+\[
+\forall i\ \sum_{i}x_{i}=1
+\]
+
+\end_inset
+
+ולכן בהכרח קיים 
+\begin_inset Formula $i$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $x_{i_{0}}>0$
+\end_inset
+
+ כלומר קיים 
+\begin_inset Formula $i_{0}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $i_{0}\in S^{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ועבור 
+\begin_inset Formula $i$
+\end_inset
+
+ זה מתקיים 
+\begin_inset Formula $i_{0}>0$
+\end_inset
+
+ ולכן אם קיים 
+\begin_inset Formula $j_{0}\in S^{\leq0}$
+\end_inset
+
+ ובנוסף מתקיים 
+\begin_inset Formula $P_{ij}>0$
+\end_inset
+
+ נקבל שעבור 
+\begin_inset Formula $i_{0},j_{0}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+x_{i_{0}}P_{i_{0}j_{0}}>0
+\]
+
+\end_inset
+
+ בסתירה ל)**(
+\end_layout
+
+\begin_layout Standard
+מסקנה: לכל 
+\begin_inset Formula $j$
+\end_inset
+
+ "שכן" של 
+\begin_inset Formula $i_{0}$
+\end_inset
+
+, כלומר שקיימת הסתברות חיובית למעבר מ
+\begin_inset Formula $i_{0}$
+\end_inset
+
+ ל-
+\begin_inset Formula $j_{0}$
+\end_inset
+
+ )כלומר 
+\begin_inset Formula $P_{i_{0}j_{0}}>0$
+\end_inset
+
+( בהכרח
+\begin_inset Formula 
+\[
+j_{0}\in S^{+}
+\]
+
+\end_inset
+
+ובסה"כ נקבל שלכל 
+\begin_inset Formula $i\in S^{+}$
+\end_inset
+
+ כל "שכן" 
+\begin_inset Formula $j$
+\end_inset
+
+ גם הוא ב 
+\begin_inset Formula $S^{+}$
+\end_inset
+
+ ומכאן, בגלל האי-פריקות, נמשיך באינדוקציה לשכנים של 
+\begin_inset Formula $j$
+\end_inset
+
+ ולשכנים שלהם וכן הלאה עד שנגיע לכל המצבים )כאמור, בגלל האי-פריקות( ונקבל
+ שכולם ב 
+\begin_inset Formula $S^{+}$
+\end_inset
+
+ או במילים אחרות 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall i\in S\ x_{i}>0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\blacksquare
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+השלב הבא יהיה להראות שבשרשראות מרקוב אי-פריקות תמיד נתכנס להתפלגות 
+\begin_inset Formula $\pi$
+\end_inset
+
+ המקובעת.
+ לשם כך נצטרך לסלק מצב בעייתי מסויים - כאשר יש מחזוריות בשרשרת.
+ במצב שבו יש מחזוריות קבוע נקבל שבהינתן מצד התחלתי )אם לצורך הדוגמה נגדיר
+ שההתפלגות ההתחלתית נותנת הסתברות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+למצב נתון ולשאר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\numeric off
+( בכל שלב לאחר מכן נקבל מחזוריות של ההתפלגויות )למשל בדוגמה נקבל שבכל שלב
+ נוכל ממש להגיד בדיוק איפה אנחנו אמורים להיות בתוך במחזור(.
+\end_layout
+
+\begin_layout Description
+הגדרה: שרשרת מרקוב היא 
+\bar under
+ארגודית
+\bar default
+ אם היא אי-פריקה ובנוסף )התנאים הבאים שקולים זה לזה(:
+\end_layout
+
+\begin_layout Enumerate
+אי-מחזורית.
+ כלומר 
+\begin_inset Formula $GCD\left(\left\{ \left|c\right||c\ -\ circle\ with\ positive\ probability\right\} \right)=1$
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+או במילים - "נאפשר" מעגלים חיוביים אבל לא באופן כזה שכל המעגלים יהיו מאורך
+ שהוא כפולה של מספר קבוע.
+ נניח אם כל המעגלים מאורך שהוא כפולה של
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+נקבל שיש מחזוריות מאורך
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בשרשרת ולכן היא לא ארגודית.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+קיים 
+\begin_inset Formula $n$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $i,j\in S$
+\end_inset
+
+ ו 
+\begin_inset Formula $t>n$
+\end_inset
+
+ : 
+\begin_inset Formula $Pr\left[x_{t}=j|x_{0}=i\right]>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula $i\in S$
+\end_inset
+
+ קיים 
+\begin_inset Formula $n>0$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $j\in S$
+\end_inset
+
+ : 
+\begin_inset Formula $Pr\left[x_{n}=j|x_{0}=i\right]>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הערה: לא נראה את ההוכחה לשקילות ההגדרות
+\end_layout
+
+\begin_layout Description
+משפט: תהי 
+\begin_inset Formula $X_{0},X_{1},...$
+\end_inset
+
+ שרשרת מרקוב ארגודית שבכל נקודת זמן 
+\begin_inset Formula $t$
+\end_inset
+
+ מתפלגת 
+\begin_inset Formula $X_{t}\sim q^{\left(t\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אזי 
+\begin_inset Formula 
+\[
+q^{\left(t\right)}\overset{{\scriptstyle t\rightarrow\infty}}{\longrightarrow}\pi
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body

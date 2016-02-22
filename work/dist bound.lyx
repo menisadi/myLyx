@@ -165,35 +165,6 @@ in other words we need that
 
 \end_inset
 
-recall that from privacy we must have 
-\begin_inset Formula $\delta<\frac{1}{T}$
-\end_inset
-
- so 
-\begin_inset Formula 
-\[
-r>\frac{8ln\left(\frac{T}{\beta}\right)}{3\epsilon\alpha}
-\]
-
-\end_inset
-
-in the case of median quality 
-\begin_inset Formula $r=\frac{|S|}{2}$
-\end_inset
-
- so we get that the sample complecsity bound:
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-\begin_inset Formula 
-\[
-|S|>\frac{16ln\left(\frac{T}{\beta}\right)}{3\epsilon\alpha}
-\]
-
-\end_inset
-
 
 \end_layout
 
