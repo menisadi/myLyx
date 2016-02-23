@@ -7738,7 +7738,32 @@ P=\begin{bmatrix}0 & \frac{1}{2} & \frac{1}{2} & 0\\
 \begin_inset Formula $n$
 \end_inset
 
- פעמים(
+ פעמים(.
+\end_layout
+
+\begin_layout Description
+הבהרה: הוקטורים שאנו עוסקים בהם מייצגים התפלגות על המצבים.
+ כלומר בוקטור 
+\begin_inset Formula $X_{0}$
+\end_inset
+
+ לדוגמה הערך במקום ה 
+\begin_inset Formula $j$
+\end_inset
+
+ מסמן את הסיכוי להיות במצב 
+\begin_inset Formula $j$
+\end_inset
+
+ בזמן 
+\begin_inset Formula $0$
+\end_inset
+
+ )כלומר הסיכו שנתחיל את הסדרה מהמצב 
+\begin_inset Formula $j$
+\end_inset
+
+(.
 \end_layout
 
 \begin_layout Standard
@@ -7994,7 +8019,11 @@ f\left(k+1\right)=f\left(k\right)=f\left(k-1\right)
 \end_layout
 
 \begin_layout Description
-הוכחת
+בחזרה
+\begin_inset space ~
+\end_inset
+
+להוכחת
 \begin_inset space ~
 \end_inset
 
@@ -8020,7 +8049,7 @@ x_{n}
 
 \begin_deeper
 \begin_layout Standard
-נקבל 
+נקבל
 \begin_inset Formula 
 \[
 \forall i\ x_{i}=\left(p_{1},...,p_{n}\right)\cdot\begin{bmatrix}x_{1}\\
@@ -8033,10 +8062,6 @@ x_{n}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 כלומר 
 \begin_inset Formula $x_{i}$
 \end_inset
@@ -8045,11 +8070,24 @@ x_{n}
 \begin_inset Formula $i$
 \end_inset
 
- )של הערכים 
+.
+ כאשר אנו מגדירים "שכן" כמצב 
+\begin_inset Formula $j$
+\end_inset
+
+ כך שההסתברות לעבור מ
+\begin_inset Formula $i$
+\end_inset
+
+ ל
+\begin_inset Formula $j$
+\end_inset
+
+ חיובית - 
 \begin_inset Formula $\left\{ x_{j}|p_{ij}>0\right\} $
 \end_inset
 
-(
+.
 \end_layout
 
 \begin_layout Standard
@@ -8058,7 +8096,11 @@ x_{n}
 \end_inset
 
  כך ש 
-\begin_inset Formula $x_{i_{0}}=\underset{j}{max\left(x_{j}\right)}$
+\begin_inset Formula 
+\[
+x_{i_{0}}=\underset{\text{j}}{max\left(x_{j}\right)}
+\]
+
 \end_inset
 
 
@@ -8066,15 +8108,23 @@ x_{n}
 
 \begin_layout Standard
 לכל 
-\begin_inset Formula $k$
+\begin_inset Formula $j$
 \end_inset
 
-כך ש 
-\begin_inset Formula $p_{ij}>0$
+ שהינו "שכן" של 
+\begin_inset Formula $i_{0}$
 \end_inset
 
- מתקיים 
-\begin_inset Formula $x_{j}=x_{i_{0}}\underset{i}{max\left(x_{i}\right)}$
+ כלומר 
+\begin_inset Formula $p_{i_{0}j}>0$
+\end_inset
+
+, מתקיים 
+\begin_inset Formula 
+\[
+x_{j}=x_{i_{0}}=\underset{i}{max\left(x_{i}\right)}
+\]
+
 \end_inset
 
 
@@ -8097,11 +8147,11 @@ x_{n}
 \begin_inset Formula $x_{j}<x_{i_{0}}$
 \end_inset
 
- ואז כדי "לאזן" את הממוצע המשוקלל שיהיה שווה ל
+ אזי כדי "לאזן" את הממוצע המשוקלל שיהיה שווה ל
 \begin_inset Formula $x_{i_{0}}$
 \end_inset
 
- היה חייב להיות שכן אחר של 
+ חייב להיות שכן אחר של 
 \begin_inset Formula $i_{0}$
 \end_inset
 
@@ -8113,7 +8163,7 @@ x_{n}
 \begin_inset Formula $x_{i_{0}}$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -8121,12 +8171,16 @@ x_{n}
 \begin_inset Formula $j\in S$
 \end_inset
 
- קיים מסלול בעל הסתברות חיובית להתרחשות מ 
+ קיים מסלול, בעל הסתברות חיובית להתרחשות, מ 
 \begin_inset Formula $i_{0}$
 \end_inset
 
- עד אליו ולכן מאותו הטיעון היינו מקבלים באינקודציה שהערך של כל השכנים של
- 
+ עד אליו.
+ משום כך לכל 
+\begin_inset Formula $j\in S$
+\end_inset
+
+, מאותו הטיעון היינו מקבלים באינקודציה שהערך של כל השכנים של 
 \begin_inset Formula $x_{i_{0}}$
 \end_inset
 
@@ -8139,10 +8193,14 @@ x_{n}
 \end_inset
 
 , כלומר קיבלנו ש 
-\begin_inset Formula $\forall j\in S\ x_{j}=x_{i_{0}}\left(=max\left(x_{i}\right)\right)$
+\begin_inset Formula 
+\[
+\forall j\in S\ x_{j}=x_{i_{0}}\left(=max\left(x_{i}\right)\right)
+\]
+
 \end_inset
 
- ובסה"כ נקבל 
+ובסה"כ נקבל 
 \end_layout
 
 \end_deeper
@@ -8204,9 +8262,9 @@ x_{1}=...=x_{n}
 \begin_inset Formula $qP=\left(q_{1}',...,q_{n}'\right)$
 \end_inset
 
- כאשר
+ מתקיים
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 המעבר האחרון )*( נובע מנוסחאת ההסתברות השלמה
@@ -8217,12 +8275,12 @@ status open
  
 \begin_inset Formula 
 \[
-q_{i}'=q\cdot\begin{bmatrix}p_{1j}\\
+q_{j}'=q\cdot\begin{bmatrix}p_{1j}\\
 .\\
 .\\
 .\\
 p_{nj}
-\end{bmatrix}=\sum_{i\in S}q_{i}p_{ij}=\sum_{i\in S}Pr\left[X_{t+1}=j|X_{t}=i\right]\stackrel{*}{=}Pr\left[X_{t+1}=j\right]
+\end{bmatrix}=\sum_{i\in S}q_{i}p_{ij}=\sum_{i\in S}Pr\left[X_{t+1}=j|X_{t}=i\right]\cdot Pr\left[X_{t}=i\right]\stackrel{*}{=}Pr\left[X_{t+1}=j\right]
 \]
 
 \end_inset
@@ -8231,15 +8289,11 @@ p_{nj}
 \end_layout
 
 \begin_layout Description
-הגדרה: התפלגות 
+הגדרה: התפלגות על המצבים 
 \begin_inset Formula $\pi=\left(\pi_{1},...,\pi_{n}\right)$
 \end_inset
 
  נקראת התפלגות מקובעת אם 
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
 \begin_inset Formula 
 \[
 \pi P=\pi
@@ -8266,7 +8320,6 @@ p_{nj}
  )ובעצם גם בזמן הבא וכן הלאה, ההתפלגות בעצם מתקבעת מכאן והלאה(
 \end_layout
 
-\end_deeper
 \begin_layout Description
 דוגמה: בהילוך מקרי בגרף קשיר 
 \begin_inset Formula $G=\left\langle V,E\right\rangle $
@@ -8328,7 +8381,19 @@ Pr\left[X_{t+1}=v|X_{t}\sim\pi\right]=\sum_{u}\pi_{u}p_{uv}=\sum_{u\in\Gamma\lef
 
 \begin_deeper
 \begin_layout Standard
-כלומר גם 
+קיבלנו שלכל 
+\begin_inset Formula $v$
+\end_inset
+
+ הסיכוי שנהיה בו בזמן 
+\begin_inset Formula $t+1$
+\end_inset
+
+ שווה ל
+\begin_inset Formula $\pi_{v}$
+\end_inset
+
+, כלומר גם 
 \begin_inset Formula $X_{t+1}$
 \end_inset
 
@@ -8336,7 +8401,7 @@ Pr\left[X_{t+1}=v|X_{t}\sim\pi\right]=\sum_{u}\pi_{u}p_{uv}=\sum_{u\in\Gamma\lef
 \begin_inset Formula $\pi$
 \end_inset
 
-
+.
 \end_layout
 
 \end_deeper
@@ -8353,7 +8418,7 @@ Pr\left[X_{t+1}=v|X_{t}\sim\pi\right]=\sum_{u}\pi_{u}p_{uv}=\sum_{u\in\Gamma\lef
 \begin_inset Formula $P$
 \end_inset
 
- אי-פריקה קיימת התפלגרות מקובעת 
+ אי-פריקה אזי קיימת התפלגרות מקובעת 
 \begin_inset Formula $\pi$
 \end_inset
 
@@ -8443,14 +8508,13 @@ status open
 \noun default
 \color inherit
 ראינו כי 
-\begin_inset Formula $rank\left(P-I\right)^{t}=rank\left(P-I\right)=n-1$
+\begin_inset Formula 
+\[
+rank\left(P-I\right)^{t}=rank\left(P-I\right)=n-1
+\]
+
 \end_inset
 
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
 ומכאן
 \begin_inset Formula 
 \[
@@ -8463,7 +8527,7 @@ dim\left(ker\left(P-I\right)^{t}\right)=1
 \begin_inset Formula $v\neq0$
 \end_inset
 
- כך ש-
+ יחיד )עד כדי מכפלה בסקלר( כך ש-
 \begin_inset Formula 
 \[
 \exists v\neq0\ \left(P-I\right)^{t}v=0
@@ -8471,8 +8535,12 @@ dim\left(ker\left(P-I\right)^{t}\right)=1
 
 \end_inset
 
-ומאחר ובמטריצה ריבועית דרגת השורות שווה לדרגת העמודות ולכן גם המימד של הגרעין
- שלהם שווה ולכן
+ומאחר ובמטריצה ריבועית דרגת השורות שווה לדרגת העמודות, גם המימד של הגרעין
+ שלהם שווה ולכן עבור 
+\begin_inset Formula $v$
+\end_inset
+
+ זה מתקיים
 \begin_inset Formula 
 \[
 v^{t}\left(P-I\right)\Rightarrow v^{t}P=v^{t}
@@ -8480,11 +8548,21 @@ v^{t}\left(P-I\right)\Rightarrow v^{t}P=v^{t}
 
 \end_inset
 
-והוקטור יחיד עד כדי מכפלה בסקלר
-\end_layout
+על ידי כפל בסלקר המתאים ניתן לנרמל את 
+\begin_inset Formula $v$
+\end_inset
 
-\begin_layout Standard
-בפרט קיים וקטור יחיד )ממש( 
+ כך שהוקטור המנורמל 
+\begin_inset Formula $x$
+\end_inset
+
+ יקיים 
+\begin_inset Formula $\sum_{i}x_{i}=1$
+\end_inset
+
+.
+ נירמול כזה ניתן לבצע באופן אחד בלבד )על ידי כפל בסקלר מתאים(ומכאן שקיים
+ וקטור יחיד )ממש( 
 \begin_inset Formula $x$
 \end_inset
 
@@ -8492,23 +8570,32 @@ v^{t}\left(P-I\right)\Rightarrow v^{t}P=v^{t}
 \begin_inset Formula $xP=x$
 \end_inset
 
- ובנוסף הוא מייצג התפלגות כלומר 
+ ובנוסף הוא מקיים 
 \begin_inset Formula $\sum_{i}x_{i}=1$
 \end_inset
 
- )יש דרך אחת לנרמל כראוי את הסכום על ידי כפל בסקלר(
+.
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
-עדיין נותר להראות ש 
-\begin_inset Formula $\forall i\ x_{i}>0$
+כדי להראות ש 
+\begin_inset Formula $x$
 \end_inset
 
+ אכן מייצג התפלגות, וכדי להראות את סעיף 
+\begin_inset Formula $1$
+\end_inset
 
-\end_layout
+ מהמשפט, נותר להראות ש
+\begin_inset Formula 
+\[
+\forall i\ x_{i}>0
+\]
 
-\begin_layout Standard
-נחלק את המצבים לפי 
+\end_inset
+
+לשם כך נחלק את המצבים לפי 
 \begin_inset Formula $x$
 \end_inset
 
@@ -8520,14 +8607,14 @@ S^{+}=\left\{ i|x_{i}>0\right\} \qquad S^{\leq0}=\left\{ i|x_{i}\leq0\right\}
 
 \end_inset
 
-ונתבונן בסכום 
-\begin_inset Formula $\sum_{j\in S^{\leq0}}x_{j}$
+נתבונן בסכום 
+\begin_inset Formula 
+\[
+\sum_{j\in S^{\leq0}}x_{j}
+\]
+
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 נשים לב ש 
 \begin_inset Formula $xP=x$
 \end_inset
@@ -8557,9 +8644,6 @@ S^{+}=\left\{ i|x_{i}>0\right\} \qquad S^{\leq0}=\left\{ i|x_{i}\leq0\right\}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula 
 \[
 =\left(\sum_{j\in S}\sum_{i\in S^{\leq0}}x_{i}P_{ij}-\sum_{j\in S^{+}}\sum_{i\in S^{\leq0}}x_{i}P_{ij}\right)+\sum_{j\in S^{\leq0}}\sum_{i\in S^{+}}x_{i}P_{ij}
@@ -8705,7 +8789,11 @@ S^{+}=\left\{ i|x_{i}>0\right\} \qquad S^{\leq0}=\left\{ i|x_{i}\leq0\right\}
 \begin_inset Formula $j_{0}\in S^{\leq0}$
 \end_inset
 
- ובנוסף מתקיים 
+ שהינו "שכן" של 
+\begin_inset Formula $i_{0}$
+\end_inset
+
+ כלומר מתקיים 
 \begin_inset Formula $P_{ij}>0$
 \end_inset
 
@@ -8721,7 +8809,7 @@ x_{i_{0}}P_{i_{0}j_{0}}>0
 
 \end_inset
 
- בסתירה ל)**(
+בסתירה ל)**(
 \end_layout
 
 \begin_layout Standard
@@ -8886,18 +8974,211 @@ j_{0}\in S^{+}
  נוכל ממש להגיד בדיוק איפה אנחנו אמורים להיות בתוך במחזור(.
 \end_layout
 
+\begin_layout Standard
+דוגמה: בגרף הבא 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename minimal.bmp
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+גרף לא ארגודי
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+נגדיר, לשם נוחות, שההתפלגות ההתחלתית היא 
+\begin_inset Formula $\left(1,0\right)$
+\end_inset
+
+ כלומר ההסבתרות להתחיל מממצב מספר 
+\begin_inset Formula $1$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+וההסתברות להתחיל מהמצב השני היא 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ נקבל שבצעד הבא בהכרח )הסתברות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+( נהיה במצב 
+\begin_inset Formula $2$
+\end_inset
+
+ כומר ההתפלגות תהיה 
+\begin_inset Formula $\left(0,1\right)$
+\end_inset
+
+ וכן הלאה.
+ נקבל מחזוריות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בין ההפלגויות הנ"ל.
+ באותו אופן גם אם היינו מגדירים את ההתפלגות ההתחלתית אחרת, ניתן להראות שהיינו
+ מקבלים מחזוריות.
+\end_layout
+
 \begin_layout Description
 הגדרה: שרשרת מרקוב היא 
-\bar under
+\series bold
 ארגודית
-\bar default
+\series default
  אם היא אי-פריקה ובנוסף )התנאים הבאים שקולים זה לזה(:
 \end_layout
 
 \begin_layout Enumerate
 אי-מחזורית.
  כלומר 
-\begin_inset Formula $GCD\left(\left\{ \left|c\right||c\ -\ circle\ with\ positive\ probability\right\} \right)=1$
+\begin_inset Formula 
+\[
+GCD\left(\left\{ \left|c\right||c\ -\ circle\ with\ positive\ probability\right\} \right)=1
+\]
+
 \end_inset
 
 
@@ -9029,7 +9310,11 @@ status collapsed
 \end_inset
 
  : 
-\begin_inset Formula $Pr\left[x_{t}=j|x_{0}=i\right]>0$
+\begin_inset Formula 
+\[
+Pr\left[x_{t}=j|x_{0}=i\right]>0
+\]
+
 \end_inset
 
 
@@ -9049,10 +9334,31 @@ status collapsed
 \end_inset
 
  : 
-\begin_inset Formula $Pr\left[x_{n}=j|x_{0}=i\right]>0$
+\begin_inset Formula 
+\[
+Pr\left[x_{n}=j|x_{0}=i\right]>0
+\]
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Description
+הגדרה
+\begin_inset space ~
+\end_inset
+
+אינטואיטיבית: אנו דורשים שלא תהיה מחזוריות )כמו בדרישה 
+\begin_inset Formula $1$
+\end_inset
+
+( באופן שקול - אם נתקדם מספיק )נעבור את צעד מספר 
+\begin_inset Formula $n$
+\end_inset
+
+( נגיע למצב שבו לא משנה מאיפה התחלנו בכל צעד יש סיכוי )כלשהו( להיות בכל
+ מצב.
 \end_layout
 
 \begin_layout Description
@@ -9069,7 +9375,7 @@ status collapsed
 \end_inset
 
  מתפלגת 
-\begin_inset Formula $X_{t}\sim q^{\left(t\right)}$
+\begin_inset Formula $X_{t}\sim q^{\left(t\right)}=\left(q_{0}^{\left(t\right)},...,q_{n}^{\left(t\right)}\right)$
 \end_inset
 
 
@@ -9080,6 +9386,806 @@ status collapsed
 \begin_inset Formula 
 \[
 q^{\left(t\right)}\overset{{\scriptstyle t\rightarrow\infty}}{\longrightarrow}\pi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הוכחה: 
+\end_layout
+
+\begin_layout Description
+הרעיון: 
+\begin_inset Formula $coupling$
+\end_inset
+
+-צימוד
+\end_layout
+
+\begin_layout Standard
+נסמן את מטריצת המעברים של השרשרת הנתונה ב 
+\begin_inset Formula $P$
+\end_inset
+
+.
+ נגדיר שלוש שרשראות מרקוב:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $X_{0},X_{1},...$
+\end_inset
+
+ כאשר המעברים הם לפי 
+\begin_inset Formula $P$
+\end_inset
+
+ וההתפלגות ההתחלתית 
+\begin_inset Formula $X_{0}\sim q^{\left(0\right)}$
+\end_inset
+
+ )זאת בעצם השרשרת הנתונה(
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $Z_{0},Z_{1},...$
+\end_inset
+
+ כאשר המעברים הם לפי 
+\begin_inset Formula $P$
+\end_inset
+
+ וההתפלגות ההתחלתית 
+\begin_inset Formula $Z_{0}\sim\pi$
+\end_inset
+
+ ומכאן ש 
+\begin_inset Formula $\forall t:\ Z_{t}\sim\pi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $Y_{0},Y_{1},...$
+\end_inset
+
+ שמוגדרת באופן הבא 
+\begin_inset Formula 
+\[
+Y_{t}=\begin{cases}
+Z_{t} & Y_{n-1}=Z_{t-1}\\
+X_{t} & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+כלומר 
+\begin_inset Formula $\left\{ Y_{t}\right\} _{t\rightarrow\infty}$
+\end_inset
+
+ מתחילה יחד עם 
+\begin_inset Formula $\left\{ X_{t}\right\} $
+\end_inset
+
+ והחל מהנקודה הראשונה בה 
+\begin_inset Formula $\left\{ X_{t}\right\} $
+\end_inset
+
+ ו 
+\begin_inset Formula $\left\{ Z_{t}\right\} $
+\end_inset
+
+נפגשים עוברת לעקוב אחרי 
+\begin_inset Formula $\left\{ Z_{t}\right\} $
+\end_inset
+
+.
+ מכאן נובע ש 
+\begin_inset Formula $\left\{ Y_{t}\right\} $
+\end_inset
+
+ מתחילה בהתפלגו 
+\begin_inset Formula $Y_{0}\sim q^{\left(0\right)}$
+\end_inset
+
+ והמעברים מוגדרים לפי 
+\begin_inset Formula $P$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+הסבר
+\begin_inset space ~
+\end_inset
+
+נוסף: חשוב להבחין בין ההתפלגות של משתנה מקרי לבין הערך שהוא מחזיר.
+ לדוגמה: נניח שיש לנו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\numeric off
+ קוביות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- 
+\numeric on
+2
+\numeric off
+ מתפלגות אחיד )סתם קוביה( והשלישית מזחירה בהתסברות 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ את הספרה 
+\begin_inset Formula $6$
+\end_inset
+
+ ובהסתברות 
+\begin_inset Formula $\frac{1}{10}$
+\end_inset
+
+ כל ספרה אחרת.
+ שתי הקוביות הרגילות מתפלגות זהה אבל יכולות להחזיר תוצאה שונה.
+ והקוביה השלישית יכולה )במקרה( להחזיר את אותו הערך כמו אחת הקוביות הרגילות
+ למרות שהן מתפלגות שונה.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\left\{ Y_{t}\right\} $
+\end_inset
+
+ מתפלג בשלב ההתחלתי באופן זהה ל 
+\begin_inset Formula $\left\{ X_{t}\right\} $
+\end_inset
+
+ וההתפלגויות בהמשך נובעות מהכפלה של התפלגות זו ב 
+\begin_inset Formula $P$
+\end_inset
+
+ ולכן למעשה 
+\begin_inset Formula $\left\{ Y_{t}\right\} $
+\end_inset
+
+ ו 
+\begin_inset Formula $\left\{ X_{t}\right\} $
+\end_inset
+
+בעלות אותה התפלגות בכל צעד.
+ בהתחלה הם גם מחזירים את אותו הערך ממש )כאילו 
+\begin_inset Formula $Y$
+\end_inset
+
+ מסתכל מה יצא ל 
+\begin_inset Formula $X$
+\end_inset
+
+ ועונה כמוהו(.
+ כאמור, כשאנחנו מציינים שיוווין בין משתנים מקריים לדוגמה 
+\begin_inset Formula $Y_{t}=Z_{t}$
+\end_inset
+
+ הכוונה שהם מחזירים אותה 
+\bar under
+תוצאה
+\bar default
+ )במקרה הקוביות 
+\numeric on
+-
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שתי הקוביות שלנו נפלו על אותה ספרה( ולא )לאו דווקא( שהם מתפלגים אותו דבר.
+ 
+\begin_inset Newline newline
+\end_inset
+
+לאחר המפגש, כאשר בפעם הראשונה 
+\begin_inset Formula $X_{t}=Y_{t}=Z_{t}$
+\end_inset
+
+, 
+\begin_inset Formula $\left\{ Y_{t}\right\} $
+\end_inset
+
+ מפסיק להחזיר את הערך שמחזיר 
+\begin_inset Formula $\left\{ X_{t}\right\} $
+\end_inset
+
+ ועובר "להעתיק" את הערך ש 
+\begin_inset Formula $\left\{ Z_{t}\right\} $
+\end_inset
+
+ מחזיר.
+ עדיין, מאחר ו
+\begin_inset Formula $Y$
+\end_inset
+
+ בכל שלב ושלב לא שינה את כללי המעבר )שוב המעבר הוא בין 
+\bar under
+התפלגות
+\bar default
+ בשלב 
+\begin_inset Formula $t$
+\end_inset
+
+ להתפלגות בשלב 
+\begin_inset Formula $t+1$
+\end_inset
+
+, לא בין הערכים( הוא עדיין מתפלג כמו 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ראה באיור לדוגמה.
+ המספרים בקודקודים מסמנים את ההסתברות של המשתנה המקרי עבור הקודוקד )מצב(
+ בצעד הנוכחי.
+ הקודקוד האדום מסמן את ה"מיקום" בכל צעד, כלומר את הערך שהמשתנה המקרי החזיר.
+ נשים לב שההתפלגות של 
+\begin_inset Formula $Y$
+\end_inset
+
+ זהה לזו של 
+\begin_inset Formula $X$
+\end_inset
+
+ גם בצעד הרביעי למרות שהם מחזירים ערך)קודקוד( שונה.
+\end_layout
+
+\begin_layout Standard
+ 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename coupling2.bmp
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+דגימה של צימוד בהילוך מקרי בגרף
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Description
+הערה: באופן פורמלי היה עלינו להראות ש 
+\begin_inset Formula $\left\{ Y_{t}\right\} $
+\end_inset
+
+היא אכן שרשרת מרקוב מוגדרת היטב שהרי לא הגדרנו אותה באופן הרגיל שבו מוגדרת
+ שרשרת מרקוב אלא כהכלאה.
+ לא הראנו את ההצדקה לכך אבל ניתן להבין ב"נפנוף ידיים" שמאחר ובכל שלב ההתפלגות
+ גם של 
+\begin_inset Formula $X$
+\end_inset
+
+ וגם של 
+\begin_inset Formula $Z$
+\end_inset
+
+ מתקדמת לפי 
+\begin_inset Formula $P$
+\end_inset
+
+ ניתן לעבור ביניהם "באופן חלק" כאשר הם נפגשים.
+\end_layout
+
+\begin_layout Description
+עלינו
+\begin_inset space ~
+\end_inset
+
+להוכיח: 
+\begin_inset Formula 
+\[
+Pr\left[Y_{t}\ne Z_{t}\right]\overset{{\scriptstyle t\rightarrow\infty}}{\longrightarrow}0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מדוע זה מספיק? כי מתקיים 
+\begin_inset Formula 
+\[
+\left|q_{i}^{\left(t\right)}-\pi_{i}\right|=\left|Pr\left[Y_{t}=i\right]-Pr\left[Z_{t}=i\right]\right|\leq Pr\left[Y_{t}=i,Z_{i}\ne i\right]+Pr\left[Y_{t}\ne i,Z_{i}=i\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Rightarrow\sum\left|q_{i}^{\left(t\right)}-\pi_{i}\right|\leq\sum\left(Pr\left[Y_{t}=i,Z_{i}\ne i\right]+Pr\left[Y_{t}\ne i,Z_{i}=i\right]\right)=2Pr\left[Y_{t}\ne Z_{t}\right]
+\]
+
+\end_inset
+
+ולכן אם 
+\begin_inset Formula $Pr\left[Y_{t}\ne Z_{t}\right]$
+\end_inset
+
+ שואף ל 
+\begin_inset Formula $0$
+\end_inset
+
+ גם 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left|q_{i}^{\left(t\right)}-\pi_{i}\right|$
+\end_inset
+
+ ישאף ל 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ לכן מספיק להוכיח ש 
+\begin_inset Formula $X$
+\end_inset
+
+ ו 
+\begin_inset Formula $Z$
+\end_inset
+
+ נפגשים בשלב כלשהו בהסתברות 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+בחזרה להוכחה: לפי הארגודיות קיים 
+\begin_inset Formula $N$
+\end_inset
+
+ עבורו קיים 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ כך ש - 
+\begin_inset Formula 
+\[
+Pr\left[X_{N}=Z_{N}\right]\geq p_{0}
+\]
+
+\end_inset
+
+כי לכל דגימה אפשרית של 
+\begin_inset Formula $Z_{N}$
+\end_inset
+
+ )כאמור, מהארגודיות( יש הסתברות חיובית ש 
+\begin_inset Formula $X$
+\end_inset
+
+ "מגיע" לשם בצעד ה 
+\begin_inset Formula $N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+טענה: גם אם נתנה בכך שבצעד ה 
+\begin_inset Formula $N$
+\end_inset
+
+ לא מתרחש מפגש באותו אופן ב 
+\begin_inset Formula $N$
+\end_inset
+
+ הצעדים הבאים הטענה עדיין תקפה כלומר מתקיים 
+\begin_inset Formula 
+\[
+Pr\left[X_{2N}=Z_{2N}|X_{N}\ne Z_{N}\right]\geq p_{0}
+\]
+
+\end_inset
+
+ובאופן כללי 
+\begin_inset Formula 
+\[
+Pr\left[X_{\left(k+1\right)N}=Z_{\left(k+1\right)N}|X_{kN}\ne Z_{kN}\right]\geq p_{0}
+\]
+
+\end_inset
+
+ולכן הסיכוי שבאף אחד מ 
+\begin_inset Formula $k$
+\end_inset
+
+ דילוגים כאלה לא יהיה מפגש הוא 
+\begin_inset Formula 
+\[
+Pr\left[X_{N}\ne Z_{N},X_{2N}\ne Z_{2N},...,X_{kN}\ne Z_{kN}\right]=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Pr\left[X_{N}\ne Z_{N}\right]\cdot Pr\left[X_{2N}\ne Z_{2N},...,X_{kN}\ne Z_{kN}|X_{N}\ne Z_{N}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\leq\left(1-p_{0}\right)Pr\left[X_{2N}\ne Z_{2N},...,X_{kN}\ne Z_{kN}|X_{N}\ne Z_{N}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left(1-p_{0}\right)Pr\left[X_{2N}\ne Z_{2N}|X_{N}\ne Z_{N}\right]\cdot Pr\left[X_{3N}\ne Z_{3N},...,X_{kN}\ne Z_{kN}|X_{N}\ne Z_{N},X_{2N}\ne Z_{2N}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\leq\left(1-p_{0}\right)^{2}Pr\left[X_{3N}\ne Z_{3N},...,X_{kN}\ne Z_{kN}|X_{N}\ne Z_{N},X_{2N}\ne Z_{2N}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+...\leq\left(1-p_{0}\right)^{k}\overset{{\scriptstyle k\rightarrow\infty}}{\longrightarrow}0\qquad\blacksquare
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הגדרות: תהי 
+\begin_inset Formula $X_{0},X_{1},...$
+\end_inset
+
+ שרשרת מרקוב עם מטריצת מעברים 
+\begin_inset Formula $P$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נסמן: 
+\end_layout
+
+\begin_layout Enumerate
+הצעד הראשון שבו הגענו למצב 
+\begin_inset Formula $i$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+T_{i}=min\left\{ t\geq0|X_{t}=i\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+זמן פגיעה - 
+\begin_inset Formula 
+\[
+H_{ij}=E\left[T_{j}|X_{0}=i\right]
+\]
+
+\end_inset
+
+כלומר תוחלת הזמן להגעה ממצב 
+\begin_inset Formula $i$
+\end_inset
+
+ למצב 
+\begin_inset Formula $j$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+טענה: אפשר לחשב את זמן הפגיעה 
+\begin_inset Formula $H_{ij}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i,j\in S$
+\end_inset
+
+ בזמן ריצה פולינומי.
+\end_layout
+
+\begin_layout Standard
+הוכחה: מהגדרה 
+\begin_inset Formula 
+\[
+H_{ii}=0
+\]
+
+\end_inset
+
+לכל 
+\begin_inset Formula $i\ne j$
+\end_inset
+
+ כדי להגיע מ 
+\begin_inset Formula $i$
+\end_inset
+
+ ל 
+\begin_inset Formula $j$
+\end_inset
+
+ נעשה לפחות צעד אחד למצב 
+\begin_inset Formula $k$
+\end_inset
+
+ כלשהו )יתכן ש 
+\begin_inset Formula $k=j$
+\end_inset
+
+(, בהסתברות 
+\begin_inset Formula $p_{ik}$
+\end_inset
+
+, ומשם נמשיך )במידה ו 
+\begin_inset Formula $j\ne k$
+\end_inset
+
+( מ 
+\begin_inset Formula $k$
+\end_inset
+
+ ל 
+\begin_inset Formula $j$
+\end_inset
+
+.
+ כלומר 
+\begin_inset Formula 
+\[
+H_{ij}=\sum_{k}p_{ik}\left(H_{kj}+1\right)=\sum_{k}p_{ik}+\sum_{k}p_{ik}\cdot H_{kj}=1+\sum_{k}p_{ik}\cdot H_{kj}
+\]
+
+\end_inset
+
+טענה: לכל 
+\begin_inset Formula $j$
+\end_inset
+
+ נגדיר משתנים 
+\begin_inset Formula 
+\[
+\forall1\leq i\leq n:\ x_{i}=H_{ij}
+\]
+
+\end_inset
+
+המשתנים הללו מקיימים מערכת משוואות לינארית 
+\begin_inset Formula 
+\begin{eqnarray*}
+ & x_{j} & =0\\
+i\ne j: & x_{i} & =1+\sum_{k}p_{ik}x_{k}
+\end{eqnarray*}
+
+\end_inset
+
+נראה שלמערכת יש פתרון יחיד:
+\end_layout
+
+\begin_layout Standard
+נניח שיש לנו שני פתרונות 
+\begin_inset Formula 
+\[
+a_{1},...,a_{n}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+b_{1},...,b_{n}
+\]
+
+\end_inset
+
+נגדיר 
+\begin_inset Formula 
+\[
+\forall i:\ c_{i}=a_{i}-b_{i}
+\]
+
+\end_inset
+
+
+\begin_inset Formula $\left\{ c_{i}\right\} $
+\end_inset
+
+ מקיימים 
+\begin_inset Formula 
+\begin{eqnarray*}
+ & c_{j} & =0\\
+i\ne j: & c_{i} & \sum_{k}p_{ik}c_{k}
+\end{eqnarray*}
+
+\end_inset
+
+מאחר ו 
+\begin_inset Formula 
+\[
+a_{i}-b_{i}=\left(1+\sum_{k}p_{ik}a_{k}\right)-\left(1+\sum_{k}p_{ik}b_{k}\right)=\sum_{k}p_{ik}c_{k}
+\]
+
+\end_inset
+
+בדומה למה שראינו בעבר - קיבלנו שכל 
+\begin_inset Formula $c_{i}$
+\end_inset
+
+, פרט ל 
+\begin_inset Formula $c_{j}$
+\end_inset
+
+, הוא "ממוצע משוקלל" של "שכניו" ולכן, מאותה טענה שראינו לעיל בנוגע לפונקציות
+ הרמוניות, המקסימום וגם המיניומם נמצאים בהכרח ב 
+\begin_inset Formula $c_{j}=0$
+\end_inset
+
+.
+ משום שאם 
+\begin_inset Formula $c_{i}$
+\end_inset
+
+ אחר מקבל מקסימום נקבל שכל שכניו גם מקסימליים וכן הלאה עד שנגיע ל 
+\begin_inset Formula $c_{j}$
+\end_inset
+
+ )בהכרח נגיע בגלל שהשרשרת אי-פריקה( ונקבל שגם הוא מקסימלי ובאופן מקביל נקבל
+ שהוא גם מינימלי.
+\end_layout
+
+\begin_layout Standard
+כלומר קיבלנו ש 
+\begin_inset Formula 
+\[
+\forall i:\ a_{i}-b_{i}=0\Rightarrow a_{i}=b_{i}
 \]
 
 \end_inset
