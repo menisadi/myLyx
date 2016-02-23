@@ -7474,8 +7474,8 @@ status open
 
 \end_layout
 
-\begin_layout Description
-הגדרות: 
+\begin_layout Section*
+הגדרות בסיסיות: 
 \end_layout
 
 \begin_layout Itemize
@@ -7581,7 +7581,7 @@ Pr\left[X_{t}=j|X_{t-1}=i\right]=p_{ij}
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Subsubsection*
 
 \series bold
 הילוך מקרי בגרף
@@ -8288,12 +8288,20 @@ p_{nj}
 
 \end_layout
 
+\begin_layout Section*
+התפלגות מקובעת
+\end_layout
+
 \begin_layout Description
 הגדרה: התפלגות על המצבים 
 \begin_inset Formula $\pi=\left(\pi_{1},...,\pi_{n}\right)$
 \end_inset
 
- נקראת התפלגות מקובעת אם 
+ נקראת התפלגות מקובעת 
+\begin_inset Formula $\left(Stationary\right)$
+\end_inset
+
+ אם 
 \begin_inset Formula 
 \[
 \pi P=\pi
@@ -9967,6 +9975,10 @@ Pr\left[X_{N}\ne Z_{N}\right]\cdot Pr\left[X_{2N}\ne Z_{2N},...,X_{kN}\ne Z_{kN}
 
 \end_layout
 
+\begin_layout Section*
+זמני פגיעה וחזרה
+\end_layout
+
 \begin_layout Standard
 הגדרות: תהי 
 \begin_inset Formula $X_{0},X_{1},...$
@@ -10000,7 +10012,27 @@ T_{i}=min\left\{ t\geq0|X_{t}=i\right\}
 \end_layout
 
 \begin_layout Enumerate
-זמן פגיעה - 
+גרסה שונה מעט של 
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+T_{i}^{+}=min\left\{ t>0|X_{t}=i\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+זמן פגיעה 
+\begin_inset Formula $Hitting-Time$
+\end_inset
+
+ - 
 \begin_inset Formula 
 \[
 H_{ij}=E\left[T_{j}|X_{0}=i\right]
@@ -10017,6 +10049,55 @@ H_{ij}=E\left[T_{j}|X_{0}=i\right]
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Enumerate
+זמן חזרה 
+\begin_inset Formula $Return-Time$
+\end_inset
+
+ - 
+\begin_inset Formula 
+\[
+R_{i}=E\left[T_{i}^{+}|X_{0}=i\right]
+\]
+
+\end_inset
+
+ תוחלת מספר הצעדים שנדרש כדי לצאת מ 
+\begin_inset Formula $i$
+\end_inset
+
+ ולחזור אליו.
+\end_layout
+
+\begin_layout Enumerate
+זמן כיסוי - 
+\begin_inset Formula 
+\[
+C_{i}=E\left[\underset{j}{max}T_{j}|X_{0}=i\right]
+\]
+
+\end_inset
+
+תוחת מספר הצעדים שנדרש כדי לעבור בכל קודקוד לפחות פעם אחת בהנחה שיצאנו ממצב
+ 
+\begin_inset Formula $i$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+זמן כיסוי כללי - 
+\begin_inset Formula 
+\[
+C=\underset{i}{max}C_{i}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10185,7 +10266,2133 @@ a_{i}-b_{i}=\left(1+\sum_{k}p_{ik}a_{k}\right)-\left(1+\sum_{k}p_{ik}b_{k}\right
 כלומר קיבלנו ש 
 \begin_inset Formula 
 \[
-\forall i:\ a_{i}-b_{i}=0\Rightarrow a_{i}=b_{i}
+\forall i:\ a_{i}-b_{i}=0\Rightarrow a_{i}=b_{i}\qquad\blacksquare
+\]
+
+\end_inset
+
+תזכורת: סימנו ב 
+\begin_inset Formula $\pi$
+\end_inset
+
+ את ההתפלגות המקובעת.
+ נסמן ב 
+\begin_inset Formula $\pi_{i}$
+\end_inset
+
+ את ההסתברות להיות במצב 
+\begin_inset Formula $i$
+\end_inset
+
+ לפי ההתפלגות המקובעת.
+ סימנו ב 
+\begin_inset Formula $R_{i}/R\left(i\right)$
+\end_inset
+
+ את זמן החזרה עבור המצב 
+\begin_inset Formula $i$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+משפט: בשרשרת מרקוב אי-פריקה, לכל מצב 
+\begin_inset Formula $i$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula 
+\[
+R\left(i\right)=\frac{1}{\pi_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לא
+\begin_inset space ~
+\end_inset
+
+הוכחה: אם נאתחל את השרשרת להתפלגות המקובעת 
+\begin_inset Formula $X_{0}\sim\pi$
+\end_inset
+
+ אזי שכזכור, היא תשאר בהתפלגות זו בכל הצעדים בהמשך.
+ מהגדרת ההתפלגות נקבל שבתוחלת ב 
+\begin_inset Formula $\pi_{i}$
+\end_inset
+
+מהצעדים נהיה במצב 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ מצד שני מהגדרת זמן פגיעה אנו נחזור ל 
+\begin_inset Formula $i$
+\end_inset
+
+ כל 
+\begin_inset Formula $R\left(i\right)$
+\end_inset
+
+ צעדים ולכן אנחנו נהיה ב 
+\begin_inset Formula $i$
+\end_inset
+
+ ב 
+\begin_inset Formula $\frac{1}{R\left(i\right)}$
+\end_inset
+
+ מהצעדים מכאן ש 
+\begin_inset Formula 
+\[
+\pi_{i}=\frac{1}{R\left(i\right)}
+\]
+
+\end_inset
+
+כנדרש.
+\end_layout
+
+\begin_layout Standard
+יותר
+\begin_inset space ~
+\end_inset
+
+הוכחה: בהינתן מצב 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ נגדיר לכל מצב 
+\begin_inset Formula $j$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+r_{j}=E\left[\left|\left\{ 0<t\leq T_{i}^{+}:\ X_{t}=j\right\} \right||X_{0}=i\right]
+\]
+
+\end_inset
+
+כלומר תוחלת מספר הפעמים שנגיע ל 
+\begin_inset Formula $j$
+\end_inset
+
+ במסלול שמתחיל מ 
+\begin_inset Formula $i$
+\end_inset
+
+ וחוזר אל 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נשים לב שמתקיים 
+\begin_inset Formula $r_{i}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ובנוסף
+\begin_inset Formula 
+\[
+\sum_{j}r_{j}=\sum_{j}E\left[\left|\left\{ 0<t\leq T_{i}^{+}:\ X_{t}=j\right\} \right|\right]=E\left[\sum_{j}\left|\left\{ 0<t\leq T_{i}^{+}:\ X_{t}=j\right\} \right|\right]
+\]
+
+\end_inset
+
+מאחר בסכום אנו סוכמים את כל הצעדים בהם הגענו ל 
+\begin_inset Formula $j_{1}$
+\end_inset
+
+ ואת כל הצעדים בהם הגענו ל 
+\begin_inset Formula $j_{2}$
+\end_inset
+
+ וכן הלאה, אנו למעשה סוכמים את 
+\bar under
+כל
+\bar default
+ הצעדים במסלול מ 
+\begin_inset Formula $i$
+\end_inset
+
+ ל 
+\begin_inset Formula $i$
+\end_inset
+
+ ולכן 
+\begin_inset Formula 
+\[
+=E\left[\left|\left\{ 0<t\leq T_{i}^{+}:\ X_{t}=j\right\} \right|\right]=E\left[T_{i}^{+}\right]=R\left(i\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כדי לחשב את 
+\begin_inset Formula $r_{k}$
+\end_inset
+
+ נוכל לסכום את מספר הפעמים שהגענו בצעד אחד משכן כלשהו 
+\begin_inset Formula $j$
+\end_inset
+
+ אל 
+\begin_inset Formula $k$
+\end_inset
+
+ לפני סוף המסלול )נסכום לכל 
+\begin_inset Formula $j$
+\end_inset
+
+ כי עבור 
+\begin_inset Formula $j$
+\end_inset
+
+ שאיננו שכן התשובה תהיה 
+\begin_inset Formula $0$
+\end_inset
+
+( 
+\begin_inset Formula 
+\[
+r_{k}=E\sum_{j}\left[_{\ went\ from\ j\ to\ k}^{times\ before\ T_{i}^{+}\ we}\right]=\sum_{j}p_{jk}E\left[_{we\ visit\ in\ j}^{times\ before\ T_{i}^{+}}\right]=\sum_{j}p_{jk}r_{j}
+\]
+
+\end_inset
+
+קיבלנו מערכת משוואות לינאריות 
+\begin_inset Formula 
+\[
+\forall k:\ r_{k}=\sum_{j}p_{jk}r_{j}
+\]
+
+\end_inset
+
+וזו אותה מערכת משוואות שקיבלנו כאשר חישבנו את ההתפךגות 
+\begin_inset Formula $\pi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הראנו שלמערכת יש פתרון יחיד עד כדי מכפלה בסקלר ולכן קיים קבוע 
+\begin_inset Formula $c>0$
+\end_inset
+
+ כך ש 
+\begin_inset Formula 
+\[
+\forall k:\ \forall r_{k}=\pi_{k}
+\]
+
+\end_inset
+
+אנו יודעים ש 
+\begin_inset Formula 
+\[
+R\left(i\right)=\sum_{k}r_{k}=\sum_{k}c\pi_{k}=c\sum_{k}\pi_{k}=c
+\]
+
+\end_inset
+
+ומאחר ו 
+\begin_inset Formula $r_{i}=1$
+\end_inset
+
+ נקבל 
+\begin_inset Formula 
+\[
+r_{i}=c\cdot\pi_{i}=R\left(i\right)\cdot\pi_{i}\Rightarrow R\left(i\right)=\frac{1}{\pi_{i}}\qquad\blacksquare
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+תזכורת: בגרף קשיר, לא מכוון, ההתפלגות המקובעת של הילוך מקרי היא 
+\begin_inset Formula 
+\[
+\pi_{v}=\frac{deg\left(v\right)}{2\left|E\right|}
+\]
+
+\end_inset
+
+מסקנה: בגרף קשיר, לא מכוון, מתקיים 
+\begin_inset Formula 
+\[
+R\left(v\right)=\frac{2\left|E\right|}{deg\left(v\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+מסלול באורך 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נניח שי שלנו מסלול 
+\begin_inset Formula $P$
+\end_inset
+
+ באורך 
+\begin_inset Formula $n$
+\end_inset
+
+ : 
+\begin_inset Formula $0,1,...,n-1,n$
+\end_inset
+
+ נרצה לחשב את 
+\begin_inset Formula $H\left(0,n\right)$
+\end_inset
+
+ כלומר את הזמן )בתוחלת( שיקח לנו להגיע בפעם הראשונה מ 
+\begin_inset Formula $0$
+\end_inset
+
+ ל 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+נסמן ב 
+\begin_inset Formula $R_{k}\left(j\right)$
+\end_inset
+
+ את זמן החזרה של נקודה 
+\begin_inset Formula $j$
+\end_inset
+
+ בגרף המתקבל מ 
+\begin_inset Formula $k$
+\end_inset
+
+ הנקודות הראשונות במסלול.
+ וב 
+\begin_inset Formula $deg_{k}\left(j\right)$
+\end_inset
+
+ את דרגת 
+\begin_inset Formula $j$
+\end_inset
+
+ בגרף זה.
+\end_layout
+
+\begin_layout Standard
+נשים לב: ובנוסף בגרף המושרה הזה יש 
+\begin_inset Formula $k$
+\end_inset
+
+ קשות ולכן 
+\begin_inset Formula 
+\[
+R_{k}\left(k\right)=\frac{2k}{deg_{k}\left(k\right)}=2k
+\]
+
+\end_inset
+
+כדי להגיע מ 
+\begin_inset Formula $0$
+\end_inset
+
+ ל 
+\begin_inset Formula $n$
+\end_inset
+
+ עלינו לעבור בכל הנקודות בדרך כאשר 
+\begin_inset Formula 
+\[
+0=T_{0}<T_{1}<...<T_{n}
+\]
+
+\end_inset
+
+נשים לב שמתקיים 
+\begin_inset Formula 
+\[
+T_{n}-T_{0}=T_{n}-T_{n-1}+T_{n-1}-T_{n-2}+..-T_{0}
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula 
+\[
+H\left(0,n\right)=E\left[T_{n}-T_{0}|X_{0}=0\right]=E\left[\sum_{k=0}^{n-1}\left(T_{k+1}-T_{k}\right)|X_{0}=0\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\sum_{k=0}^{n-1}E\left[\left(T_{k+1}-T_{k}\right)|X_{0}=0\right]=H\left(0,1\right)+H\left(1,2\right)+...+H\left(n-1,n\right)
+\]
+
+\end_inset
+
+כעת נשים לב שמהנקודה 
+\begin_inset Formula $0$
+\end_inset
+
+ ניתן רק לזוז לנקודה 
+\begin_inset Formula $1$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $H\left(0,1\right)=1$
+\end_inset
+
+.
+ מנהקודה 
+\begin_inset Formula $1$
+\end_inset
+
+ ניתן לזוז קדימה ל 
+\begin_inset Formula $2$
+\end_inset
+
+ או אחורה ל 
+\begin_inset Formula $0$
+\end_inset
+
+ ואז חזרה )כי אין ברירה אחרת( ל 
+\begin_inset Formula $1$
+\end_inset
+
+וחזרנו לנקודת המוצא.
+ יש לנו "מטבע" )או משתנה מקרי ברנולי עם 
+\begin_inset Formula $p=\frac{1}{2}$
+\end_inset
+
+( שבהסתברות 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ "מצליח", כלומר אנחנו מתקדמים ל 
+\begin_inset Formula $2$
+\end_inset
+
+ ובהסתברות 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ "נכשל" כלומר אנחנו זזים אחורה ל 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ על פי המאפיינים של משתנה ברנולי נקבל 
+\begin_inset Formula 
+\[
+E\left[number\ of\ "failures"\right]=\frac{1}{p}-1=1
+\]
+
+\end_inset
+
+כל עוד אנחנו נכשלים המשמעות היא שאנו זזים צעד אחד ל 
+\begin_inset Formula $0$
+\end_inset
+
+ ואחד חזרה ל 
+\begin_inset Formula $1$
+\end_inset
+
+ ואז שוב "מטילים מטבע" כדי לדעת לאן נזוז.
+ כאשר נצליח המשמעות היא שנלך צעד אחד נוסף כדי להגיע, סוף סוף, אל 
+\begin_inset Formula $2$
+\end_inset
+
+ ולכן 
+\begin_inset Formula 
+\[
+H\left(1,2\right)=E\left[_{\substack{went\ the\ "wrong\ way"}
+}^{number\ of\ times\ we}\right]\cdot E\left[_{\substack{and\ return\ to\ 1}
+}^{time\ to\ go\ 0}\right]+1=1\cdot2+1=3
+\]
+
+\end_inset
+
+ובאופן כללי 
+\begin_inset Formula 
+\[
+H\left(k,k+1\right)=E\left[_{\substack{went\ the\ "wrong\ way"}
+}^{number\ of\ times\ we}\right]\cdot E\left[_{\substack{we\ went\ the\ wrong\ way}
+}^{time\ to\ return\ to\ k\ after}\right]+1
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=1\cdot R_{k}\left(k\right)+1=2k+1
+\]
+
+\end_inset
+
+בסך הכל נקבל : 
+\begin_inset Formula 
+\[
+H\left(0,n\right)=\sum_{k=0}^{n-1}\left(2k+1\right)=n^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+לצערי, בשל קוצר זמן, אני לא אספיק לסכם את השיעור המבלבל מאוד והלא לגמרי
+ קשור בנושא 
+\begin_inset Formula $SAT$
+\end_inset
+
+.
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+חישוב קוונטי
+\end_layout
+
+\begin_layout Section*
+רקע
+\end_layout
+
+\begin_layout Description
+הברה לא באמת צריך לדעת את הפיסיקה של תורת הקוונטים כדי לדעת לתכנן אלגוריתמים
+ קוונטיםת באותה מידה שלא היינו צריכים ידע באלקטרוניקה של של מחשב קלאסי כדי
+ לתכנן אלגוריתמים עד כה.
+\end_layout
+
+\begin_layout Subsection*
+ניסוי שני הסדקים
+\end_layout
+
+\begin_layout Standard
+אם נזרוק אבל לבריכה היא תכרום לגל שינוע ממקום הפגיע במים לכל הכיוונים.
+ אם נחסום את גל המים בקיר עם סדק הגל יעצר למעט הסדק מעבר לקיר ינויע גל שתחילתו
+ בסדק.
+ אם המים, לצורך הניסוי, יכתימו את צד הבריכה, נקבל שם כתם מקביל למקום הסדק
+ שככל שנתרחק ממנו הצבע יחלש.
+ אם בקיר יהיו שני סדקים ולא רק אחד, יווצרו מעבר לקיר שני גלים שיתנגשו.
+ שני גלים שמתנגשים יכולים או להתווסף זה לזה או לבטל זה את זה )תלוי במצב
+ של כל אחד, לא קריטי( ולכן נקבל בצד הבריכה לא כתם שהולך ודוהה בקצוות כמקודם
+ אלא תבנית מתחזקת ונחלשת לכל האורך )אם כי גם כאן הצבע יהיה יותר מודגש במרכז(.
+\end_layout
+
+\begin_layout Standard
+כמובן שתופעה זו נובעת מהאופי הגלי של תנועת המים.
+ אם היינו מנסים את אותו ניסוי עם חפץ חלקיקי כלשהו )כלומר עשוי חלקיקים, נניח,
+ אבן( החלקיקים, אלה שהיו מצליחים לעבור את הסדק, היו ממשיכים ישירות וצובעים
+ נקודה ותו לא.
+\end_layout
+
+\begin_layout Standard
+בתחילת המאה ה
+\numeric on
+19
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בוצע ניסוי שכזה עם אור, במטרה לקבוע אם האור הוא גל או חלקיק, התוצאה היית
+ שהאור התנהג כמו המים ממקודם, כלומר כמו גל.
+ מאוחר יותר התברר שיש לאור גם מאפיינים חלקיקיים והוא מורכב מחלקיקים ששמם
+ "פוטונים", האור, איכשהו, הוא גם גל וגם חלקיק.
+\end_layout
+
+\begin_layout Standard
+בתחילת המאה ה
+\numeric on
+20
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ניסו לבצע את הניסוי עם אלקטרונים.
+ למרבה ההפתעה גם האלקטרונים התנהגו כמו גלים ויצרו תבנית גלית על המסך שמאחורי
+ הסדקים.
+\end_layout
+
+\begin_layout Standard
+אז הוחלט לעשות את הניסוי מעט אחרת - במקום לירות כל פעם שני חלקיקים )פוטונים
+ במקרה הזה( אחד לכל סדק, הפעם ירו חלקיק אחד בלבד לכיוון שני הסדקים באופן
+ כזה שיש לו אפשרות לעבור בכל סדק )כתלות ב"ספין" מאפיין כלשהו של פוטונים.
+ הספין לא ידוע במהלך הניסוי(.
+ על המסך התקבלה תבנית מתחלפת כאילו ירינו לשני הסדקים בו זמנית.
+ במובן מסוים התברר שהפוטון הבודד "הפריע לעצמו".
+ 
+\end_layout
+
+\begin_layout Standard
+תורת הקוונטים סיפקה את ההסבר לתופעה - אין מיקום מוגדר לפוטון )וכן לגבי עוד
+ כמה מאפיינים( אלא מעין התפלגות מיקום במרחב, רק כאשר אנו מנסים למדוד את
+ המיקום ההתפלגות "קורסת" לערך מוגדר, כאילו יש משתנה אקראי שמגדיר את המיקום
+ וניסיון למדוד אותו גורם לו להדגם ולעשות למוחלט.
+ עקרון זה נקרא 
+\series bold
+עקרון הסופרפוזיציה
+\series default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+להמחשה של הנסוי 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://goo.gl/A5Cje0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+לעניינו
+\end_layout
+
+\begin_layout Description
+הגדרה: קיוביט )
+\lang english
+qubit - quantum bit
+\lang hebrew
+( יחידת זכרון שיכולה להיות במצב קלאסי )כלומר 
+\begin_inset Formula $\left\{ 0,1\right\} $
+\end_inset
+
+ כמו שראינו עד כה( שאותם נסמן ב- 
+\begin_inset Formula $|0\rangle,|1\rangle$
+\end_inset
+
+ או בסופרפוזיציה כלומר 
+\begin_inset Formula 
+\[
+\alpha_{0}|0\rangle+\alpha_{1}|1\rangle
+\]
+
+\end_inset
+
+ לכל 
+\begin_inset Formula $\alpha_{0},\alpha_{1}\in\mathbb{C}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\left|\alpha_{0}\right|^{2}+\left|\alpha_{1}\right|^{2}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר מצבו של קיוביט שנמצא בסופרפוזיציה הוא משהו שמזכיר הפתלגות אלא שהפעם
+ יש ל"הסתברות" כיוון.
+\end_layout
+
+\begin_layout Standard
+אם מודדים קיוביוט, כלומר נבדוק באיזה מצב הוא ובכך נכפה עליו מצב קלאסי, המצב
+ של הקיוביט יהפוך ל 
+\begin_inset Formula $|0\rangle$
+\end_inset
+
+ או 
+\begin_inset Formula $|1\rangle$
+\end_inset
+
+ כאשר 
+\begin_inset Formula 
+\[
+Pr\left[we\ got\ |0\rangle\right]=\left|\alpha_{0}\right|^{2},\qquad Pr\left[we\ got\ |1\rangle\right]=\left|\alpha_{1}\right|^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+פעולות על קיוביטים
+\end_layout
+
+\begin_layout Standard
+אנו לא מאפשרים כל פעולה על קיוביט.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+פעולה חייבת להיות לינארית
+\bar default
+.
+ נחשוב על 
+\begin_inset Formula $|0\rangle,|1\rangle$
+\end_inset
+
+ כבסיס של מרחב וקטורי כלומר 
+\begin_inset Formula 
+\[
+|0\rangle=\begin{pmatrix}1\\
+0
+\end{pmatrix}\ |1\rangle=\begin{pmatrix}0\\
+1
+\end{pmatrix}
+\]
+
+\end_inset
+
+ ולפי ההגדרות נקבל שסופרפוזיציה היא צירוף לינארי של אברי הבסיס 
+\begin_inset Formula 
+\[
+\alpha_{0}|0\rangle+\alpha_{1}|1\rangle=\begin{pmatrix}\alpha_{0}\\
+\alpha_{1}
+\end{pmatrix}
+\]
+
+\end_inset
+
+ ומאחר ו 
+\begin_inset Formula 
+\[
+\left\Vert \begin{pmatrix}\alpha_{0}\\
+\alpha_{1}
+\end{pmatrix}\right\Vert =\left|\alpha_{0}\right|^{2}+\left|\alpha_{1}\right|^{2}=1
+\]
+
+\end_inset
+
+ הוקטור המייצב את הסופרפוזיציה 
+\begin_inset Formula $\begin{pmatrix}\alpha_{0}\\
+\alpha_{1}
+\end{pmatrix}$
+\end_inset
+
+ הוא וקטור יחידה.
+\end_layout
+
+\begin_layout Standard
+מלינארית נובע שפעולה 
+\begin_inset Formula $U$
+\end_inset
+
+ על קיוביט יחיד 
+\begin_inset Formula $q=\alpha_{0}|0\rangle+\alpha_{1}|1\rangle$
+\end_inset
+
+ כלשהו ניתנת להגדרה כמטריצה 
+\begin_inset Formula $U\in\mathbb{C}^{2\times2}$
+\end_inset
+
+ שפעולתה מוגדרת על אברי הבסיס 
+\begin_inset Formula 
+\[
+U\left(|0\rangle\right)\longmapsto s_{0}\in\mathbb{C}^{2}\ U\left(|1\rangle\rangle\right)\longmapsto s_{1}\in\mathbb{C}^{2}
+\]
+
+\end_inset
+
+ומכאן ש
+\begin_inset Formula 
+\[
+U\left(q\right)=U\left(\alpha_{0}|0\rangle+\alpha_{1}|1\rangle\right)=\alpha_{0}s_{0}+\alpha_{1}s_{1}
+\]
+
+\end_inset
+
+כדי לשמור על עקביות ההגדרה נרצה שתוצאת פעולה תהיה תמיד סופרפוזיציה תקינה
+ של מצבים קלאסים.
+ כלומר שיתקיים
+\begin_inset Formula 
+\[
+\forall v\in\mathbb{C}^{2}:\ \left\Vert v\right\Vert =1\Rightarrow\left\Vert U\left(v\right)\right\Vert =1
+\]
+
+\end_inset
+
+כלומר 
+\bar under
+
+\begin_inset Formula $U$
+\end_inset
+
+ מעבירה וקטורי יחידה לוקטורי יחידה
+\bar default
+, או במילים אחרות, 
+\begin_inset Formula $U$
+\end_inset
+
+ לא מכווצת ולא מעוות אלא היא מריצת שיקוף ו/או סיבוב.
+ מריצה כזאת, כפי שלמדנו כקורס באלגברה נקראית מטריצה אוניטרית המוגדרת באופן
+ פורמלי 
+\begin_inset Formula 
+\[
+U\cdot U^{*}=1
+\]
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $U*=\overline{U^{T}}$
+\end_inset
+
+ הוא הצמוד המרוכב )אחרי שעשינו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+traspose
+\lang hebrew
+( של 
+\begin_inset Formula $U$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הגדרה: צירוף של כמה קיוביטים
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $n$
+\end_inset
+
+ קיוביטים יכולים להיות בסופרפוזיציה משותפת שמוגדרת כ
+\begin_inset Formula 
+\[
+\sum_{b_{1}...b_{n}\in\left\{ 0,1\right\} ^{n}}\alpha_{b_{1}...b_{n}}|b_{1}...b_{n}\rangle\rangle
+\]
+
+\end_inset
+
+כך ש
+\begin_inset Formula 
+\[
+\sum_{b_{1}...b_{n}}\left|\alpha_{b_{1}...b_{n}}\right|^{2}=1
+\]
+
+\end_inset
+
+הבהרה - 
+\begin_inset Formula $b_{1}...b_{n}$
+\end_inset
+
+ היא מחרוזת של אפסים ואחדות.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+במילים - סופרפוזיציה של כמה קיוביטים היא צירוף לינארי של מצבים קלאסים, אלא
+ שבמקום שני מצבים קלאסים בלבד 
+\begin_inset Formula $|0\rangle,|1\rangle\rangle$
+\end_inset
+
+ יש לנו 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ מצבים קלאסים 
+\begin_inset Formula $|0...0\rangle,|0...01\rangle,...|1...1\rangle$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Description
+דוגמה: בשני קיוביטים נקבל את המצבים הקלאסים 
+\begin_inset Formula $|00\rangle,|01\rangle,|10\rangle,|11\rangle$
+\end_inset
+
+ וסופרפוזיציה של שני קיוביטים תהיה 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+\alpha_{00}|00\rangle+\alpha_{01}|01\rangle+\alpha_{10}|10\rangle+\alpha_{11}|11\rangle
+\]
+
+\end_inset
+
+כך ש 
+\begin_inset Formula 
+\[
+\left|\alpha_{00}\right|^{2}+\left|\alpha_{01}\right|^{2}+\left|\alpha_{10}\right|^{2}+\left|\alpha_{11}\right|^{2}=1
+\]
+
+\end_inset
+
+גם כאן ניתן להתייחס לייצוג כמרחב וקטורי 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ מימדי והסופר פוזיציה הזאת, של שני קיוביטים תיוצג כ 
+\begin_inset Formula 
+\[
+\begin{pmatrix}\alpha_{00}\\
+\alpha_{01}\\
+\alpha_{10}\\
+\alpha_{11}
+\end{pmatrix}\in\mathbb{C}^{4}
+\]
+
+\end_inset
+
+ כך ש 
+\begin_inset Formula 
+\[
+\left\Vert \begin{pmatrix}\alpha_{00}\\
+\alpha_{01}\\
+\alpha_{10}\\
+\alpha_{11}
+\end{pmatrix}\right\Vert =1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+הגדרה: אוסף של קיוביטים יכולים להיות במצב 
+\series bold
+שזור
+\series default
+ )כלומר, יש מעין תלות בין המצבים שלהם, יוסבר בהמשך( או במצב לא שזור ואז
+ ניתן לפרק את הסופרפוזיציה ל
+\series bold
+מכפלה טנזורית
+\series default
+ כלומר למכפלה הבאה
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+בדומה לפירוק של הסתברות על משתנים בלתי תלויים למכפלת הסתברויות
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+q_{1}\otimes...\otimes q_{n}=\left(\alpha_{0}^{1}|0\rangle+\alpha_{1}^{1}|1\rangle\right)\otimes...\otimes\left(\alpha_{0}^{n}|0\rangle+\alpha_{1}^{n}|1\rangle\right)=\sum_{b_{1}...b_{n}}\left(\prod_{k=1}^{n}\alpha_{b_{k}}^{k}\right)|b_{1}...b_{n}\rangle
+\]
+
+\end_inset
+
+כלומר במכפלה טנזורית אנחנו סוכמים על כל האינדקסים 
+\begin_inset Formula $b_{1}...b_{n}$
+\end_inset
+
+ )מחרוזות מאורך 
+\begin_inset Formula $n$
+\end_inset
+
+ של אפסים ואחדות( ולכל אינקדס שכזה המקדם של המצב הקלאסי בעל האינקדס יהיה
+ המכפלה של המקדמים המתאימים בכל קיוביטץ לדוגמה עבור
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+קיוביטים ועבור אינדקס 
+\begin_inset Formula $b_{1}b_{2}b_{3}=001$
+\end_inset
+
+ המקדם של 
+\begin_inset Formula $|001\rangle$
+\end_inset
+
+ יהיה 
+\begin_inset Formula 
+\[
+\prod_{k=1}^{3}\alpha_{b_{k}}^{k}=\alpha_{0}^{0}\alpha_{0}^{1}\alpha_{1}^{2}
+\]
+
+\end_inset
+
+אם, לעומת זאת 
+\begin_inset Formula $q_{1},...,q_{n}$
+\end_inset
+
+ היו שזורים לא היינו יכולים לבטא את הסופרפוזיציה )את הצירוף הלינארי( בתור
+ מכפלה טנזורית באופן הזה.
+\end_layout
+
+\begin_layout Description
+דוגמה: 
+\begin_inset Formula 
+\[
+\alpha_{0}^{1}\alpha_{0}^{2}|00\rangle+\alpha_{0}^{1}\alpha_{1}^{2}|01\rangle+\alpha_{1}^{1}\alpha_{0}^{2}|10\rangle+\alpha_{1}^{1}\alpha_{1}^{2}|11\rangle=\left(\alpha_{0}^{1}|0\rangle+\alpha_{1}^{1}|1\rangle\right)\otimes\left(\alpha_{0}^{2}|0\rangle+\alpha_{1}^{2}|1\rangle\right)
+\]
+
+\end_inset
+
+ולכן המצבים לא שזורים.
+\end_layout
+
+\begin_layout Subsubsection*
+מדידה חלקית
+\end_layout
+
+\begin_layout Standard
+אם נבצע מדידה של 
+\begin_inset Formula $k$
+\end_inset
+
+ קיוביטים הראשונים בסופרפוזיציה אזי לכל תוצאת מדידה אפשרית 
+\begin_inset Formula $a_{1}...a_{k}\in\left\{ 0,1\right\} ^{k}$
+\end_inset
+
+ )במדידה נקבל תמיד מצבים קלאסים( 
+\begin_inset Formula 
+\[
+Pr\left[_{\substack{will\ return\ a_{1}...a_{k}}
+}^{the\ measurement}\right]=\sum_{b_{k+1}...b_{n}}\left|a_{1}...a_{k}b_{k+1}...b_{n}\right|^{2}
+\]
+
+\end_inset
+
+כלומר הסיכוי לקבל תוצאה חלקית מסוימת שווה לסכום ה"גדלים" של תוצאות המדידה
+ )של כל הקיוביטים( האפשרויות ש"מסכימות" עם התוצאה החלקית.
+\end_layout
+
+\begin_layout Standard
+נכנה הסתברות זו 
+\begin_inset Formula $P_{a_{1}...a_{k}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לאחר מדידה חלקית אם קיבלנו 
+\begin_inset Formula $a_{1}...a_{k}$
+\end_inset
+
+ אזי שאר 
+\begin_inset Formula $n-k$
+\end_inset
+
+ הקיוביטים נמצאים עדיין בסופרפוזיציה שנובעת מהסופרפוזיציה שהיית כאשר 
+\begin_inset Formula $k$
+\end_inset
+
+ הקיוביטים הראשונים כבר לא חלק ממנה אלא הם כבר "נקבעו" כלומר 
+\begin_inset Formula 
+\[
+\sum_{b_{k+1}...b_{n}}\frac{\alpha_{a_{1}...a_{k}b_{k+1}...b_{n}}}{\sqrt{P_{a_{1}...a_{k}}}}|b_{k+1}...b_{n}\rangle
+\]
+
+\end_inset
+
+כלומר המקדם של המצבים הקלאסים )הצירוף הלינארי כולל רק את האינדקסים שלא נמדדו(
+ הוא סכום של המקדמים האפשריים בהינתן ש 
+\begin_inset Formula $\alpha_{0}=a_{0},...,\alpha_{k}=a_{k}$
+\end_inset
+
+.
+ חילקנו ב 
+\begin_inset Formula $\sqrt{P_{a_{1}...a_{k}}}$
+\end_inset
+
+ כדי לנרמל את המקדמים באופן כזה שנשאר עם קואורדינאטות שסכומם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כך שהסופרפוזיציה תקינה.
+\end_layout
+
+\begin_layout Description
+הערה: מדידה חלקית מזכירה קצת הסתברות מותנית - מה ההתפלגות בהינתן שחלק מהמשתנים
+ הם נקבעו.
+\end_layout
+
+\begin_layout Description
+דוגמה: שני קיוביטים עם סופרפוזיציה משותפת 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+את המחובר השני רשמנו רק למען הבהירות, סתם כך לא צריך לרשום מחוברים שהמקדם
+ שלהם הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{-i}{\sqrt{2}}|00\rangle+0|01\rangle-\frac{1}{\sqrt{6}}|10\rangle+\frac{i}{\sqrt{3}}|11\rangle
+\]
+
+\end_inset
+
+נמדוד את הקיוביט הראשון בלבד 
+\begin_inset Formula 
+\[
+Pr\left[q_{1}=1\right]=Pr\left[q_{1}q_{2}=1q_{2}\right]=\left|\alpha_{10}\right|^{2}+\left|\alpha_{11}\right|^{2}=\left|-\frac{1}{\sqrt{6}}\right|^{2}+\left|\frac{i}{\sqrt{3}}\right|^{2}=\frac{1}{6}+\frac{1}{3}=\frac{1}{2}
+\]
+
+\end_inset
+
+ומכך נובע שבמקרה המשלים 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+גם אותו ניתן, כמובן, לחשב אך במקרה הזה אין צורך
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+Pr\left[q_{1}=0\right]=Pr\left[q_{1}q_{2}=0q\right]=\frac{1}{2}
+\]
+
+\end_inset
+
+לאחר המדידה:
+\end_layout
+
+\begin_layout Itemize
+אם קיבלנו 
+\begin_inset Formula $0$
+\end_inset
+
+ - מאחר והמקדם של 
+\begin_inset Formula $|01\rangle$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הרי שההקיוביט השני חייב להיות 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+למעשה, במצב שהתקבל ברור שמדידת הקיוביט השני תחזיר
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\frac{\alpha_{00}}{\sqrt{P_{0}}}|0\rangle=\frac{\frac{-i}{\sqrt{2}}}{\sqrt{\frac{1}{2}}}|0\rangle=-i|0\rangle
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+אם קיבלנו 
+\begin_inset Formula $1$
+\end_inset
+
+ - אזי הקיוביט השני יהיה 
+\begin_inset Formula 
+\[
+P_{1}=\frac{1}{2}\Rightarrow\frac{1}{\sqrt{P_{1}}}=\sqrt{2}\Rightarrow\sqrt{2}\left(\alpha_{10}|0\rangle+\alpha_{11}|1\rangle\right)=-\frac{1}{\sqrt{3}}|0\rangle+\sqrt{\frac{2}{3}}|1\rangle
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+ניסוי/פרדוקס 
+\begin_inset Formula $EPR-Einstein\ Podolsky\ Rosen$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בשנת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1935
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הציעו אלברט איינשטיין, בוריס פודולסקי וניית'ן רוזן ניסוי מחשבתי במטרה להדגים
+ את הבעייתיות של תורת הקוואנטים.
+ 
+\end_layout
+
+\begin_layout Standard
+נניח שיש בידינו שני קיוביטים 
+\begin_inset Formula $\frac{1}{\sqrt{2}}|00\rangle+\frac{1}{\sqrt{2}}|11\rangle$
+\end_inset
+
+ )שאר המקדמים הם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ולכן לא טרחנו לרשום אותם(.
+ אם נעשה את החישוב כמו שעשינו מקודם )לא נתעכב על זה( נגלה שהם מתואמים לחלוטין,
+ במובן שאם נמדוד קיוביט אחד הקיוביט השני בהכרח מקבל את אותו הערך.
+ נניח שהפרדנו את הקיוביטים )בלי לפגוע בסופר פוזיציה המשותפת, זה אפשרי מבחינה
+ פיזיקלית, לא משנה לנו איך( וכעת אנסטסיה מחזיקה בקיוביט הראשון ובוריס בשני.
+ 
+\end_layout
+
+\begin_layout Standard
+שניהם מתפצלים כך שמהרחק ביניהם גדול, נניח בוריס טס למאדים.
+ שניהם, בתיאום מראש, מודדים את הקיוביט שיש בידיהם באותו הזמן.
+ 
+\end_layout
+
+\begin_layout Standard
+באופן "פלאי" שניהם יקבלו את אותה התוצאה.
+ הבעיה היא שעל פניו, בשביל תוצאה מתואמת איזשהי אינפורמציה היית צריכה לעבור
+ מאחד מהם לשני, אבל אם כך הרי שהמעבר הזה היה מהיר מאוד - מרחק גדול כרצוננו
+ בשבריר שניה, מה שסותר את תורת היחסות שטוענת שאין אפשרות לעבור את מהירות
+ האור.
+\end_layout
+
+\begin_layout Description
+תוספת
+\begin_inset space ~
+\end_inset
+
+העשרה: איינשטיין התנגד נחרצות לפרשנות המקובלת לתוצאות של תורת הקוונטים )ובראשה
+ מה שמכונה "אסכולת קופנהגן"( שהסבירה שאין מאפיינים מוגדרים אלא סופרפוזיציה
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+או בניסוחו המפורסם מתוך מכתב לחבר "מכניקת הקוונטים בהחלט מרשימה.
+ אך קול פנימי אומר לי שהיא עדיין איננה הדבר האמיתי.
+ התאוריה אומרת הרבה, אך לא באמת מקרבת אותנו במאומה לסודו של "הזקן" ]אלוקים[.
+ 
+\series bold
+אני, איך שלא יהיה, משוכנע שהוא אינו מטיל קוביות
+\series default
+"
+\end_layout
+
+\end_inset
+
+.
+ לטענת איינשטיין הפיזיקה מתנהגת באופן מוגדר ולכן הוא סבר שיש "משתנים חבויים"
+ כלומר ישנם משתנים נוספים, שאנו לא יודעים עליהם עדיין, שנקבעים בשלב מוקדם
+ יותר בניסוי והם קובעים, מראש את תוצאתו.
+ ניסוי 
+\begin_inset Formula $EPR$
+\end_inset
+
+ )כמו גם הניסוי המחשבתי המפורסם על החתול של שרדינגר( בא להראות שהפרשנות
+ הרווחת של תורת הקוונטים בעייתית.
+ לצערו של איינשטיין, ניסויים רבים, ביניהם מימוש של הניסוי שהוא עצמו הגה,
+ הראו שוב ושוב שדווקא פרשנות קופנהגן תואמת את הנתונים ושלא יתכן להניח את
+ קיומם של משתנים חבויים
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+או כמו שהגיב הפיזיקאי נילס בוהר בתגובה לאימרה של איינשטיין "תפסיק לומר לאלוקים
+ מה לעשות עם הקוביות שלו!" וכמו שהוסיף עשרות שנים אחר כך סטיבן הוקינג "לא
+ זו בלבד שאלוקים משחק בקוביות הוא גם לפעמים זורק אותם למקומות בהם לא ניתן
+ לראות אותם".
+\end_layout
+
+\begin_layout Plain Layout
+ואם כבר אז אצטט גם את הסופר טרי פראצ'ט ז"ל "אלוקים לא משחק בקובייה עם היקום:
+ הוא משחק משחק בלתי ברור שהוא המציא, שאפשר להשוות, מנקודת המבט של שאר השחקנים
+ )כלומר: כולם(, לגרסה של משחק פוקר מבולבל, מוזר בחדר חשוך לחלוטין עם קלפים
+ ריקים על סכומים אינסופיים, עם מחלק שלא אומר לך את החוקים ומחייך כל הזמן!"
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+שער הדמר )
+\begin_inset Formula $Hadamard$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+רכיב לוגי, בדומה לשערי 
+\begin_inset Formula $NOT,AND$
+\end_inset
+
+ וכד' במחשב קלאסי, שמבצע את הפעולה הבאה: 
+\begin_inset Formula 
+\[
+H\left(|0\rangle\right)=\frac{1}{\sqrt{2}}|0\rangle+\frac{1}{\sqrt{2}}|1\rangle
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+H\left(|1\rangle\right)=\frac{1}{\sqrt{2}}|0\rangle-\frac{1}{\sqrt{2}}|1\rangle
+\]
+
+\end_inset
+
+בבסיס שלנו )שמוגדר על ידי המצבים הקלאסים( 
+\begin_inset Formula $|0\rangle=\begin{pmatrix}1\\
+0
+\end{pmatrix},\ |1\rangle=\begin{pmatrix}0\\
+1
+\end{pmatrix}$
+\end_inset
+
+ ולכן בכתיב מטריציוני הפעולה תוגדר כ 
+\begin_inset Formula 
+\[
+H=\frac{1}{\sqrt{2}}\begin{pmatrix}1 & 1\\
+1 & -1
+\end{pmatrix}
+\]
+
+\end_inset
+
+כלומר עבור קיוביט כלשהו 
+\begin_inset Formula $\begin{pmatrix}\alpha_{0}\\
+\alpha_{1}
+\end{pmatrix}$
+\end_inset
+
+ הפעלת שער הדמר על הקיוביט היא למעשה הכפלה שלו במטריצה 
+\begin_inset Formula $H$
+\end_inset
+
+ כלומר 
+\begin_inset Formula $H\cdot\begin{pmatrix}\alpha_{0}\\
+\alpha_{1}
+\end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+פעולה חוקית על 
+\begin_inset Formula $k$
+\end_inset
+
+ קיוביטים
+\end_layout
+
+\begin_layout Standard
+פעולה על 
+\begin_inset Formula $k$
+\end_inset
+
+ קיוביטים היא בעצם פעולה לינארית ואוניטרית מעל מרחב ממימד 
+\begin_inset Formula $2^{k}$
+\end_inset
+
+היא תפעל על וקטורים מהסוג 
+\begin_inset Formula 
+\[
+\begin{pmatrix}\alpha_{0...0}\\
+.\\
+.\\
+.\\
+\alpha_{1...1}
+\end{pmatrix}=\sum_{j_{1}...j_{k}\in\left\{ 0,1\right\} }\alpha_{j_{1}...j_{k}}|j_{1}...j_{k}\rangle
+\]
+
+\end_inset
+
+נזכור שכאשר יש לנו אוסף של 
+\begin_inset Formula $k$
+\end_inset
+
+ קיוביטים אנו מתייחסים אל הבסיס המורכב מהמצבים הקלאסים 
+\begin_inset Formula $|0...0\rangle,|0...01\rangle...,|1...1\rangle$
+\end_inset
+
+ וכל סופרפוזיציה היא צירוף לינארי של אברי הבסיס.
+ נשים לב, בסכום כאן האינדקס רץ מ
+\begin_inset Formula $0...0$
+\end_inset
+
+ עד 
+\begin_inset Formula $1...1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+דוגמה: שער 
+\begin_inset Formula $CNOT-Controlled\ NOT$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+השער מקבל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+קיוביטים 
+\begin_inset Formula $q_{1},q_{2}$
+\end_inset
+
+ והופך את 
+\begin_inset Formula $q_{2}$
+\end_inset
+
+ אמ"ם 
+\begin_inset Formula $q_{1}=|1\rangle$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשים לב שאנו צריכים רק לתאר מה הפעולה עושה למצבים הקלאסים.
+ במקרה של סופרפוזיציה תוצאת הפעולה תתקבל מהלינאריות של הפעולה ומכך שהסופרפוזיציה
+ היא למעשה צירוף לינארי של הבסיס.
+ 
+\begin_inset Formula 
+\[
+CNOT\left(|0q_{2}\rangle\right)=|0q_{2}\rangle,\ CNOT\left(|1q_{2}\rangle\right)=|0\left(1-q_{2}\right)\rangle
+\]
+
+\end_inset
+
+ובכתיב מטריציוני 
+\begin_inset Formula 
+\[
+CNOT=\begin{pmatrix}1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 1 & 0
+\end{pmatrix}
+\]
+
+\end_inset
+
+אפשר להגיע למטריצה על ידי כך שעבור כל וקטור בסיס 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ נשאל מה קורה כשמפעילים את הפעולה עליו ואת התשובה נכתוב בטור ה
+\begin_inset Formula $i$
+\end_inset
+
+.
+ לדוגמה עבור 
+\begin_inset Formula 
+\[
+e_{3}=\begin{pmatrix}0\\
+0\\
+1\\
+0
+\end{pmatrix}=|10\rangle\Rightarrow q_{1}=1\Rightarrow CNOT\left(e_{3}\right)=|11\rangle=\begin{pmatrix}0\\
+0\\
+0\\
+1
+\end{pmatrix}
+\]
+
+\end_inset
+
+ולכן בטור השלישי במטריצה כתבנו 
+\begin_inset Formula $\begin{pmatrix}0\\
+0\\
+0\\
+1
+\end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+פעולה חלקית
+\end_layout
+
+\begin_layout Standard
+מה קורה כשמפעילים פעולה על 
+\begin_inset Formula $k$
+\end_inset
+
+ קיוביטים מתוך 
+\begin_inset Formula $n$
+\end_inset
+
+?
+\begin_inset Formula 
+\[
+\sum_{j_{1}...j_{n}\in\left\{ 0,1\right\} }\alpha_{j_{1}...j_{n}}|j_{1}...j_{n}\rangle\longmapsto\sum_{j_{1}...j_{n}\in\left\{ 0,1\right\} }\alpha_{j_{1}...j_{n}}U\left(|j_{1}...j_{k}\rangle\right)\otimes|j_{k+1}...j_{n}\rangle
+\]
+
+\end_inset
+
+כלומר נניח ויש לנו שלושה קיוביטים בסופרפוזיציה 
+\begin_inset Formula 
+\[
+q_{1}q_{2}q_{3}=\alpha_{000}|000\rangle+\alpha_{001}|001\rangle+\alpha_{010}|010\rangle+\alpha_{011}|011\rangle
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
++\alpha_{100}|100\rangle+\alpha_{101}|101\rangle+\alpha_{110}|110\rangle+\alpha_{111}|111\rangle
+\]
+
+\end_inset
+
+ ונפעיל שער 
+\begin_inset Formula $CNOT$
+\end_inset
+
+ על שני הקיוביטים הראשונים 
+\begin_inset Formula $q_{1}q_{2}$
+\end_inset
+
+ )כלומר אם 
+\begin_inset Formula $q_{1}=1$
+\end_inset
+
+ נהפוך את 
+\begin_inset Formula $q_{2}$
+\end_inset
+
+( כל שנעשה הוא להפעיל את הפעולה על המצבים הקלאסים וההשלכה על הסופרפוזיציה
+ תנבע מהלינאריות.
+ כלומר נקבל
+\begin_inset Formula 
+\[
+CNOT\left(q_{1}q_{2}\right)q_{3}=\alpha_{000}|000\rangle+\alpha_{001}|001\rangle+\alpha_{010}|010\rangle+\alpha_{011}|011\rangle
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
++\alpha_{100}|110\rangle+\alpha_{101}|111\rangle+\alpha_{110}|100\rangle+\alpha_{111}|101\rangle
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\alpha_{000}|000\rangle+\alpha_{001}|001\rangle+\alpha_{010}|010\rangle+\alpha_{011}|011\rangle
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
++\alpha_{110}|100\rangle+\alpha_{111}|101\rangle+\alpha_{100}|110\rangle+\alpha_{101}|111\rangle
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+דוגמה: נתחיל משני קיוביטים במצב הקלאסי 
+\begin_inset Formula $q_{1},q_{2}=|00\rangle$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+נפעיל שער 
+\begin_inset Formula $H$
+\end_inset
+
+ על 
+\begin_inset Formula $q_{1}$
+\end_inset
+
+ נקבל 
+\begin_inset Formula 
+\[
+H\left(q_{1}\right)\otimes q_{2}=\left(\frac{1}{\sqrt{2}}|0\rangle+\frac{1}{\sqrt{2}}|1\rangle\right)\otimes|0\rangle=\frac{1}{\sqrt{2}}|00\rangle+\frac{1}{\sqrt{2}}|10\rangle
+\]
+
+\end_inset
+
+עכשיו נעפיל שער 
+\begin_inset Formula $CNOT$
+\end_inset
+
+ על שני הקיוביטים 
+\begin_inset Formula 
+\[
+\frac{1}{\sqrt{2}}CNOT\left(|00\rangle\right)+\frac{1}{\sqrt{2}}CNOT\left(|10\rangle\right)=\frac{1}{\sqrt{2}}|00\rangle+\frac{1}{\sqrt{2}}|11\rangle
+\]
+
+\end_inset
+
+וקבילנו את הקיוביטים שהיינו צריכים לצורך ניסוי 
+\begin_inset Formula $EPR$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+חשוב לשים לב שהתחלנו מקיוביטים במצב קלאסי )וכמובן לא שזור( וסיימנו עם סופרפוזיצי
+ה של קיוביטים שזורים.
+\end_layout
+
+\begin_layout Standard
+איך אנו יודעים שהם שזורים? 
+\end_layout
+
+\begin_layout Enumerate
+לפי תוצאות מדידה - אם נמדוד קיוביט אחד זה ישפיע על המצב של הקיוביט השני.
+\end_layout
+
+\begin_layout Enumerate
+אם הם לא היו שזורים היה היינו יכולים לבטא את הסופרפוזיציה כמכפלה טנזורית
+ כלומר 
+\begin_inset Formula 
+\[
+\frac{1}{\sqrt{2}}|00\rangle+\frac{1}{\sqrt{2}}|11\rangle=\left(\alpha_{0}|0\rangle+\alpha_{1}|1\rangle\right)\otimes\left(\beta_{0}|0\rangle+\beta_{1}|1\rangle\right)
+\]
+
+\end_inset
+
+וזה לא אפשרי )אם ננס הלפתוח את המכפלה ולהשוות מקדמים נקבל מערכת משוואת ב
+\numeric on
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+נעלמים שאין לה פתרון(
+\end_layout
+
+\begin_layout Subsection*
+טלפוטציה קוונטית
+\end_layout
+
+\begin_layout Standard
+לאנסטסיה יש קיוביט 
+\begin_inset Formula $q_{1}-1$
+\end_inset
+
+ בסופרפוזיציה 
+\begin_inset Formula $\alpha_{0}|0\rangle+\alpha_{1}|1\rangle$
+\end_inset
+
+ לא ידועה.
+ היא רוצה לשלוח את הקיוביט לבוריס )ליתר דיוק היא רוצה להביא למצב שלבוריס
+ יהיה העתק זהה של הקיוביט הזה(.
+\end_layout
+
+\begin_layout Standard
+הבנה: אנסטסיה ובוריס מייצרים זוג קיוביטים כמו בניסוי 
+\begin_inset Formula $EPR$
+\end_inset
+
+ 
+\begin_inset Formula $q_{2}q_{3}=\frac{1}{\sqrt{2}}|00\rangle+\frac{1}{\sqrt{2}}|11\rangle$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+המצב המשותף )אם מסופים את הקיוביט 
+\begin_inset Formula $q_{1}$
+\end_inset
+
+ של אנסטסיה ומסתכלים על שלושתם כעל סופרפוזיציה משותפת( 
+\begin_inset Formula 
+\[
+\left(q_{1}q_{2}q_{3}\right)=\left(\alpha_{0}|0\rangle+\alpha_{1}|1\rangle\right)\otimes\left(\frac{1}{\sqrt{2}}|00\rangle+\frac{1}{\sqrt{2}}|11\rangle\right)
 \]
 
 \end_inset
