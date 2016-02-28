@@ -1,0 +1,359 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\series bold
+Theorem
+\series default
+: Fixing a database 
+\begin_inset Formula $x\in X^{*}$
+\end_inset
+
+, a quality function 
+\begin_inset Formula $u:X^{*}x\mathcal{R}\rightarrow\mathbb{R}$
+\end_inset
+
+, aproximation and probability parameters 
+\begin_inset Formula $\alpha,\beta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+denote: 
+\begin_inset Formula $OPT_{u}\left(x\right)=\max_{r\in\mathcal{R}}\left(u\left(x,r\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for the configuration in the 
+\begin_inset Formula $Flat-Concave$
+\end_inset
+
+ mechanism, step-9:
+\end_layout
+
+\begin_layout Standard
+if 
+\begin_inset Formula 
+\[
+OPT_{u}\left(x\right)\geq\frac{2}{\epsilon\alpha}\cdot ln\left(\left|\bar{R_{\alpha}}\right|\left(\frac{1}{\beta}-2\right)+1\right)
+\]
+
+\end_inset
+
+ it holds that 
+\begin_inset Formula 
+\[
+Pr\left[u\left(\mathcal{M}\left(x,u,\mathcal{R}\right)\right)\leq\left(1-\alpha\right)\cdot OPT_{u}\right]=\leq\beta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+denote:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R_{OPT}=\left\{ r\in\mathcal{R}|u\left(x,r\right)=OPT_{u}\left(x\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R_{\alpha}=\left\{ r\in\mathcal{R}|u\left(x,r\right)\geq\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R'_{\alpha}=R_{\alpha}\backslash R_{OPT}=\left\{ r\in\mathcal{R}|OPT_{u}\left(x\right)>u\left(x,r\right)\geq\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\bar{R{}_{\alpha}}=R\backslash R_{\alpha}=\left\{ r\in\mathcal{R}|u\left(x,r\right)<\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we want to the parameters s.t.
+ 
+\begin_inset Formula 
+\[
+Pr\left[u\left(\mathcal{M}\left(x,u,\mathcal{R}\right)\right)\leq\left(1-\alpha\right)\cdot OPT_{u}\right]=Pr\left[\mathcal{M}\left(x,u,\mathcal{R}\right)\in\bar{R_{\alpha}}\right]\leq\beta
+\]
+
+\end_inset
+
+each element from 
+\begin_inset Formula $\bar{R_{\alpha}}$
+\end_inset
+
+ has mass probability of at most 
+\begin_inset Formula $exp\left(\frac{\epsilon}{2}\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right)$
+\end_inset
+
+ so the entire set of 
+\begin_inset Quotes eld
+\end_inset
+
+bad
+\begin_inset Quotes erd
+\end_inset
+
+ elements has total probability mass of at most 
+\begin_inset Formula $\left|\bar{R_{\alpha}}\right|exp\left(\frac{\epsilon}{2}\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+on the other side elements that aren't in 
+\begin_inset Formula $\bar{R_{\alpha}}$
+\end_inset
+
+ can be of two types:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $r\in R_{OPT}$
+\end_inset
+
+ such elements has probability mass of 
+\begin_inset Formula $exp\left(\frac{\epsilon}{2}\cdot OPT_{u}\left(x\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $r\in R'_{\alpha}$
+\end_inset
+
+ such elements has probability mass of at least 
+\begin_inset Formula $exp\left(\frac{\epsilon}{2}\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so the entire set of 
+\begin_inset Quotes eld
+\end_inset
+
+good
+\begin_inset Quotes erd
+\end_inset
+
+ elements has total probability mass of at most 
+\begin_inset Formula 
+\[
+\left|R'_{\alpha}\right|exp\left(\frac{\epsilon}{2}\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right)+\left|R_{OPT}\right|exp\left(\frac{\epsilon}{2}\cdot OPT_{u}\left(x\right)\right)
+\]
+
+\end_inset
+
+hence this is a lower bound on the normalization term and in total we get
+ that 
+\begin_inset Formula 
+\[
+Pr\left[\mathcal{M}\left(x,u,\mathcal{R}\right)\in\bar{R_{\alpha}}\right]\leq\frac{\left|\bar{R_{\alpha}}\right|exp\left(\frac{\epsilon}{2}\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right)}{\left|R'_{\alpha}\right|exp\left(\frac{\epsilon}{2}\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right)+\left|R_{OPT}\right|exp\left(\frac{\epsilon}{2}\cdot OPT_{u}\left(x\right)\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we defined the bound on the probability as 
+\begin_inset Formula $\beta$
+\end_inset
+
+ so it must hold that 
+\begin_inset Formula 
+\[
+\frac{\left|\bar{R_{\alpha}}\right|exp\left(\frac{\epsilon}{2}\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right)}{\left|R'_{\alpha}\right|exp\left(\frac{\epsilon}{2}\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right)+\left|R_{OPT}\right|exp\left(\frac{\epsilon}{2}\cdot OPT_{u}\left(x\right)\right)}\leq\beta\Rightarrow
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\left|\bar{R_{\alpha}}\right|}{\beta}exp\left(\frac{\epsilon}{2}\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right)\leq\left|R_{\alpha}\right|exp\left(\frac{\epsilon}{2}\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right)+\left|R_{OPT}\right|exp\left(\frac{\epsilon}{2}\cdot OPT_{u}\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Rightarrow e^{\frac{\epsilon}{2}\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)}\left(\frac{\left|\bar{R_{\alpha}}\right|}{\beta}-\left(\left|R\right|-\left|\bar{R_{\alpha}}\right|-1\right)\right)\leq e^{\frac{\epsilon}{2}\cdot OPT_{u}\left(x\right)}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Rightarrow\frac{\epsilon}{2}\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)+ln\left(\frac{\left|\bar{R_{\alpha}}\right|}{\beta}-\left(\left|R\right|-\left|\bar{R_{\alpha}}\right|-1\right)\right)\leq\frac{\epsilon}{2}\cdot OPT_{u}\left(x\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Rightarrow\frac{2}{\epsilon\alpha}\cdot ln\left(\left|\bar{R_{\alpha}}\right|\left(\frac{1}{\beta}-1\right)-\left|R\right|+1\right)\leq OPT_{u}\left(x\right)
+\]
+
+\end_inset
+
+since by definition 
+\begin_inset Formula $\left|\bar{R_{\alpha}}\right|<\left|R\right|$
+\end_inset
+
+ if 
+\begin_inset Formula 
+\[
+OPT_{u}\left(x\right)\geq\frac{2}{\epsilon\alpha}\cdot ln\left(\left|R_{\alpha}\right|\left(\frac{1}{\beta}-2\right)+1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we get the appropriate bound.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Remark
+\series default
+: using the bound proved in Algorithmic Foundations of Differential Privacy
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+C.Dwork , A.roth
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+Pr\left[u(\mathcal{M}_{E}(x,u,\mathcal{R}))\leq OPT_{u}(x)-\frac{2\Delta u}{\epsilon}\left(ln\left(\frac{|\mathcal{R}|}{|R_{OPT}|}\right)+t\right)\right]\leq e^{-t}
+\]
+
+\end_inset
+
+we can show that the bound is 
+\begin_inset Formula 
+\[
+OPT_{u}\left(x\right)\geq\frac{16}{3\epsilon\alpha}ln\left(\frac{|\mathcal{R}|}{\beta}\right)
+\]
+
+\end_inset
+
+the result above is lower than this one when 
+\begin_inset Formula 
+\[
+\left|\mathcal{R}\right|>\frac{\beta}{\exp\left(\frac{10}{3\epsilon\alpha}\right)+2\beta-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

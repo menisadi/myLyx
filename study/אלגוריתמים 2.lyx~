@@ -107,7 +107,7 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Part*
+\begin_layout Part
 
 \size largest
 סיבוכיות של פעולות אריתמטיות
@@ -213,7 +213,7 @@ n=log_{2}m\Rightarrow m=2^{n}\Rightarrow\mathcal{O}\left(m\right)=\mathcal{O}\le
  הקלט.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 חשבון מודולרי
 \end_layout
 
@@ -506,7 +506,7 @@ m
  הוא לא רק חוג אלא שדה.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 האלגוריתם של אוקלידס למציאת
 \family roman
 \series medium
@@ -1049,11 +1049,11 @@ y=x'\; x=y'-dx
  )ניתוח זמן הריצה לא השתנה מהאלגוריתם המקורי(
 \end_layout
 
-\begin_layout Part*
+\begin_layout Part
 בדיקת ראשוניות
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 חישוב חזקה בחשבון מודולרי
 \end_layout
 
@@ -1341,7 +1341,7 @@ b=\sum2^{x_{k}}\Rightarrow a^{b}\: mod\: m=\prod_{k}(a^{2^{x_{k}}}\: mod\: m)
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 
 \series bold
 \begin_inset Formula $PRIMES$
@@ -1653,7 +1653,7 @@ b=\sum2^{x_{k}}\Rightarrow a^{b}\: mod\: m=\prod_{k}(a^{2^{x_{k}}}\: mod\: m)
 לעומת זאת נחשבת בעיה קשה - לא ידוע על אלגוריתם שפותר אותה בזמן סביר.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 היסטוריה
 \lang english
 
@@ -1835,7 +1835,7 @@ status open
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 מציאת מספר ראשוני
 \end_layout
 
@@ -1947,7 +1947,7 @@ Pr\left[m\ is\ prime\right]=\frac{(1+o(1))\frac{2^{n}}{ln\left(2^{n}\right)}}{2^
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 אלגוריתם 
 \begin_inset Formula $CO-RP$
 \end_inset
@@ -2837,7 +2837,7 @@ a^{2^{t-1}q}=a_{j-1}\neq1\ mod\ m
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 קריפטוגרפיה
 \end_layout
 
@@ -3023,7 +3023,7 @@ Pr\left[A\left(E\left(x_{1},e\right),e\right)=1\right]\approx Pr\left[A\left(E\l
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 \begin_inset Formula $RSA$
 \end_inset
 
@@ -3322,11 +3322,11 @@ status collapsed
 (
 \end_layout
 
-\begin_layout Part*
+\begin_layout Part
 הפרד ומשול
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 כפל מספרים
 \end_layout
 
@@ -3815,7 +3815,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 מכפלת מטריצות
 \end_layout
 
@@ -4152,7 +4152,7 @@ P_{3}+P_{4} & P_{4}+P_{5}-P_{7}
  אבל אף אחד לא שמע על זה כי הוא לא טרח לפרסם את זה כמו שצריך[
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 כפל פולינומים והתמרת פורייה 
 \begin_inset Marginal
 status open
@@ -4252,7 +4252,7 @@ c_{k}=\sum_{j=0}^{k}a_{j}b_{k-j}
 כדי להתעסק בנושא נתחיל בתזכורת/מבוא על פונקציות מרוכבות:
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 פונקציות מרוכבות - על רגל אחת
 \end_layout
 
@@ -4746,7 +4746,7 @@ x^{k}=e^{k\theta i}
  זאת הכוחה ממש יפה"(
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 טורי פורייה והתמרת פורייה - על רגל אחת
 \begin_inset Marginal
 status open
@@ -6304,7 +6304,7 @@ a\left(\omega^{k}\right)=a_{even}\left(\left(\omega^{k}\right)^{2}\right)+\omega
 ובאופן הזה נחסוך חצי מהקריאות.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 אלגוריתם 
 \begin_inset Formula $FFT\left(a\left(\cdot\right),\omega\right)$
 \end_inset
@@ -6602,7 +6602,7 @@ T\left(n\right)=2T\left(\frac{n}{2}\right)+\mathcal{O}\left(n\right)\Rightarrow 
 נסכם את כל מה שראינו ונתאר את האלגוריתם השלם להכפלת פולינומים:
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 אלגוריתם כפל פולינומים
 \end_layout
 
@@ -6873,7 +6873,7 @@ n=\mathcal{O}\left(d\right)
 
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 \begin_inset Formula $FFT^{-1}$
 \end_inset
 
@@ -7457,7 +7457,7 @@ C_{n-1}
 
 \end_layout
 
-\begin_layout Part*
+\begin_layout Part
 תהליכים סטוכסטים
 \begin_inset Marginal
 status open
@@ -7474,7 +7474,7 @@ status open
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 הגדרות בסיסיות: 
 \end_layout
 
@@ -7581,7 +7581,7 @@ Pr\left[X_{t}=j|X_{t-1}=i\right]=p_{ij}
 \end_layout
 
 \begin_deeper
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 
 \series bold
 הילוך מקרי בגרף
@@ -8288,7 +8288,7 @@ p_{nj}
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 התפלגות מקובעת
 \end_layout
 
@@ -9975,7 +9975,7 @@ Pr\left[X_{N}\ne Z_{N}\right]\cdot Pr\left[X_{2N}\ne Z_{2N},...,X_{kN}\ne Z_{kN}
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 זמני פגיעה וחזרה
 \end_layout
 
@@ -10547,7 +10547,7 @@ R\left(v\right)=\frac{2\left|E\right|}{deg\left(v\right)}
 
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 מסלול באורך 
 \begin_inset Formula $n$
 \end_inset
@@ -10610,7 +10610,11 @@ R\left(v\right)=\frac{2\left|E\right|}{deg\left(v\right)}
 \end_layout
 
 \begin_layout Standard
-נשים לב: ובנוסף בגרף המושרה הזה יש 
+נשים לב: 
+\begin_inset Formula $deg_{k}\left(k\right)=1$
+\end_inset
+
+ ובנוסף בגרף המושרה הזה יש 
 \begin_inset Formula $k$
 \end_inset
 
@@ -10790,11 +10794,11 @@ H\left(0,n\right)=\sum_{k=0}^{n-1}\left(2k+1\right)=n^{2}
 
 \end_layout
 
-\begin_layout Part*
+\begin_layout Part
 חישוב קוונטי
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 רקע
 \end_layout
 
@@ -10804,7 +10808,7 @@ H\left(0,n\right)=\sum_{k=0}^{n-1}\left(2k+1\right)=n^{2}
  לתכנן אלגוריתמים עד כה.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 ניסוי שני הסדקים
 \end_layout
 
@@ -10937,7 +10941,7 @@ http://goo.gl/A5Cje0
 .
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 לעניינו
 \end_layout
 
@@ -10999,7 +11003,7 @@ Pr\left[we\ got\ |0\rangle\right]=\left|\alpha_{0}\right|^{2},\qquad Pr\left[we\
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 פעולות על קיוביטים
 \end_layout
 
@@ -11396,7 +11400,7 @@ q_{1}\otimes...\otimes q_{n}=\left(\alpha_{0}^{1}|0\rangle+\alpha_{1}^{1}|1\rang
 ולכן המצבים לא שזורים.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 מדידה חלקית
 \end_layout
 
@@ -11714,7 +11718,7 @@ P_{1}=\frac{1}{2}\Rightarrow\frac{1}{\sqrt{P_{1}}}=\sqrt{2}\Rightarrow\sqrt{2}\l
 
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 ניסוי/פרדוקס 
 \begin_inset Formula $EPR-Einstein\ Podolsky\ Rosen$
 \end_inset
@@ -11913,7 +11917,7 @@ status collapsed
 .
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 שער הדמר )
 \begin_inset Formula $Hadamard$
 \end_inset
@@ -11979,7 +11983,7 @@ H=\frac{1}{\sqrt{2}}\begin{pmatrix}1 & 1\\
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 פעולה חוקית על 
 \begin_inset Formula $k$
 \end_inset
@@ -12165,7 +12169,7 @@ e_{3}=\begin{pmatrix}0\\
 \end_layout
 
 \end_deeper
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 פעולה חלקית
 \end_layout
 
@@ -12354,7 +12358,7 @@ H\left(q_{1}\right)\otimes q_{2}=\left(\frac{1}{\sqrt{2}}|0\rangle+\frac{1}{\sqr
 נעלמים שאין לה פתרון(
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 טלפוטציה קוונטית
 \end_layout
 
