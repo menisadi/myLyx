@@ -73,7 +73,7 @@ Theorem
 \begin_inset Formula $u:X^{*}x\mathcal{R}\rightarrow\mathbb{R}$
 \end_inset
 
-, aproximation and probability parameters 
+, approximation and probability parameters 
 \begin_inset Formula $\alpha,\beta$
 \end_inset
 
@@ -90,18 +90,18 @@ denote:
 \end_layout
 
 \begin_layout Standard
-for the configuration in the 
-\begin_inset Formula $Flat-Concave$
+if 
+\begin_inset Formula $\left|R_{OPT}\right|=1$
 \end_inset
 
- mechanism, step-9:
-\end_layout
+, 
+\begin_inset Formula $\Delta u$
+\end_inset
 
-\begin_layout Standard
-if 
+=1 and 
 \begin_inset Formula 
 \[
-OPT_{u}\left(x\right)\geq\frac{2}{\epsilon\alpha}\cdot ln\left(\left|\bar{R_{\alpha}}\right|\left(\frac{1}{\beta}-2\right)+1\right)
+OPT_{u}\left(x\right)\geq\frac{2}{\epsilon\alpha}\cdot ln\left(\left|R\right|\left(\frac{1}{\beta}-2\right)+1\right)
 \]
 
 \end_inset
@@ -109,7 +109,7 @@ OPT_{u}\left(x\right)\geq\frac{2}{\epsilon\alpha}\cdot ln\left(\left|\bar{R_{\al
  it holds that 
 \begin_inset Formula 
 \[
-Pr\left[u\left(\mathcal{M}\left(x,u,\mathcal{R}\right)\right)\leq\left(1-\alpha\right)\cdot OPT_{u}\right]=\leq\beta
+Pr\left[u\left(\mathcal{M}\left(x,u,\mathcal{R}\right)\right)\leq\left(1-\alpha\right)\cdot OPT_{u}\left(x\right)\right]\leq\beta
 \]
 
 \end_inset
@@ -301,7 +301,7 @@ since by definition
  if 
 \begin_inset Formula 
 \[
-OPT_{u}\left(x\right)\geq\frac{2}{\epsilon\alpha}\cdot ln\left(\left|R_{\alpha}\right|\left(\frac{1}{\beta}-2\right)+1\right)
+OPT_{u}\left(x\right)\geq\frac{2}{\epsilon\alpha}\cdot ln\left(\left|R\right|\left(\frac{1}{\beta}-2\right)+1\right)
 \]
 
 \end_inset
@@ -316,42 +316,62 @@ we get the appropriate bound.
 \begin_layout Standard
 
 \series bold
-Remark
+Remark 1
 \series default
-: using the bound proved in 
+: in the special case where 
+\begin_inset Formula $\left|R_{OPT}\right|=1$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+R_{\alpha}=R_{OPT}\Rightarrow\bar{R_{\alpha}}=R\backslash R_{OPT}\Rightarrow\left|\bar{R_{\alpha}}\right|=\left|R\right|-\left|R_{OPT}\right|
+\]
+
+\end_inset
+
+we get that if 
+\begin_inset Formula 
+\[
+OPT_{u}\left(x\right)\geq\frac{2}{\epsilon\alpha}\cdot ln\left(\left(\left|R\right|-1\right)\left(\frac{1}{\beta}-2\right)\right)
+\]
+
+\end_inset
+
+it holds that
+\begin_inset Formula 
+\[
+Pr\left[u\left(\mathcal{M}\left(x,u,\mathcal{R}\right)\right)\ne OPT_{u}\left(x\right)\right]\leq\beta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Remark 2
+\series default
+: 
 \shape italic
-Algorithmic Foundations of Differential Privacy
+In Algorithmic Foundations of Differential Privacy
 \shape default
 
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-C.Dwork , A.roth
+C.Dwork , A.Roth
 \end_layout
 
 \end_inset
 
- 
+ the following additive bound had been proved: 
 \begin_inset Formula 
 \[
 Pr\left[u(\mathcal{M}_{E}(x,u,\mathcal{R}))\leq OPT_{u}(x)-\frac{2\Delta u}{\epsilon}\left(ln\left(\frac{|\mathcal{R}|}{|R_{OPT}|}\right)+t\right)\right]\leq e^{-t}
-\]
-
-\end_inset
-
-we can show that the bound is 
-\begin_inset Formula 
-\[
-OPT_{u}\left(x\right)\geq\frac{16}{3\epsilon\alpha}ln\left(\frac{|\mathcal{R}|}{\beta}\right)
-\]
-
-\end_inset
-
-the result above is lower than this one when 
-\begin_inset Formula 
-\[
-\left|\mathcal{R}\right|>\frac{\beta}{\exp\left(\frac{10}{3\epsilon\alpha}\right)+2\beta-1}
 \]
 
 \end_inset

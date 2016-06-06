@@ -64,11 +64,83 @@
 \begin_body
 
 \begin_layout Description
-Thorem 
+Thorem in algorithm RecConcave
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A.
+ Beimel, K.
+ Nissim, and U.
+ Stemmer.
+ Private learning and sanitization- Pure vs.
+ Approximate Differential Privacy
+\end_layout
+
+\end_inset
+
+ for privacy parameters 
+\begin_inset Formula $\epsilon,\delta$
+\end_inset
+
+ ,promise 
+\begin_inset Formula $r$
+\end_inset
+
+ database 
+\begin_inset Formula $X$
+\end_inset
+
+, domain 
+\begin_inset Formula $R$
+\end_inset
+
+, sensetivity-1 utility function 
+\begin_inset Formula $u$
+\end_inset
+
+ and recursion bound 
+\begin_inset Formula $N=2$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+then: the step 6 will returns a 
+\begin_inset Quotes eld
+\end_inset
+
+good interval
+\begin_inset Quotes erd
+\end_inset
+
+ in probability at least 
+\begin_inset Formula $1-\beta$
+\end_inset
+
+ if 
+\begin_inset Formula $r>\frac{16}{\epsilon\alpha}ln\left(\frac{log_{2}\left(T\right)}{\beta}\right)$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-Proof we want to make sure that the 
+Proof notice that when 
+\begin_inset Formula $N=2$
+\end_inset
+
+ the recurssion call actually calls the 
+\begin_inset Formula $Exponential-Mechanism$
+\end_inset
+
+ and retrives its answer
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+we want to make sure that the 
 \begin_inset Formula $Exponential-Mechanism$
 \end_inset
 
@@ -109,16 +181,12 @@ Pr\left[q(M_{E}(x,q,R))\leq OPT_{q}(x)-\frac{2\Delta q}{\epsilon}\left(ln\left(\
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 and if we switch 
 \begin_inset Formula $e^{-t}=\beta$
 \end_inset
 
  and take the specific parameters used in our case
-\begin_inset Formula $\Delta u=1,\ |R|=ln\left(T\right)$
+\begin_inset Formula $\Delta u=1,\ |R|=log_{2}\left(T\right)$
 \end_inset
 
  and 
@@ -132,7 +200,7 @@ and if we switch
 we get 
 \begin_inset Formula 
 \[
-Pr\left[q(M_{E}(x,q,R))\leq OPT_{q}(x)-\frac{2}{\epsilon}ln\left(\frac{ln\left(T\right)}{\beta}\right)\right]\leq\beta
+Pr\left[q(M_{E}(x,q,R))\leq OPT_{q}(x)-\frac{2}{\epsilon}ln\left(\frac{log_{2}\left(T\right)}{\beta}\right)\right]\leq\beta
 \]
 
 \end_inset
@@ -152,7 +220,7 @@ we also know that
 if we combine all the above we get that we want 
 \begin_inset Formula 
 \[
-\frac{3\alpha}{8}r<\frac{\alpha}{2}r-\frac{2}{\epsilon}ln\left(\frac{T}{\beta}\right)\Rightarrow r>\frac{16}{\epsilon\alpha}ln\left(\frac{ln\left(T\right)}{\beta}\right)
+\frac{3\alpha}{8}r<\frac{\alpha}{2}r-\frac{2}{\epsilon}ln\left(\frac{log_{2}\left(T\right)}{\beta}\right)\Rightarrow r>\frac{16}{\epsilon\alpha}ln\left(\frac{log_{2}\left(T\right)}{\beta}\right)
 \]
 
 \end_inset
@@ -160,6 +228,7 @@ if we combine all the above we get that we want
 
 \end_layout
 
+\end_deeper
 \begin_layout Description
 Remark we saw that for 
 \begin_inset Formula $A_{dist}$
@@ -176,6 +245,7 @@ r>\frac{8ln\left(\frac{1}{\beta\delta}\right)}{3\epsilon\alpha}
 
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 notice that this bound will be less than the one above iff 
 \begin_inset Formula $\delta>\frac{\beta^{5}}{ln^{6}\left(T\right)}$
@@ -184,11 +254,12 @@ notice that this bound will be less than the one above iff
 
 \end_layout
 
+\end_deeper
 \begin_layout Description
 Proof 
 \begin_inset Formula 
 \[
-\frac{8ln\left(\frac{1}{\beta\delta}\right)}{3\epsilon\alpha}<\frac{16}{\epsilon\alpha}ln\left(\frac{ln\left(T\right)}{\beta}\right)\Rightarrow ln\left(\frac{1}{\beta\delta}\right)<6ln\left(\frac{ln\left(T\right)}{\beta}\right)\Rightarrow\frac{1}{\beta\delta}<\left(\frac{ln\left(T\right)}{\beta}\right)^{6}
+\frac{8ln\left(\frac{1}{\beta\delta}\right)}{3\epsilon\alpha}<\frac{16}{\epsilon\alpha}ln\left(\frac{log_{2}\left(T\right)}{\beta}\right)\Rightarrow ln\left(\frac{1}{\beta\delta}\right)<6ln\left(\frac{log_{2}\left(T\right)}{\beta}\right)\Rightarrow\frac{1}{\beta\delta}<\left(\frac{log_{2}\left(T\right)}{\beta}\right)^{6}
 \]
 
 \end_inset
@@ -199,7 +270,7 @@ Proof
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\Rightarrow\delta>\frac{\beta^{5}}{ln^{6}\left(T\right)}
+\Rightarrow\delta>\frac{\beta^{5}}{\log_{2}^{6}\left(T\right)}
 \]
 
 \end_inset

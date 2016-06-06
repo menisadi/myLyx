@@ -157,7 +157,11 @@ if we set
 \end_inset
 
  , 
-\begin_inset Formula $\Delta u=1$
+\begin_inset Formula $\Delta u=1,$
+\end_inset
+
+ 
+\begin_inset Formula $\left|R\right|=log\left(\mathcal{R}\right)$
 \end_inset
 
  and 
@@ -170,7 +174,7 @@ we get:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
- & Pr\left[u(M_{E}(x,u,R))\leq OPT_{u}(x)-\frac{2}{\epsilon}\left(ln\left(|R|\right)+ln\left(\frac{1}{\beta}\right)\right)\right] & =
+ & Pr\left[u(M_{E}(x,u,R))\leq OPT_{u}(x)-\frac{2}{\epsilon}\left(ln\left(log\left(\mathcal{\left|R\right|}\right)\right)+ln\left(\frac{1}{\beta}\right)\right)\right] & =
 \end{eqnarray*}
 
 \end_inset
@@ -181,7 +185,7 @@ we get:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-Pr\left[u(M_{E}(x,u,R))\leq OPT_{u}(x)-\frac{2}{\epsilon}ln\left(\frac{|R|}{\beta}\right)\right]\leq\beta
+Pr\left[u(M_{E}(x,u,R))\leq OPT_{u}(x)-\frac{2}{\epsilon}ln\left(\frac{log_{2}\left(\mathcal{\left|R\right|}\right)}{\beta}\right)\right]\leq\beta
 \]
 
 \end_inset
@@ -191,14 +195,14 @@ Pr\left[u(M_{E}(x,u,R))\leq OPT_{u}(x)-\frac{2}{\epsilon}ln\left(\frac{|R|}{\bet
 
 \begin_layout Standard
 we want the gap to be at least 
-\begin_inset Formula $\frac{2}{\epsilon}ln\left(\frac{|R|}{\beta}\right)$
+\begin_inset Formula $\frac{2}{\epsilon}ln\left(\frac{log_{2}\left(\mathcal{\left|R\right|}\right)}{\beta}\right)$
 \end_inset
 
  
 \end_layout
 
 \begin_layout Standard
-from the other hand in the RecConcave we know that the gap is at least 
+from the other hand in RecConcave we know that the gap is at least 
 \begin_inset Formula $\frac{3\alpha}{8}r$
 \end_inset
 
@@ -209,7 +213,7 @@ from the other hand in the RecConcave we know that the gap is at least
 if we combine the two we get 
 \begin_inset Formula 
 \[
-\frac{2}{\epsilon}ln\left(\frac{|R|}{\beta}\right)<\frac{3\alpha}{8}r\Rightarrow r>\frac{16}{3\epsilon\alpha}ln\left(\frac{|R|}{\beta}\right)
+\frac{2}{\epsilon}ln\left(\frac{log_{2}\left(\mathcal{\left|R\right|}\right)}{\beta}\right)<\frac{3\alpha}{8}r\Rightarrow r>\frac{16}{3\epsilon\alpha}ln\left(\frac{log_{2}\left(\mathcal{\left|R\right|}\right)}{\beta}\right)
 \]
 
 \end_inset
@@ -228,7 +232,7 @@ and in the case of median
 \begin_layout Standard
 \begin_inset Formula 
 \[
-|s|>\frac{32}{3\epsilon\alpha}ln\left(\frac{|R|}{\beta}\right)
+|s|>\frac{32}{3\epsilon\alpha}ln\left(\frac{log_{2}\left(\mathcal{\left|R\right|}\right)}{\beta}\right)
 \]
 
 \end_inset
@@ -240,7 +244,23 @@ and in the case of median
 alternatively if we want to bound |R| 
 \begin_inset Formula 
 \[
-\frac{3\epsilon\alpha r}{16}>ln\left(\frac{|R|}{\beta}\right)\Rightarrow e^{\frac{3\epsilon\alpha r}{16}}>\frac{|R|}{\beta}\Rightarrow|R|<\beta e^{\frac{3\epsilon\alpha r}{16}}=\beta e^{\frac{3\epsilon\alpha|s|}{32}}
+\frac{3\epsilon\alpha r}{16}>ln\left(\frac{log_{2}\left(\mathcal{\left|R\right|}\right)}{\beta}\right)\Rightarrow e^{\frac{3\epsilon\alpha r}{16}}>\frac{log_{2}\left(\mathcal{\left|R\right|}\right)}{\beta}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Rightarrow log_{2}\left(\mathcal{\left|R\right|}\right)<\beta e^{\frac{3\epsilon\alpha r}{16}}=\beta e^{\frac{3\epsilon\alpha|s|}{32}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Rightarrow\mathcal{\left|R\right|}<2^{\beta e^{\frac{3\epsilon\alpha|s|}{32}}}
 \]
 
 \end_inset

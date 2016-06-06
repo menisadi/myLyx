@@ -1,0 +1,348 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\numeric on
+3
+\end_layout
+
+\begin_layout Section*
+
+\numeric on
+1
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula $x,y\in2\cdot\mathbb{N}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $x>y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נסמן 
+\begin_inset Formula 
+\[
+w_{i}=x^{n-i}y^{i}\cdot e_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נבחר בסיס 
+\begin_inset Formula 
+\[
+b_{1}=x^{n}\cdot e_{1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\forall1<i:\ b_{i}=w_{i}+\frac{1}{2}w_{i-1}
+\]
+
+\end_inset
+
+נשים לב כי 
+\begin_inset Formula 
+\[
+2|x,y\Rightarrow2|x^{n-i}y^{i}\Rightarrow\frac{1}{2}x^{n-i}y^{i}\in\mathbb{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כעת נקבל כי 
+\begin_inset Formula 
+\[
+\tilde{b_{i}}=w_{i}
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula 
+\[
+\mu_{i,i+1}=\frac{\left\langle b_{i+1},\tilde{b_{i}}\right\rangle }{\left\langle \tilde{b_{i}},\tilde{b_{i}}\right\rangle }=\frac{\frac{1}{2}x^{n-i}y^{i}\cdot x^{n-i}y^{i}}{x^{n-i}y^{i}}=\frac{1}{2}
+\]
+
+\end_inset
+
+וכמו כן 
+\begin_inset Formula 
+\[
+\frac{\left\Vert \tilde{b_{i+1}}\right\Vert ^{2}}{\left\Vert \tilde{b_{i}}\right\Vert ^{2}}=\left(\frac{x^{n-i-1}y^{i+1}}{x^{n-i}y^{i}}\right)^{2}=\left(\frac{y}{x}\right)^{2}
+\]
+
+\end_inset
+
+ולבסוף 
+\begin_inset Formula 
+\[
+\left\Vert b_{1}\right\Vert =x^{n}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda_{1}\geq\min_{i}\left\Vert \tilde{b_{i}}\right\Vert =\left\Vert \tilde{b_{n}}\right\Vert =y^{n}
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula 
+\[
+\left\Vert b_{1}\right\Vert \leq\lambda_{1}\cdot\left(\frac{x}{y}\right)^{n}
+\]
+
+\end_inset
+
+כעת לכל 
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+ נוכל לבחור 
+\begin_inset Formula $x,y$
+\end_inset
+
+ שיקיימו
+\begin_inset Formula 
+\[
+\frac{1}{\sqrt{2}}<\frac{y}{x}\leq\epsilon+\frac{1}{\sqrt{2}}
+\]
+
+\end_inset
+
+ואם נסמן 
+\begin_inset Formula $\epsilon':=\frac{y}{x}-\frac{1}{\sqrt{2}}$
+\end_inset
+
+ כלומר 
+\begin_inset Formula $\epsilon>\epsilon'>0$
+\end_inset
+
+ ונקבל כי
+\begin_inset Formula 
+\[
+\frac{\left\Vert \tilde{b_{i+1}}\right\Vert ^{2}}{\left\Vert \tilde{b_{i}}\right\Vert ^{2}}=\left(\frac{y}{x}\right)^{2}\geq\frac{1}{2}+\epsilon'>\left(\frac{3}{4}-\mu_{i,i+1}\right)
+\]
+
+\end_inset
+
+ובנוסף 
+\begin_inset Formula 
+\[
+\lambda_{1}\geq\left\Vert b_{1}\right\Vert \cdot\left(\frac{y}{x}\right)^{n}=\left\Vert b_{1}\right\Vert \cdot\left(\frac{1}{\sqrt{2}}+\epsilon'\right)^{n}=\left\Vert b_{1}\right\Vert \cdot\frac{c_{\epsilon}}{2^{\frac{n}{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר 
+\begin_inset Formula $c_{\epsilon}$
+\end_inset
+
+ תלוי בבחירת 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ ומקתיים
+\end_layout
+
+\begin_layout Section*
+
+\numeric on
+2
+\end_layout
+
+\begin_layout Subsection*
+
+\numeric on
+1
+\end_layout
+
+\begin_layout Standard
+נשים לב כי לאחר האיטרציה הראשונה נקבל כי המקדם של 
+\begin_inset Formula $b_{n}$
+\end_inset
+
+ בביטוי 
+\begin_inset Formula $t-b$
+\end_inset
+
+ הינו בדיוק 
+\begin_inset Formula 
+\[
+\lceil\frac{\left\langle t,\tilde{b_{n}}\right\rangle }{\left\langle \tilde{b_{n}},\tilde{b_{n}}\right\rangle }\rfloor=\lceil c_{n}\rfloor
+\]
+
+\end_inset
+
+כאשר השיוויון האחרון נובע ממשפט שהוכחנו על מקדמי הצגה בבסיס נתון בקורס אלגברה
+ לינארית
+\end_layout
+
+\begin_layout Standard
+כעת נשים לב כי בשאר האיטרציות, מאחר וחיסרנו מ 
+\begin_inset Formula $b$
+\end_inset
+
+ את הרכיב ההטלה שלו על 
+\begin_inset Formula $b_{n}$
+\end_inset
+
+ קיבלנו וקטור שנמצא בפריסה של 
+\begin_inset Formula $b_{1},...,b_{n-1}$
+\end_inset
+
+ וככזה הוא גם בפריסה של 
+\begin_inset Formula $\tilde{b_{1}},...,\tilde{b_{n-1}}$
+\end_inset
+
+ ולכן כל הפעולות מכאן ולהבא ישפיעו רק על הרכיב של 
+\begin_inset Formula $t-b$
+\end_inset
+
+ שנמצא בפריסה הזאת ולכן המקדם של 
+\begin_inset Formula $b_{n}$
+\end_inset
+
+ בהצגה של הפלט 
+\begin_inset Formula $t-b$
+\end_inset
+
+ לא ישתנה.
+ 
+\end_layout
+
+\begin_layout Standard
+כלומר גם בסוף התהליך נקבל כי המקדם של 
+\begin_inset Formula $b_{n}$
+\end_inset
+
+ בהצגה של 
+\begin_inset Formula $t-b$
+\end_inset
+
+ הוא 
+\begin_inset Formula 
+\[
+\lceil\frac{\left\langle t,\tilde{b_{n}}\right\rangle }{\left\langle \tilde{b_{n}},\tilde{b_{n}}\right\rangle }\rfloor=\lceil c_{n}\rfloor
+\]
+
+\end_inset
+
+כדרש
+\end_layout
+
+\begin_layout Subsection*
+
+\numeric on
+2
+\end_layout
+
+\begin_layout Standard
+אם הבסיס אורתוגונלי מתקיים 
+\begin_inset Formula 
+\[
+\tilde{b_{i}}=b_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\numeric on
+3
+\end_layout
+
+\begin_layout Section*
+
+\numeric on
+4
+\end_layout
+
+\end_body
+\end_document

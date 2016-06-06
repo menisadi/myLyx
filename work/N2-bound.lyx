@@ -120,7 +120,7 @@ good interval
 \end_inset
 
  if 
-\begin_inset Formula $r>\frac{16}{\epsilon\alpha}ln\left(\frac{ln\left(T\right)}{\beta}\right)$
+\begin_inset Formula $r>\frac{16}{\epsilon\alpha}ln\left(\frac{log_{2}\left(T\right)}{\beta}\right)$
 \end_inset
 
 
@@ -186,7 +186,7 @@ and if we switch
 \end_inset
 
  and take the specific parameters used in our case
-\begin_inset Formula $\Delta u=1,\ |R|=ln\left(T\right)$
+\begin_inset Formula $\Delta u=1,\ |R|=log_{2}\left(T\right)$
 \end_inset
 
  and 
@@ -200,7 +200,7 @@ and if we switch
 we get 
 \begin_inset Formula 
 \[
-Pr\left[q(M_{E}(x,q,R))\leq OPT_{q}(x)-\frac{2}{\epsilon}ln\left(\frac{ln\left(T\right)}{\beta}\right)\right]\leq\beta
+Pr\left[q(M_{E}(x,q,R))\leq OPT_{q}(x)-\frac{2}{\epsilon}ln\left(\frac{log_{2}\left(T\right)}{\beta}\right)\right]\leq\beta
 \]
 
 \end_inset
@@ -220,7 +220,7 @@ we also know that
 if we combine all the above we get that we want 
 \begin_inset Formula 
 \[
-\frac{3\alpha}{8}r<\frac{\alpha}{2}r-\frac{2}{\epsilon}ln\left(\frac{T}{\beta}\right)\Rightarrow r>\frac{16}{\epsilon\alpha}ln\left(\frac{ln\left(T\right)}{\beta}\right)
+\frac{3\alpha}{8}r<\frac{\alpha}{2}r-\frac{2}{\epsilon}ln\left(\frac{log_{2}\left(T\right)}{\beta}\right)\Rightarrow r>\frac{16}{\epsilon\alpha}ln\left(\frac{log_{2}\left(T\right)}{\beta}\right)
 \]
 
 \end_inset
@@ -248,7 +248,7 @@ r>\frac{8ln\left(\frac{1}{\beta\delta}\right)}{3\epsilon\alpha}
 \begin_deeper
 \begin_layout Standard
 notice that this bound will be less than the one above iff 
-\begin_inset Formula $\delta>\frac{\beta^{5}}{ln^{6}\left(T\right)}$
+\begin_inset Formula $\delta>\frac{\beta^{5}}{\log_{2}^{6}\left(T\right)}$
 \end_inset
 
 
@@ -259,7 +259,7 @@ notice that this bound will be less than the one above iff
 Proof 
 \begin_inset Formula 
 \[
-\frac{8ln\left(\frac{1}{\beta\delta}\right)}{3\epsilon\alpha}<\frac{16}{\epsilon\alpha}ln\left(\frac{ln\left(T\right)}{\beta}\right)\Rightarrow ln\left(\frac{1}{\beta\delta}\right)<6ln\left(\frac{ln\left(T\right)}{\beta}\right)\Rightarrow\frac{1}{\beta\delta}<\left(\frac{ln\left(T\right)}{\beta}\right)^{6}
+\frac{8ln\left(\frac{1}{\beta\delta}\right)}{3\epsilon\alpha}<\frac{16}{\epsilon\alpha}ln\left(\frac{log_{2}\left(T\right)}{\beta}\right)\Rightarrow ln\left(\frac{1}{\beta\delta}\right)<6ln\left(\frac{log_{2}\left(T\right)}{\beta}\right)\Rightarrow\frac{1}{\beta\delta}<\left(\frac{log_{2}\left(T\right)}{\beta}\right)^{6}
 \]
 
 \end_inset
@@ -270,7 +270,7 @@ Proof
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\Rightarrow\delta>\frac{\beta^{5}}{ln^{6}\left(T\right)}
+\Rightarrow\delta>\frac{\beta^{5}}{\log_{2}^{6}\left(T\right)}
 \]
 
 \end_inset
